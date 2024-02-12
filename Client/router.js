@@ -1,5 +1,4 @@
-import home from "./pages/home.js";
-import about from "./Pages/about.js";
+import home from "./Pages/home.js";
 
 function route() {
     //console.log(location)

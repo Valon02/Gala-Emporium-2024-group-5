@@ -1,5 +1,5 @@
-import Club from "./Api/club.js";
+import about from "./Api/about.js";
 
 export default function (server) {
-  Club(server)
+  about(server)
 }

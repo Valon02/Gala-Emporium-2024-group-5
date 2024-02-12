@@ -6,8 +6,9 @@ const server = express()
 const port = 3000
 
 server.use(express.json())
+server.use(express.static('../client'))
 
-mongoose.connect("mongodb+srv://Gala:Grupp5@cluster0.ewaouzm.mongodb.net/GalaEmporium")
+mongoose.connect("mongodb+srv://gala:grupp5@cluster0.ewaouzm.mongodb.net/GalaEmporium")
 
 apiRegister(server)
 
