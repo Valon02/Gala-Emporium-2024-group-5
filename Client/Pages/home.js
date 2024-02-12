@@ -1,11 +1,10 @@
 export default function home() {
-
-    let text = "blissful"
-  
+  $("main").attr("id","homepage")
     return `
-    <article id="home">
-      <h1>Welcome to my ${text} page</h1>
-      <p>OBS! Glöm inte CSS.</p>
-    </article>
+
+    <main>
+    
+    </main>
+
     `
   }

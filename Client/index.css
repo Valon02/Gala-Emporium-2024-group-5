@@ -1,3 +1,170 @@
-h1 {
-    color: red;
+@import url("./Styles/Home.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+/*HEADER*/
+
+
+header{
+    width: 100vw;
+    height: 80px;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+   background-color: gray;
+
+}
+
+nav{
+  font-family: 'Protest Revolution';
+}
+
+ul{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+nav a{
+    font-size: 1.2rem;
+    margin-right: 2rem;
+
+    padding: .1rem 1.5rem;
+    text-decoration: none;
+    color:white
+}
+
+nav li:last-child a{
+    border: 2px solid yellow;
+    border-radius: 50px;
+   
+}
+
+
+
+.logo{
+    position: absolute;
+    left: 25px;
+
+    color: yellow;
+    font-size: 3rem;
+    font-family: 'Protest Revolution';
+    cursor: pointer;
+}
+
+
+.dropbtn {
+    display: flex;
+    color: yellow;
+    text-align: center;
+    text-decoration: none;
+
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .rotate{
+    display: block;
+    transform: rotate(90deg);
+    position: relative;
+    left: 5px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: yellow;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    border-radius: 0 25px 25px 0;
+  }
+  
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  .bn3637 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 2rem;
+    font-family: "protest Revolution";
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem;
+  }
+  
+  .bn36 {
+    border-color: #fff;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  }
+  
+  .bn36:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+
+/*HEADER*/
+
+
+
+
+/*FOOTER*/
+footer {
+    width: 100vw;
+    height: auto;
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+}
+
+.left-footer-section {
+    display: flex;
+    flex-direction: column;
+    color: yellow;
+}
+
+.right-footer-section > p {
+    color: white;
+}
+
+
+
+/*FOOTER*/
