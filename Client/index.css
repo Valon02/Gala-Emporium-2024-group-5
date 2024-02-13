@@ -32,7 +32,8 @@ ul {
 }
 
 nav a {
-  font-size: 1.2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
   margin-right: 2rem;
 
   padding: 0.1rem 1.5rem;
@@ -89,7 +90,7 @@ nav li:last-child a {
 .dropdown-content {
   display: none;
   position: absolute;
-
+  left: -40px;
   background-color: rgb(245, 245, 0);
   min-width: 160px;
   border-radius: 15px;
@@ -126,10 +127,10 @@ nav li:last-child a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.7rem 2rem;
+  padding: 0.4rem 2rem;
   font-family: "protest Revolution";
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
   text-decoration: none;
   color: #fff;
