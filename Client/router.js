@@ -1,4 +1,5 @@
 import home from "./Pages/home.js";
+import trolleriKlubb from "./Pages/trolleriklubb.js";
 
 function route() {
     //console.log(location)
@@ -13,6 +14,11 @@ function route() {
             console.log("Home", home());
             $("main").html(home())
             break;
+
+        case "trolleriklubb":
+            $("main").html(trolleriKlubb())
+            break;
+        
         default:
             console.log("404");
             break;
