@@ -2,11 +2,20 @@ import Club from "../Models/club.js"
 
 export default function (server) {
 
+    // Get all clubs
     server.get("/api/clubs", async (req, res) => {
-        const clubs = await Club.find()
+        const clubs = await Club.find().populate("events")
         res.json(clubs)
     })
 
+    // Get one club
+    server.get("/api/clubs/:id", async (req, res) => {
+        const id = req.params.id;
+        const club = await Club.findById(id).populate("events");
+        res.json(club)
+    })
+
+    // Create new club
     server.post("/api/clubs", async (req, res) => {
         try {
             const newClub = new Club({
@@ -26,7 +35,8 @@ export default function (server) {
         }
     })
 
-    server.post("/api/clubs/:id", async (req, res) => {
+    // Update club
+    server.put("/api/clubs/:id", async (req, res) => {
         const id = req.params.id;
         const updatedItem = req.body;
 
@@ -35,11 +45,11 @@ export default function (server) {
         res.status(200).json(updatedItem);
     })
 
-
+    // Delete club
     server.delete("/api/clubs/:id", async (req, res) => {
         const id = req.params.id;
 
-        const result = await Event.findByIdAndDelete(id);
+        const result = await Club.findByIdAndDelete(id);
 
         res.status(204).send();
     })
