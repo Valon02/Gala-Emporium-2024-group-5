@@ -1,0 +1,15 @@
+.trolleritest > div {
+    border: 1px solid black;
+    width: 100vw;
+    height: 5rem;
+}
+
+aside {
+    border: 1px solid black;
+    width: 12rem;
+    border-radius: 5px;
+}
+
+#testbild {
+    width: 100%;
+}
