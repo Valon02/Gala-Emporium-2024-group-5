@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+}
 /*HEADER*/
 
 header {
@@ -156,7 +160,8 @@ nav li:last-child a {
 footer {
     font-family: sans-serif;
     width: 100vw;
-    height: auto;
+    min-height: auto;
+    max-height: ;
     background-color: grey;
     display: flex;
     align-items: center;
