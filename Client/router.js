@@ -2,7 +2,7 @@ import home from "./Pages/home.js";
 import trolleriKlubb from "./Pages/trolleriklubb.js";
 
 function route() {
-    //console.log(location)
+  //console.log(location)
 
     switch(location.hash.replace("#", "")) {
         case "about":
@@ -25,5 +25,5 @@ function route() {
     }
 }
 
-window.onhashchange = route
-window.onload = route
+window.onhashchange = route;
+window.onload = route;

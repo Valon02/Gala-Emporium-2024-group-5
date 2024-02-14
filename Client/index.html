@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="router.js" defer></script>
     <script src="jquery-3.7.1.js"></script>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap" rel="stylesheet">
-</head>
-<body>
-<header>
-    <div class="logo">GE</div>
-    <nav>
-        
-    <ul>
-       <li> <a href="#">Home</a> </li>
-       <li class="dropdown">
-        <a href="#" class="dropbtn">Clubs <span class="material-symbols-outlined">
-            expand_more
-            </span> </a>
-        <div class="dropdown-content">
-          <a href="#">Club 1</a>
-          <a href="#">Club 2</a>
-          <a href="#">Club 3</a>
-          <a href="#">Club 4</a>
-          <a href="#">Club 5</a>
-          <a href="#">Club 6</a>
-        </div>
-      </li>
-       <li> <a href="#">Sign Up</a> </li>
-       <li> <a href="#" class="bn3637 bn36">Login</a></li>
-    </ul>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">GE</div>
+      <nav>
+        <ul>
+          <li><a href="#" class="home">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropbtn"
+              >Clubs
+              <span class="material-symbols-outlined"> expand_more </span>
+            </a>
+            <div class="dropdown-content">
+              <a href="#">Nattklubben</a>
+              <a href="#">Komediklubben</a>
+              <a href="#">Matlagningsklubben</a>
+              <a href="#">Trolleriklubben</a>
+              <a href="#">Dejtingklubben</a>
+              <a href="#">Kodningsklubben</a>
+            </div>
+          </li>
+          <li><a href="#" class="sign-up">Sign Up</a></li>
+          <li><a href="#" class="bn3637 bn36">Login</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    </nav>
-</header>
+    <main id="homepage"></main>
 
+    <footer>
+      <section class="left-footer-section">
+        <h3>Säg hej till oss!</h3>
+        <br />
+        <form>
+          <input type="text" placeholder="Förnamn" />
+          <input type="text" placeholder="Efternamn" />
+          <br />
+          <input type="text" placeholder="Mail" />
+          <input type="text" placeholder="Telefon" />
+          <br />
+          <textarea name="meddelande" cols="30" rows="10"></textarea>
+          <br />
+          <input type="button" value="Skicka" />
+        </form>
+      </section>
 
-<main id="homepage">
-    
-</main>
-
-
-<footer>
-    <section class="left-footer-section">
-    <h3>Säg hej till oss!</h3>
+<section class="right-footer-section">
+    <p>Adress:</p>
+    <p>Gala Emporium</p>
+    <p>123 Kulturvägen</p>
+    <p>Evenemangsstad, EXE MPL3</p>
     <br>
-    <form>
-        <input type="text" placeholder="Förnamn">
-        <input type="text" placeholder="Efternamn">
-        <br>
-        <input type="text" placeholder="Mail">
-        <input type="text" placeholder="Telefon">
-        <br>
-        <textarea name="meddelande" cols="30" rows="10"></textarea>
-        <br>
-        <input type="button" value="Skicka">
-    </form>
+    <p>Kontakt:</p>
+    <p>Telefon: 0123-356 789</p>
+    <p>E-post: <a href="mailto:info@galaemporium.com">info@galaemporium.com</a></p>
+    <br>
+    <p class="follow-us">Följ oss på sociala medier:</p>
+    <p>-Facebook: <a href="https://www.facebook.com/GalaEmporium" target="_blank">@GalaEmporium</a></p>
+    <p>-Instagram: <a href="https://www.instagram.com/GalaEmporiumOfficial" target="_blank">@GalaEmporiumOfficial</a></p>
+    <p>-Twitter: <a href="https://twitter.com/GalaEmporiumHQ" target="_blank">@GalaEmporiumHQ</a></p>
+    <br>
+    <img src="path/to/facebook-icon.png" alt="Facebook Icon">
+    <img src="path/to/instagram-icon.png" alt="Instagram Icon">
+    <img src="path/to/twitter-icon.png" alt="Twitter Icon">
+    <br>
+    <p>Gala Emporium - Där kulturella upplevelser tar plats!</p>
 </section>
-
-    <section class="right-footer-section">
-        <p>Adress:</p>
-        <p>Gala Emporium</p>
-        <p>123 Kulturvägen</p>
-        <p>Evenemangsstad, EXE MPL3</p>
-        <br>
-        <p>Kontakt:</p>
-        <p>Telefon: 0123-356 789</p>
-        <p>E-post: info@galaemporium.com</p>
-        <br>
-        <p>Följ oss på sociala medier:</p>
-        <p>-Facebook: @GalaEmporium</p>
-        <p>-Instagram: @GalaEmporiumOfficial</p>
-        <p>-Twitter: @GalaEmporiumHQ</p>
-        <br>
-        <p>Gala Emporium - Där kulurella upplevelser tar plats!</p>
-    </section>
 </footer>
 
 </body>
