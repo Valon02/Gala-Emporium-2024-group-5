@@ -140,7 +140,13 @@ nav li:last-child a{
 /*HEADER*/
 
 
-
+/*MAIN*/
+main {
+  width: 80%; /* Anpassa bredden efter dina behov */
+  margin: 0 auto; /* Centrerar main-innehållet horisontellt */
+  padding-bottom: 100px; /* Ger tillräckligt utrymme nedtill för att undvika att fotern täcker innehållet */
+}
+/*MAIN*/
 
 /*FOOTER*/
 footer {
@@ -153,6 +159,7 @@ footer {
     justify-content: space-evenly;
     padding: 1rem;
     position: relative;
+    bottom: 0;
     margin-bottom: 0;
 }
 
