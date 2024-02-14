@@ -144,6 +144,7 @@ nav li:last-child a{
 
 /*FOOTER*/
 footer {
+    font-family: sans-serif;
     width: 100vw;
     height: auto;
     background-color: grey;
@@ -151,19 +152,107 @@ footer {
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
+    position: relative;
+    margin-bottom: 0;
 }
 
 .left-footer-section {
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    color: yellow;
+    color: yellow
+    
+}
+form {
+  max-width: 300px; /* Begränsar bredden */
+  margin: 0 auto; /* Centrerar formuläret horisontellt */
+}
+
+input[type='text'],
+textarea {
+  width: calc(100% - 20px); /* Fyller ut tillgängligt utrymme, med lite marginal */
+  padding: 10px; /* Utfyllnad för input-fälten */
+  margin-bottom: 15px; /* Lite marginal mellan fälten */
+  border: 1px solid #ccc; /* Ljus gränslinje */
+  border-radius: 4px; /* Runda hörn */
+  box-sizing: border-box; /* Inkluderar padding och border i elementets bredd */
+  font-size: 14px; /* Textstorlek */
+}
+
+textarea {
+  height: 100px; /* Höjden för textområdet */
+}
+
+input[type='button'] {
+  background-color: #4CAF50; /* Grön bakgrundsfärg */
+  color: white; /* Vit textfärg */
+  border: none;
+  padding: 10px 20px; /* Utfyllnad för knappen */
+  cursor: pointer; /* Visar pekare när man hovrar över knappen */
+  border-radius: 4px; /* Runda hörn */
+  font-size: 14px; /* Textstorlek */
+}
+
+input[type='button']:hover {
+  background-color: #45a049; /* Lite mörkare grön vid hover */
+}
+
+/* Placeholder-färger */
+input[type='text']::placeholder,
+textarea::placeholder {
+  color: #999; /* Ljusare grå för placeholders */
+}
+
+/* Fokusstilar */
+input[type='text']:focus,
+textarea:focus {
+  outline: none; /* Ingen standardfokusram */
+  border-color: #4CAF50; /* Grön fokusram */
 }
 
 .right-footer-section > p {
+    font-family: sans-serif;
+    margin: 0;
     color: white;
 }
+/* Stilar för höger footer-sektion */
+.right-footer-section {
+  max-width: 300px; /* Begränsar bredden */
+  flex: 1 1 100%; /* Tar upp hela bredden på mindre skärmar */
+}
+
+.right-footer-section p {
+  margin-bottom: 8px; /* Lite mindre marginal mellan styckena */
+  font-size: 14px; /* Textstorlek */
+}
+
+.right-footer-section p:last-child {
+  margin-bottom: 15px; /* Lite mindre extra marginal efter sista stycket */
+  font-weight: bold; /* Fet stil för den sista stycket */
+}
+
+/* Sociala medie-länkar */
+.right-footer-section a {
+  color: #4CAF50; /* Grön färg för länkarna */
+  text-decoration: none; /* Inget understreck för länkarna */
+  font-weight: bold; /* Fet stil för länkarna */
+}
+
+/* Följ oss på sociala medier-stilar */
+.right-footer-section .follow-us {
+  margin-bottom: 10px; /* Lite mindre marginal under rubriken */
+}
+
+/* Bildstilar */
+.right-footer-section img {
+  max-width: 100%; /* Begränsar bredden av bilder till containerstorlek */
+  height: auto; /* Bibehåller bildens proportioner */
+  margin-bottom: 10px; /* Lite marginal under bilderna */
+  border-radius: 5px; /* Runda hörn för bilder */
+}
+
+
+
 
 
 
