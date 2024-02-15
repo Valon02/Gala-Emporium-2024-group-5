@@ -1,3 +1,5 @@
+@import url("/Client/Styles/comedy.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@ body {
   display: flex;
   flex-direction: column; /* Låter main och footer följa efter varandra */
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /*HEADER*/
@@ -156,40 +159,41 @@ nav li:last-child a {
 /*HEADER*/
 
 /*MAIN*/
-#homepage{
-  min-height: calc(20vh - 80px);
-}  
 
 /*MAIN*/
 
-
 /*FOOTER*/
 footer {
-    font-family: sans-serif;
-    width: 100vw;
-    height: 80vh;
-    background-color: grey;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 1rem;    
+  font-family: sans-serif;
+  width: 100vw;
+  min-height: auto;
+  /* max-height: ; */
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 0;
 }
 
 .left-footer-section {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: yellow
-    
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: yellow;
 }
 form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
 }
 
-input[type='text'],
+input[type="text"],
 textarea {
-  width: calc(100% - 20px); /* Fyller ut tillgängligt utrymme, med lite marginal */
+  width: calc(
+    100% - 20px
+  ); /* Fyller ut tillgängligt utrymme, med lite marginal */
   padding: 10px; /* Utfyllnad för input-fälten */
   margin-bottom: 15px; /* Lite marginal mellan fälten */
   border: 1px solid #ccc; /* Ljus gränslinje */
@@ -202,8 +206,8 @@ textarea {
   height: 100px; /* Höjden för textområdet */
 }
 
-input[type='button'] {
-  background-color: #4CAF50; /* Grön bakgrundsfärg */
+input[type="button"] {
+  background-color: #4caf50; /* Grön bakgrundsfärg */
   color: white; /* Vit textfärg */
   border: none;
   padding: 10px 20px; /* Utfyllnad för knappen */
@@ -212,25 +216,29 @@ input[type='button'] {
   font-size: 14px; /* Textstorlek */
 }
 
-input[type='button']:hover {
+input[type="button"]:hover {
   background-color: #45a049; /* Lite mörkare grön vid hover */
 }
 
 /* Placeholder-färger */
-input[type='text']::placeholder,
+input[type="text"]::placeholder,
 textarea::placeholder {
   color: #999; /* Ljusare grå för placeholders */
 }
 
 /* Fokusstilar */
-input[type='text']:focus,
+input[type="text"]:focus,
 textarea:focus {
   outline: none; /* Ingen standardfokusram */
-  border-color: #4CAF50; /* Grön fokusram */
+  border-color: #4caf50; /* Grön fokusram */
 }
 
-
-
+.right-footer-section > p {
+  font-family: sans-serif;
+  margin: 0;
+  color: white;
+}
+/* Stilar för höger footer-sektion */
 .right-footer-section {
   display: flex;
   flex-direction: column;
@@ -241,35 +249,29 @@ textarea:focus {
   margin-top: 20px; /* Avstånd från det föregående elementet */
 }
 
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  max-width: 1200px; /* Maximal bredd för fotern */
-  width: 100%; /* Se till att fotern tar hela bredden av sitt föräldreelement */
+.right-footer-section p:last-child {
+  margin-bottom: 15px; /* Lite mindre extra marginal efter sista stycket */
+  font-weight: bold; /* Fet stil för den sista stycket */
 }
 
-.footer-container > * {
-  margin-bottom: 20px; /* Lägg till lite utrymme mellan varje del */
+/* Sociala medie-länkar */
+.right-footer-section a {
+  color: #4caf50; /* Grön färg för länkarna */
+  text-decoration: none; /* Inget understreck för länkarna */
+  font-weight: bold; /* Fet stil för länkarna */
 }
 
-.footer-icons {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  background-color: darkgray;
-  padding: 10px;
+/* Följ oss på sociala medier-stilar */
+.right-footer-section .follow-us {
+  margin-bottom: 10px; /* Lite mindre marginal under rubriken */
 }
 
-.footer-icons img {
-  width: 40px; /* Justera storleken på ikonerna efter behov */
-  margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
+/* Bildstilar */
+.right-footer-section img {
+  max-width: 100%; /* Begränsar bredden av bilder till containerstorlek */
+  height: auto; /* Bibehåller bildens proportioner */
+  margin-bottom: 10px; /* Lite marginal under bilderna */
+  border-radius: 5px; /* Runda hörn för bilder */
 }
 
-/* Stil för h2-elementen */
-h2 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  margin-bottom: 10px; /* Lite extra utrymme under h2-elementen */
-}
 /*FOOTER*/
