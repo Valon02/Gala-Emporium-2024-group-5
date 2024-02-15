@@ -1,15 +1,20 @@
-.trolleri-background > div {
-    border: 1px solid black;
-    width: 100vw;
-    height: 5rem;
+
+#trolleriklubb {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    z-index: -1;
 }
 
-aside {
-    border: 1px solid black;
-    width: 12rem;
-    border-radius: 5px;
+#trolleri-background {
+    width: 90%;
+    z-index: 0;
+    position: relative;
 }
 
-#testbild {
-    width: 100%;
+#test {
+    color: white;
+    z-index: 100;
+    margin-right: 10rem;
+    position: absolute;
 }
