@@ -16,7 +16,7 @@ export default function renderComedy() {
 
             <div class="break-line"></div>
 
-            <h2 class="comedy-upcomming-events-title">Upcomming Events</h2>
+            <h2 class="comedy-upcoming-events-title">Upcoming Events</h2>
             <section class="comedy-upcoming-events">
                 <div class="event-card">
                     <div class="event-card-date">15 Maj</div>
