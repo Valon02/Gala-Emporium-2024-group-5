@@ -1,7 +1,8 @@
 import home from "./Pages/home.js";
 import renderComedy from "./Pages/comedy.js";
+import renderComedy from "./Pages/comedy.js";
 
-async function route() {
+function route() {
   //console.log(location);
 
   switch (location.hash.replace("#", "")) {
@@ -15,17 +16,15 @@ async function route() {
       $("main").html(home());
       break;
 
-    case "comedy":
+    case "yes":
       console.log("comedy");
-      $("main").html(await renderComedy());
+      $("main").html(renderComedy());
       break;
     default:
       console.log("404");
       break;
   }
 }
-
-
 
 //window.onhashchange = route;
 //window.onload = route;

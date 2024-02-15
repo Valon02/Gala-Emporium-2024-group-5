@@ -1,17 +1,9 @@
-#comedy {
-  padding: 0 10px;
+main {
+  width: 90%;
+  margin: 10px auto;
 }
-
-.comedy-site-title-container {
-  padding: 100px;
-}
-
-#hello {
-  color: red;
-}
-
 .comedy-site-title {
-  margin: 20px;
+  margin: 10px;
   font-size: 5rem;
   text-align: center;
   color: red;
@@ -74,14 +66,13 @@
   margin: 10px;
 }
 
-.comedy-upcoming-events-title {
+.comedy-upcomming-events-title {
   text-align: center;
   font-size: 2.5rem;
   color: rgba(255, 0, 0, 0.85);
 }
 
 .comedy-upcomming-events {
-  /*DENNA GÖR INGET TITTA IGEN!*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,8 +88,6 @@
   width: 80%;
   height: 250px;
   border: 2px solid red;
-
-  box-shadow: 3px 3px 5px 1px rgba(255, 0, 0, 0.85);
 }
 .event-card-date {
   padding: 5px;
@@ -153,10 +142,10 @@
   padding: 5px;
   color: red;
   font-size: 1.7rem;
-  max-width: 80%;
+  width: 80%;
   margin: 25px auto;
 
-  transition: border-color 0.7s ease;
+  transition: border-color 0.5s ease;
 }
 
 .all-events:hover {
