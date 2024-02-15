@@ -7,7 +7,7 @@ const userSchema = mongoose.Schema({
     password: String,
     upcomingEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: "events" }],
     previousEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: "events" }],
-    ClubOwnerAt: { type: mongoose.Schema.Types.ObjectId, ref: "clubs" }
+    clubOwnerAt: { type: mongoose.Schema.Types.ObjectId, ref: "clubs" }
 })
 
 const User = mongoose.model("users", userSchema)

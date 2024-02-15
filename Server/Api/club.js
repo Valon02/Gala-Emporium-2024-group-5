@@ -1,4 +1,5 @@
 import Club from "../Models/club.js"
+import Event from "../Models/event.js"
 
 export default function (server) {
 
@@ -20,14 +21,9 @@ export default function (server) {
         try {
             const newClub = new Club({
                 name: req.body.name,
-                about: req.body.about,
-                events: req.body.eventId
+                about: req.body.about
             })
             const savedClub = await newClub.save()
-
-            const event = await Event.findById(req.body.authorId)
-            event.clubs.push(newClub._id)
-            await event.save()
 
             res.status(201).json(savedClub)
         }   catch (err) {
@@ -49,7 +45,11 @@ export default function (server) {
     server.delete("/api/clubs/:id", async (req, res) => {
         const id = req.params.id;
 
+        // Raderar klubben
         const result = await Club.findByIdAndDelete(id);
+
+        // Raderar alla events i klubben
+        await Event.deleteMany({ club: id })
 
         res.status(204).send();
     })
