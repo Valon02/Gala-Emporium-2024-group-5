@@ -1,7 +1,8 @@
 import home from "./Pages/home.js";
+import renderComedy from "./Pages/comedy.js";
 
 function route() {
-  //console.log(location)
+  //console.log(location);
 
   switch (location.hash.replace("#", "")) {
     case "about":
@@ -12,6 +13,11 @@ function route() {
     case "":
       console.log("Home", home());
       $("main").html(home());
+      break;
+
+    case "yes":
+      console.log("comedy");
+      $("main").html(renderComedy());
       break;
     default:
       console.log("404");

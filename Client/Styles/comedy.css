@@ -1,0 +1,156 @@
+main {
+  width: 90%;
+  margin: 10px auto;
+}
+.comedy-site-title {
+  margin: 10px;
+  font-size: 5rem;
+  text-align: center;
+  color: red;
+
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  border: 5px solid lightcoral;
+  border-radius: 15px;
+
+  animation: borderAnimate 5s linear infinite;
+}
+
+@keyframes borderAnimate {
+  0% {
+    border-color: red;
+    border-left-color: lightcoral;
+  }
+  25% {
+    border-color: red;
+    border-top-color: lightcoral;
+  }
+  50% {
+    border-color: red;
+    border-right-color: lightcoral;
+  }
+  75% {
+    border-color: red;
+    border-bottom-color: lightcoral;
+  }
+  100% {
+    border-color: red;
+    border-left-color: lightcoral;
+  }
+}
+
+.comedy-about {
+  width: 60%;
+  padding: 10px;
+
+  margin: 15px auto;
+}
+
+.comedy-about-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.comedy-about-description {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.break-line {
+  width: 100%;
+  height: 3px;
+  background-color: red;
+  margin: 10px;
+}
+
+.comedy-upcomming-events-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: rgba(255, 0, 0, 0.85);
+}
+
+.comedy-upcomming-events {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  border: 1px solid red;
+}
+
+.event-card {
+  position: relative;
+  margin: 25px auto;
+
+  width: 80%;
+  height: 250px;
+  border: 2px solid red;
+}
+.event-card-date {
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  font-size: 2rem;
+}
+.event-card-time {
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  font-size: 2rem;
+}
+.event-card-description {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  font-size: 1.7rem;
+}
+.buy-ticket {
+  padding: 5px 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  font-size: 2rem;
+
+  border: none;
+
+  background-color: white;
+  color: red;
+}
+.buy-ticket:hover {
+  border-left: 2px solid red;
+  border-top: 2px solid red;
+  font-style: italic;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.all-events {
+  display: block;
+  border: none;
+
+  border: 2px solid transparent;
+  background-color: white;
+  padding: 5px;
+  color: red;
+  font-size: 1.7rem;
+  width: 80%;
+  margin: 25px auto;
+
+  transition: border-color 0.5s ease;
+}
+
+.all-events:hover {
+  font-style: italic;
+  cursor: pointer;
+
+  border-color: red;
+}

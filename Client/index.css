@@ -1,3 +1,5 @@
+@import url("/Client/Styles/comedy.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@
 body {
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 /*HEADER*/
 
@@ -158,35 +161,36 @@ nav li:last-child a {
 
 /*FOOTER*/
 footer {
-    font-family: sans-serif;
-    width: 100vw;
-    min-height: auto;
-    max-height: ;
-    background-color: grey;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    margin-bottom: 0;
+  font-family: sans-serif;
+  width: 100vw;
+  min-height: auto;
+  /* max-height: ; */
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 0;
 }
 
 .left-footer-section {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: yellow
-    
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: yellow;
 }
 form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
 }
 
-input[type='text'],
+input[type="text"],
 textarea {
-  width: calc(100% - 20px); /* Fyller ut tillgängligt utrymme, med lite marginal */
+  width: calc(
+    100% - 20px
+  ); /* Fyller ut tillgängligt utrymme, med lite marginal */
   padding: 10px; /* Utfyllnad för input-fälten */
   margin-bottom: 15px; /* Lite marginal mellan fälten */
   border: 1px solid #ccc; /* Ljus gränslinje */
@@ -199,8 +203,8 @@ textarea {
   height: 100px; /* Höjden för textområdet */
 }
 
-input[type='button'] {
-  background-color: #4CAF50; /* Grön bakgrundsfärg */
+input[type="button"] {
+  background-color: #4caf50; /* Grön bakgrundsfärg */
   color: white; /* Vit textfärg */
   border: none;
   padding: 10px 20px; /* Utfyllnad för knappen */
@@ -209,27 +213,27 @@ input[type='button'] {
   font-size: 14px; /* Textstorlek */
 }
 
-input[type='button']:hover {
+input[type="button"]:hover {
   background-color: #45a049; /* Lite mörkare grön vid hover */
 }
 
 /* Placeholder-färger */
-input[type='text']::placeholder,
+input[type="text"]::placeholder,
 textarea::placeholder {
   color: #999; /* Ljusare grå för placeholders */
 }
 
 /* Fokusstilar */
-input[type='text']:focus,
+input[type="text"]:focus,
 textarea:focus {
   outline: none; /* Ingen standardfokusram */
-  border-color: #4CAF50; /* Grön fokusram */
+  border-color: #4caf50; /* Grön fokusram */
 }
 
 .right-footer-section > p {
-    font-family: sans-serif;
-    margin: 0;
-    color: white;
+  font-family: sans-serif;
+  margin: 0;
+  color: white;
 }
 /* Stilar för höger footer-sektion */
 .right-footer-section {
@@ -249,7 +253,7 @@ textarea:focus {
 
 /* Sociala medie-länkar */
 .right-footer-section a {
-  color: #4CAF50; /* Grön färg för länkarna */
+  color: #4caf50; /* Grön färg för länkarna */
   text-decoration: none; /* Inget understreck för länkarna */
   font-weight: bold; /* Fet stil för länkarna */
 }
@@ -266,10 +270,5 @@ textarea:focus {
   margin-bottom: 10px; /* Lite marginal under bilderna */
   border-radius: 5px; /* Runda hörn för bilder */
 }
-
-
-
-
-
 
 /*FOOTER*/
