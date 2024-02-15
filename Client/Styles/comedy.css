@@ -66,13 +66,14 @@ main {
   margin: 10px;
 }
 
-.comedy-upcomming-events-title {
+.comedy-upcoming-events-title {
   text-align: center;
   font-size: 2.5rem;
   color: rgba(255, 0, 0, 0.85);
 }
 
 .comedy-upcomming-events {
+  /*DENNA GÖR INGET TITTA IGEN!*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,7 +143,7 @@ main {
   padding: 5px;
   color: red;
   font-size: 1.7rem;
-  width: 80%;
+  max-width: 80%;
   margin: 25px auto;
 
   transition: border-color 0.5s ease;
