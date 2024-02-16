@@ -1,169 +1,274 @@
-@import url("./Styles/Home.css");
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+}
 /*HEADER*/
 
+header {
+  width: 100vw;
+  height: 80px;
 
-header{
-    width: 100vw;
-    height: 80px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    
-   background-color: gray;
-
+  background-color: gray;
 }
 
-nav{
-  font-family: 'Protest Revolution';
+nav {
+  font-family: "Protest Revolution";
 }
 
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav a{
-    font-size: 1.2rem;
-    margin-right: 2rem;
+nav a {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-right: 2rem;
 
-    padding: .1rem 1.5rem;
-    text-decoration: none;
-    color:white
+  padding: 0.1rem 1.5rem;
+  text-decoration: none;
+  color: white;
 }
 
-nav li:last-child a{
-    border: 2px solid yellow;
-    border-radius: 50px;
-   
+nav li:last-child a {
+  border: 2px solid yellow;
 }
 
+.logo {
+  position: absolute;
+  left: 25px;
 
+  color: yellow;
+  font-size: 3rem;
+  font-family: "Protest Revolution";
+  cursor: pointer;
 
-.logo{
-    position: absolute;
-    left: 25px;
-
-    color: yellow;
-    font-size: 3rem;
-    font-family: 'Protest Revolution';
-    cursor: pointer;
+  transition: transform 0.7s;
 }
 
+.logo:hover {
+  transform: scale(1.3);
+}
+
+.home:hover {
+  background-image: linear-gradient(to right, white 43%, yellow 66%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sign-up:hover {
+  background-image: linear-gradient(to left, white 43%, yellow 66%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 .dropbtn {
-    display: flex;
-    color: yellow;
-    text-align: center;
-    text-decoration: none;
+  display: flex;
+  color: yellow;
+  text-align: center;
+  text-decoration: none;
+}
 
-  }
-  
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  .rotate{
-    display: block;
-    transform: rotate(90deg);
-    position: relative;
-    left: 5px;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: yellow;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    border-radius: 0 25px 25px 0;
-  }
-  
-  
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
-  
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: -40px;
+  background-color: rgb(245, 245, 0);
+  min-width: 160px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
+.dropdown-content a {
+  color: rgb(40, 40, 40);
+  padding: 12px 16px;
+  display: block;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 0 25px 25px 0;
+}
 
-  .bn3637 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.7rem 2rem;
-    font-family: "protest Revolution";
-    font-weight: 700;
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    backface-visibility: hidden;
-    border: 0.3rem solid transparent;
-    border-radius: 3rem;
-  }
-  
-  .bn36 {
-    border-color: #fff;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-  }
-  
-  .bn36:hover {
-    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  }
+.dropdown-content a:first-child {
+  border-radius: 15px 25px 25px 0;
+}
+.dropdown-content a:last-child {
+  border-radius: 0px 25px 25px 15px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  box-shadow: 3px 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 2rem;
+  font-family: "protest Revolution";
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+}
+
+.bn36 {
+  border-color: #fff;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+.bn36:hover {
+  transform: perspective(1px) scale3d(1.144, 1.044, 1) translateZ(0) !important;
+}
 
 /*HEADER*/
 
+/*MAIN*/
 
-
+/*MAIN*/
 
 /*FOOTER*/
 footer {
+    font-family: sans-serif;
     width: 100vw;
-    height: auto;
+    min-height: auto;
+    max-height: ;
     background-color: grey;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    margin-bottom: 0;
 }
 
 .left-footer-section {
+    font-family: sans-serif;
     display: flex;
     flex-direction: column;
-    color: yellow;
+    color: yellow
+    
+}
+form {
+  max-width: 300px; /* Begränsar bredden */
+  margin: 0 auto; /* Centrerar formuläret horisontellt */
+}
+
+input[type='text'],
+textarea {
+  width: calc(100% - 20px); /* Fyller ut tillgängligt utrymme, med lite marginal */
+  padding: 10px; /* Utfyllnad för input-fälten */
+  margin-bottom: 15px; /* Lite marginal mellan fälten */
+  border: 1px solid #ccc; /* Ljus gränslinje */
+  border-radius: 4px; /* Runda hörn */
+  box-sizing: border-box; /* Inkluderar padding och border i elementets bredd */
+  font-size: 14px; /* Textstorlek */
+}
+
+textarea {
+  height: 100px; /* Höjden för textområdet */
+}
+
+input[type='button'] {
+  background-color: #4CAF50; /* Grön bakgrundsfärg */
+  color: white; /* Vit textfärg */
+  border: none;
+  padding: 10px 20px; /* Utfyllnad för knappen */
+  cursor: pointer; /* Visar pekare när man hovrar över knappen */
+  border-radius: 4px; /* Runda hörn */
+  font-size: 14px; /* Textstorlek */
+}
+
+input[type='button']:hover {
+  background-color: #45a049; /* Lite mörkare grön vid hover */
+}
+
+/* Placeholder-färger */
+input[type='text']::placeholder,
+textarea::placeholder {
+  color: #999; /* Ljusare grå för placeholders */
+}
+
+/* Fokusstilar */
+input[type='text']:focus,
+textarea:focus {
+  outline: none; /* Ingen standardfokusram */
+  border-color: #4CAF50; /* Grön fokusram */
 }
 
 .right-footer-section > p {
+    font-family: sans-serif;
+    margin: 0;
     color: white;
 }
+/* Stilar för höger footer-sektion */
+.right-footer-section {
+  max-width: 300px; /* Begränsar bredden */
+  flex: 1 1 100%; /* Tar upp hela bredden på mindre skärmar */
+}
+
+.right-footer-section p {
+  margin-bottom: 8px; /* Lite mindre marginal mellan styckena */
+  font-size: 14px; /* Textstorlek */
+}
+
+.right-footer-section p:last-child {
+  margin-bottom: 15px; /* Lite mindre extra marginal efter sista stycket */
+  font-weight: bold; /* Fet stil för den sista stycket */
+}
+
+/* Sociala medie-länkar */
+.right-footer-section a {
+  color: #4CAF50; /* Grön färg för länkarna */
+  text-decoration: none; /* Inget understreck för länkarna */
+  font-weight: bold; /* Fet stil för länkarna */
+}
+
+/* Följ oss på sociala medier-stilar */
+.right-footer-section .follow-us {
+  margin-bottom: 10px; /* Lite mindre marginal under rubriken */
+}
+
+/* Bildstilar */
+.right-footer-section img {
+  max-width: 100%; /* Begränsar bredden av bilder till containerstorlek */
+  height: auto; /* Bibehåller bildens proportioner */
+  margin-bottom: 10px; /* Lite marginal under bilderna */
+  border-radius: 5px; /* Runda hörn för bilder */
+}
+
+
+
 
 
 
