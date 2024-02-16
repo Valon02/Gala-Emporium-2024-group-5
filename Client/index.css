@@ -3,11 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Låter main och footer följa efter varandra */
   min-height: 100vh;
 }
+
 /*HEADER*/
 
 header {
@@ -153,23 +156,23 @@ nav li:last-child a {
 /*HEADER*/
 
 /*MAIN*/
+#homepage{
+  min-height: calc(20vh - 80px);
+}  
 
 /*MAIN*/
+
 
 /*FOOTER*/
 footer {
     font-family: sans-serif;
     width: 100vw;
-    min-height: auto;
-    max-height: ;
+    height: 80vh;
     background-color: grey;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    margin-bottom: 0;
+    padding: 1rem;    
 }
 
 .left-footer-section {
