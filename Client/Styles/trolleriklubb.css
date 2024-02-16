@@ -1,48 +1,30 @@
 
 #trolleriklubb {
+   
+}
+
+.kommande-event-container{
+    border: 1px solid black;
+    padding: 1rem;
+    display: inline-flex;
+    margin: 1rem;
+}
+
+.kommande-event {
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 10rem;
+    margin: 1rem;
+}
+
+#logga {
+    border: 2px solid red;
+    border-radius: 5px;
+    display: inline-flex;
+    padding: 1rem;
+}
+
+#logga-container {
     display: flex;
     justify-content: center;
-    background-color: black;
-    z-index: -1;
-}
-
-#trolleri-background {
-    width: 90%;
-    z-index: 0;
-    position: relative;
-}
-
-#test {
-    color: white;
-    z-index: 100;
-    margin-right: 10rem;
-    position: absolute;
-}
-
-#fetch-test {
-    display: flex;
-    border: 5px solid white;
-    height: 10rem;
-    width: auto;
-    position: absolute;
-    z-index: 100;
-    margin-top: 5rem;
-}
-
-#fetch-test > p{
-    color: white;
-    font-size: 3rem;
-}
-
-.club-name{
-    color: white;
-    font-size: 2rem;
-}
-
-#testtest {
-    color: white;
-    height: auto;
-    width: auto;
-    border: 1px solid white;
-    margin: 1rem;
 }

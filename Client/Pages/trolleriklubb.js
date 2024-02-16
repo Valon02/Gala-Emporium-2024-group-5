@@ -6,11 +6,13 @@ export default async function trolleriKlubb() {
 
     console.log(result)
 
+
+
     let eventString = "";
-    for (let event of result ){
+    for (let event of result.splice(0, 6) ){
         eventString += `
-        <div id="testtest">
-        <h3 class="club-name">${event.club.name}</h3>
+        <div class="kommande-event">
+        <h3>${event.club.name}</h3>
         <p>${event.name}</p>
         <br>
         <p>Participant limit: ${event.participantLimit}</p>
@@ -18,11 +20,14 @@ export default async function trolleriKlubb() {
         `
     }
 
+    //<img id="trolleri-background" draggable="false" src="../Images/trolleriklubb.jpg">
     return `
-    <img id="trolleri-background" draggable="false" src="../Images/trolleriklubb.jpg">
-    <h1 id="test">Test</h1>
+    <div id="logga-container">
+    <h1 id="logga">Trolleri</h1>
+    </div>
 
-    <div id="fetch-test">
+    <h3>Kommande event:</h3>
+    <div class="kommande-event-container">
     ${eventString}
     </div>
     `
