@@ -1,7 +1,15 @@
-main {
-  width: 90%;
-  margin: 10px auto;
+#comedy {
+  padding: 0 10px;
 }
+
+.comedy-site-title-container {
+  padding: 100px;
+}
+
+#hello {
+  color: red;
+}
+
 .comedy-site-title {
   margin: 20px;
   font-size: 5rem;
@@ -89,6 +97,8 @@ main {
   width: 80%;
   height: 250px;
   border: 2px solid red;
+
+  box-shadow: 3px 3px 5px 1px rgba(255, 0, 0, 0.85);
 }
 .event-card-date {
   padding: 5px;
@@ -146,7 +156,7 @@ main {
   max-width: 80%;
   margin: 25px auto;
 
-  transition: border-color 0.5s ease;
+  transition: border-color 0.7s ease;
 }
 
 .all-events:hover {
