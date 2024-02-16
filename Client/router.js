@@ -16,7 +16,7 @@ function route() {
       $("main").html(home());
       break;
 
-    case "yes":
+    case "comedy":
       console.log("comedy");
       $("main").html(renderComedy());
       break;
