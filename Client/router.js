@@ -1,4 +1,5 @@
 import home from "./Pages/home.js";
+import kodklubben from "./Pages/kodklubben.js";
 
 function route() {
   //console.log(location)
@@ -13,10 +14,15 @@ function route() {
       console.log("Home", home());
       $("main").html(home());
       break;
+
+      case "kodklubben":
+        $("#kodklubben").html(kodklubben());
+        break;
     default:
       console.log("404");
       break;
   }
+
 }
 
 window.onhashchange = route;
