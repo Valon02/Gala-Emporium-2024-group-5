@@ -18,3 +18,31 @@
     margin-right: 10rem;
     position: absolute;
 }
+
+#fetch-test {
+    display: flex;
+    border: 5px solid white;
+    height: 10rem;
+    width: auto;
+    position: absolute;
+    z-index: 100;
+    margin-top: 5rem;
+}
+
+#fetch-test > p{
+    color: white;
+    font-size: 3rem;
+}
+
+.club-name{
+    color: white;
+    font-size: 2rem;
+}
+
+#testtest {
+    color: white;
+    height: auto;
+    width: auto;
+    border: 1px solid white;
+    margin: 1rem;
+}

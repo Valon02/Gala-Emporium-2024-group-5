@@ -1,7 +1,7 @@
 import home from "./Pages/home.js";
 import trolleriKlubb from "./Pages/trolleriklubb.js";
 
-function route() {
+async function route() {
   //console.log(location)
 
     switch(location.hash.replace("#", "")) {
@@ -16,7 +16,7 @@ function route() {
             break;
 
         case "trolleriklubb":
-            $("main").html(trolleriKlubb())
+            $("main").html(await trolleriKlubb())
             break;
         
         default:
