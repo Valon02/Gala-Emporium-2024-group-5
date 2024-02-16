@@ -9,6 +9,14 @@ export default function (server) {
         res.json(events)
     })
 
+    // Get all events within a specific club
+    server.get("/api/events/clubs/:id", async (req, res) => {
+        const clubId = req.params.id
+
+        const events = await Event.find({ club: clubId }).populate("club")
+        res.json(events)
+    })
+
     // Get one event
     server.get("/api/events/:id", async (req, res) => {
         const id = req.params.id
