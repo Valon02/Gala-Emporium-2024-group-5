@@ -98,52 +98,6 @@ export default function (server) {
         res.status(200).json(updatedItem);
     })
 
-    // Boka event
-    server.put("/api/users/book/:id/:antal", async (req, res) => {
-        // Om användaren är inloggad
-        if (req.session.login) {
-            // Hämtar användaren som är inloggad
-            const userId = req.session.login
-            try {
-                // Hämtar eventet
-                const eventId = req.params.id
-                const event = await Event.findById(eventId)
-
-                // Letar upp användaren baserat på användar id't
-                const user = await User.findById(userId)
-
-                // Om användaren redan har bokat eventet
-                if (user.upcomingEvents.includes(eventId)) {
-                    return res.json({ message: "Du har redan en bokning på detta eventet." })
-                }
-
-                // Kollar om det finns platser kvar
-                if (event.availableTickets <= 0) {
-                    return res.json({ message: "Det finns inga lediga platser kvar på detta eventet." })
-                }
-
-                // Pushar eventet till kommande event
-                user.upcomingEvents.push(eventId)
-
-                // Minskar antalet platser som finns kvar
-                event.availableTickets--
-
-                // Sparar användaren
-                await user.save()
-                await event.save()
-
-
-                
-
-                res.json({ message: "Du har nu bokat eventet." })
-            } catch (error) {
-                res.json({ message: "Något gick fel vid bokning av eventet." })
-            }
-        } else {
-            res.json({ message: "Du måste logga in för att boka." })
-        }
-    })
-
     // Delete user
     server.delete("/api/users/:id", async (req, res) => {
         const id = req.params.id
