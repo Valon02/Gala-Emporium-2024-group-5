@@ -16,7 +16,7 @@ function route() {
       break;
 
       case "kodklubben":
-        $("#kodklubben").html(kodklubben());
+        $("main").html(kodklubben());
         break;
     default:
       console.log("404");
