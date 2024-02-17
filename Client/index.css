@@ -229,26 +229,47 @@ textarea:focus {
   border-color: #4CAF50; /* Grön fokusram */
 }
 
+
+
+.right-footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; /* Bakgrundsfärg för fotern */
+  padding: 20px; /* Lite utrymme runt innehållet */
+  margin-top: 20px; /* Avstånd från det föregående elementet */
+}
+
 .footer-container {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px; /* Maximal bredd för fotern */
+  width: 100%; /* Se till att fotern tar hela bredden av sitt föräldreelement */
+}
 
+.footer-container > * {
+  margin-bottom: 20px; /* Lägg till lite utrymme mellan varje del */
 }
 
 .footer-icons {
-  flex: 1;
-  margin: 5vh;
-}
-
-.footer-info h2,
-.footer-icons h2 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: darkgray;
+  padding: 10px;
 }
 
 .footer-icons img {
-  width: 40px;
-  margin: 0 10px;
+  width: 40px; /* Justera storleken på ikonerna efter behov */
+  margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
+}
+
+/* Stil för h2-elementen */
+h2 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px; /* Lite extra utrymme under h2-elementen */
 }
 /*FOOTER*/
