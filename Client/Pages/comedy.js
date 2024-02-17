@@ -1,76 +1,51 @@
 export default async function renderComedy() {
-  $("main").attr("id", "comedy");
-
   const response = await fetch("/api/events");
   const result = await response.json();
 
-  console.log(result);
+  let eventCards = "";
+  let dateString = "";
+  let timeString = "";
+  let count = 0; // Räknare för antal event
 
-  let eventString = "";
   for (let event of result) {
-    if (event.date) {
-      const dateString = event.date.substring(0, 10);
+    if (event.date && count < 3) {
+      dateString = event.date.substring(0, 10);
+      timeString = event.date.substring(11, 16);
 
-      eventString += `<p id="hello">${event.name}</p>
-    <p>${dateString}</p>
-    <p>Participant limit: ${event.participantLimit}</p>
-    <p>Avalible tickets: ${event.availableTickets}</p>
-    <br>
-    `;
+      eventCards += `
+          <div class="event-card">
+            <h3 class="event-name">${event.name}</h3>
+            <p class="event-date">${dateString}</p>
+            <p class="event-time">Time:${timeString}</p>
+            <p class="event-tickets-left">Available tickets: ${event.availableTickets}</p>
+            <button class="buy-ticket">Buy Ticket</button>
+          </div>
+        `;
+
+      count++; // Öka räknaren för varje event som läggs till
     }
   }
 
   return `
-        ${eventString}
-        <main>
-            <div class="comedy-site-title-container">
-            <h1 class="comedy-site-title">ClubFun</h1>
-            </div>
-            <section class="comedy-about">
-                <h2 class="comedy-about-title">ClubFun Comedy</h2>
-                <p class="comedy-about-description">
-                    Welcome to the newest hottest comedyclub in town.
-                    With a mix of todays superstars and tomorrows talants, our shows has something for everyone.
-                </p>
-            </section>
-
-            <div class="break-line"></div>
-
-            <h2 class="comedy-upcoming-events-title">Upcoming Events</h2>
-            <section class="comedy-upcoming-events">
-                <div class="event-card">
-                    <div class="event-card-date">15 Maj</div>
-                    <div class="event-card-time">20:00 - 23:00</div>
-                    <div class="event-card-description"></div>
-                    <button class="buy-ticket">Buy Ticket</button>
-
-                </div>
-
-                <div class="event-card">
-                    <div class="event-card-date">15 Maj</div>
-                    <div class="event-card-time">20:00 - 23:00</div>
-                    <div class="event-card-description">This event...</div>
-                    <button class="buy-ticket">Buy Ticket</button>
-
-                </div>
-
-                <div class="event-card">
-                    <div class="event-card-date">15 Maj</div>
-                    <div class="event-card-time">20:00 - 23:00</div>
-                    <div class="event-card-description">person1 person2 person3</div>
-                    <button class="buy-ticket">Buy Ticket</button>
-
-                </div>
-
-                <button class="all-events">Click here to view all upcomming events</button>
-            </section>
-
-            
-            
-            
-
-        </main>
-        
-
+      <main class="test">
+        <div class="comedy-site-title-container">
+          <h1 class="comedy-site-title">ClubFun</h1>
+        </div>
+        <section class="comedy-about">
+          <h2 class="comedy-about-title">ClubFun Comedy</h2>
+          <p class="comedy-about-description">
+            Welcome to the newest hottest comedy club in town.
+            With a mix of today's superstars and tomorrow's talents, our shows have something for everyone.
+          </p>
+        </section>
+  
+        <div class="break-line"></div>
+  
+        <h2 class="comedy-upcoming-events-title">Next Events</h2>
+        <section class="comedy-upcoming-events">
+          ${eventCards}
+          <button class="all-events">Click here to view all upcoming events</button>
+        </section>
+      </main>
     `;
 }
