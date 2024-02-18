@@ -166,16 +166,12 @@ nav li:last-child a {
 footer {
   font-family: sans-serif;
   width: 100vw;
-  min-height: auto;
-  /* max-height: ; */
+  height: 80vh;
   background-color: grey;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 1rem;
-  position: relative;
-  bottom: 0;
-  margin-bottom: 0;
 }
 
 .left-footer-section {
@@ -233,12 +229,6 @@ textarea:focus {
   border-color: #4caf50; /* Grön fokusram */
 }
 
-.right-footer-section > p {
-  font-family: sans-serif;
-  margin: 0;
-  color: white;
-}
-/* Stilar för höger footer-sektion */
 .right-footer-section {
   display: flex;
   flex-direction: column;
@@ -249,29 +239,36 @@ textarea:focus {
   margin-top: 20px; /* Avstånd från det föregående elementet */
 }
 
-.right-footer-section p:last-child {
-  margin-bottom: 15px; /* Lite mindre extra marginal efter sista stycket */
-  font-weight: bold; /* Fet stil för den sista stycket */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px; /* Maximal bredd för fotern */
+  width: 100%; /* Se till att fotern tar hela bredden av sitt föräldreelement */
 }
 
-/* Sociala medie-länkar */
-.right-footer-section a {
-  color: #4caf50; /* Grön färg för länkarna */
-  text-decoration: none; /* Inget understreck för länkarna */
-  font-weight: bold; /* Fet stil för länkarna */
+.footer-container > * {
+  margin-bottom: 20px; /* Lägg till lite utrymme mellan varje del */
 }
 
-/* Följ oss på sociala medier-stilar */
-.right-footer-section .follow-us {
-  margin-bottom: 10px; /* Lite mindre marginal under rubriken */
+.footer-icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: darkgray;
+  padding: 10px;
 }
 
-/* Bildstilar */
-.right-footer-section img {
-  max-width: 100%; /* Begränsar bredden av bilder till containerstorlek */
-  height: auto; /* Bibehåller bildens proportioner */
-  margin-bottom: 10px; /* Lite marginal under bilderna */
-  border-radius: 5px; /* Runda hörn för bilder */
+.footer-icons img {
+  width: 40px; /* Justera storleken på ikonerna efter behov */
+  margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
 }
 
+/* Stil för h2-elementen */
+h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px; /* Lite extra utrymme under h2-elementen */
+}
 /*FOOTER*/
