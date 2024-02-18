@@ -1,6 +1,5 @@
 import home from "./Pages/home.js";
 import renderComedy from "./Pages/comedy.js";
-import renderComedy from "./Pages/comedy.js";
 
 async function route() {
   //console.log(location);
