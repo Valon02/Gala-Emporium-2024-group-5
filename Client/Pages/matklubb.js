@@ -8,12 +8,30 @@ export default async function matKlubb() {
 
         let eventString = "";
         for (let event of result) {
+                // Hämtar datumet som en sträng
+                const dateString = event.date;
+                // Konverterar datumet till ett datum objekt
+                const dateObject = new Date(dateString);
+                // Använder datum objektet för att få fram vilken månad det är (förkortat)
+                const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '')
+                const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
                 eventString += `
                 <div class="kommande-event">
-                        <h3>${event.club.name}</h3>
-                        <p>${event.name}</p>
-                        <br>
-                        <p>Totala platser: ${event.participantLimit}</p>
+                        <div class="event-date">
+                                <span>${day}</span>
+                                <b>${month}</b>
+
+                        </div>
+
+                        <div class="event-content">
+                                <h3>${event.name}</h3>
+                                <p class="event-content-about">${event.about}</p>
+                                <p>Platser kvar: ${event.availableTickets}</p>
+                        </div>
+
+                        <div class="event-button">
+                        <b>BOKA</b>
+                        </div>
                 </div>
                 `
         }
@@ -21,6 +39,8 @@ export default async function matKlubb() {
 
         return `
                 <div id="main-container">
+
+
                         <div id="home-container">
                                 <img src="Images/mat2.jpeg" id="mainImg">
                                 <div id="welcome-container">
@@ -32,6 +52,17 @@ export default async function matKlubb() {
                                 </div>
                         </div>
                         
+
+                        <div id="main-event-container">
+                                <div id="event-container">
+                                        <div id="event-container-header">
+                                                <h3>Kommande evenemang!</h3>
+                                        </div>
+                                        <div id="event-container-main">
+                                                <div id="event-container-main-content">${eventString}</div>
+                                        </div>
+                                </div>
+                        </div>
                 
                 
                 </div>
