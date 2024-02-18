@@ -26,6 +26,5 @@ function route() {
 }
 
 
-
-//window.onhashchange = route;
-//window.onload = route;
+window.onhashchange = route;
+window.onload = route;

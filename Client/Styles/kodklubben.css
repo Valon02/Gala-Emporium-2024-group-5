@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+#event-section {
+    margin-top: 20px;
+}
+
+.event {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.event h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.event p {
+    margin: 5px 0;
+}
+
+.book-btn {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.book-btn:hover {
+    background-color: #0056b3;
+}
