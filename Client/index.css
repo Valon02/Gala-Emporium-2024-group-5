@@ -1,3 +1,6 @@
+@import url("./Styles/Home.css");
+@import url(./Styles/matklubb.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +16,7 @@ body {
 header {
   width: 100vw;
   height: 80px;
+  position: absolute;
 
   display: flex;
   justify-content: end;
@@ -161,7 +165,6 @@ footer {
     font-family: sans-serif;
     width: 100vw;
     min-height: auto;
-    max-height: ;
     background-color: grey;
     display: flex;
     align-items: center;

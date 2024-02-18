@@ -1,0 +1,67 @@
+#main-container {
+    height: 1000px;
+    background-color: #141414;
+}
+
+#home-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#welcome-container {
+    position: absolute;
+    width: 50rem;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#welcome-container div {
+    background-color: #111010b4;
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+#welcome-container h3 {
+    color: #E8E24F;
+    font-family: "Playfair Display", serif;
+    font-size: 5rem;
+}
+
+#welcome-container p {
+    color: #E8E24F;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#welcome-container button {
+    width: 8rem;
+    height: 2rem;
+    background-color: #E8E24F;
+    border: none;
+    border-radius: 1rem;
+    margin-top: 2rem;
+}
+
+#mainImg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.kommande-event-container{
+    border: 1px solid black;
+    padding: 1rem;
+    display: inline-flex;
+    margin: 1rem;
+}

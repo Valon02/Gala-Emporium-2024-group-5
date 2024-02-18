@@ -1,6 +1,7 @@
 import home from "./Pages/home.js";
+import matKlubb from "./Pages/matklubb.js";
 
-function route() {
+async function route() {
   //console.log(location)
 
   switch (location.hash.replace("#", "")) {
@@ -13,6 +14,11 @@ function route() {
       console.log("Home", home());
       $("main").html(home());
       break;
+
+    case "matklubb":
+      $("main").html(await matKlubb())
+      break;
+
     default:
       console.log("404");
       break;
