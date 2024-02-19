@@ -1,11 +1,14 @@
 export default async function matKlubb() {
         $("main").attr("id", "matklubb")
 
-        const response = await fetch('/api/events')
+        const clubId = "65d230f506faf47f74e55504"
+
+        const response = await fetch(`/api/events/clubs/${clubId}`)
         const result = await response.json()
+        console.log(result);
 
-        console.log(result)
 
+        // Hämtar alla eventen och lägger till rätt styling
         let eventString = "";
         for (let event of result) {
                 // Hämtar datumet som en sträng
@@ -16,7 +19,7 @@ export default async function matKlubb() {
                 const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '')
                 const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
                 eventString += `
-                <div class="kommande-event">
+                <div class="kommande-event" data-event-id="${event._id}">
                         <div class="event-date">
                                 <span>${day}</span>
                                 <b>${month}</b>
@@ -26,15 +29,43 @@ export default async function matKlubb() {
                         <div class="event-content">
                                 <h3>${event.name}</h3>
                                 <p class="event-content-about">${event.about}</p>
-                                <p>Platser kvar: ${event.availableTickets}</p>
+                                <p class="event-content-platser">Platser kvar: ${event.availableTickets}</p>
                         </div>
 
                         <div class="event-button">
-                        <b>BOKA</b>
+                                <b>BOKA</b>
                         </div>
                 </div>
                 `
         }
+
+
+
+
+
+
+
+
+
+        // Lägg till en klickhändelse för knapparna med klassen "event-button"
+        $(document).on('click', '.event-button', function () {
+                // Hämta det specifika eventets id från det närliggande DOM-elementet
+                const eventId = $(this).closest('.kommande-event').data('event-id');
+
+                // Gör något baserat på eventets id
+                console.log('Klickade på knappen för event med id:', eventId);
+        });
+
+
+
+
+
+
+
+
+
+
+
 
 
         return `
@@ -63,6 +94,20 @@ export default async function matKlubb() {
                                         </div>
                                 </div>
                         </div>
+
+                        <div id="about-container">
+                                <div id="about-text-container">
+                                        <h2>Om oss</h2>
+                                        <p>Välkommen till vår matlagningsklubb på Gala Emporium - en plats där matälskare samlas för kulinariska äventyr! Vi är din destination för minnesvärda matlagningsupplevelser i en festlig atmosfär.<br><br>
+
+                                        Våra matlagningsevent är en resa genom smakernas värld, oavsett om du är en erfaren kock eller nybörjare. Vi tror på gemenskapen som matlagning skapar och strävar efter att skapa minnesvärda stunder där medlemmar kan dela idéer och utbyta kulinariska tips.<br><br>
+                                        
+                                        Anslut dig till vår matlagningsklubb på Gala Emporium, låt maten bli en källa till glädje och samhörighet. Vårt team av passionerade kockar ser fram emot att välkomna dig till vårt kök för att dela den kulinariska magin tillsammans!</p><br><br>
+                                </div>
+                                <div id="about-img-container">
+                                        <img src="Images/mat1.jpg" id="aboutImg">
+                                </div>
+                        </div>
                 
                 
                 </div>
@@ -71,12 +116,3 @@ export default async function matKlubb() {
         `
 
 }
-
-{/* <div id="logga-container">
-    <h1 id="logga">Trolleri</h1>
-    </div>
-
-    <h3>Kommande event:</h3>
-    <div class="kommande-event-container">
-    ${eventString}
-    </div> */}

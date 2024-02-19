@@ -72,7 +72,6 @@
     background-color: #363333;
     height: 100%;
     width: 100%;
-    overflow: scroll;
 }
 
 #event-container-header {
@@ -92,9 +91,26 @@
 }
 
 #event-container-main {
-    width: 100%;
-    height: 80%;
-    overflow: scroll;
+    width: 99%;
+    height: 78%;
+    overflow-y: scroll;
+}
+
+/*Scrollbar styling*/
+#event-container-main::-webkit-scrollbar {
+    width: 12px;
+}
+
+/*Scrollbar styling*/
+#event-container-main::-webkit-scrollbar-thumb {
+    background-color: #E8E24F;
+    border-radius: 6px;
+}
+
+/*Scrollbar styling*/
+#event-container-main::-webkit-scrollbar-track {
+    background-color: #D9D9D9;
+    border-radius: 6px;
 }
 
 #event-container-main-content {
@@ -131,22 +147,22 @@
     flex: 1;
     padding: 0.5rem;
     font-family: "Inter", sans-serif;
+    padding-right: 2.5rem;
 }
 
 .event-content h3 {
-    padding-bottom: 0.1rem;
+    margin-bottom: 0.3rem;
     font-size: 1rem;
 }
 
 .event-content-about {
-    height: 2.5rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin-bottom: 0.4rem;
 }
-
 
 .event-button {
     width: 7rem;
@@ -157,4 +173,61 @@
     align-items: center;
     justify-content: center;
     font-family: "Inter", sans-serif;
+}
+
+#about-container {
+    height: auto;
+    padding: 5rem;
+    background-color: #363333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#about-img-container {
+    min-height: 35rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: end;
+    margin-left: 5rem;
+}
+
+#about-img-container img {
+}
+
+#about-text-container {
+    font-family: "Inter", sans-serif;
+    color: #E8E24F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#about-text-container h2 {
+    margin-bottom: 3rem;
+}
+
+#about-text-container p {
+    width: 30rem;
+    text-align: center;
+}
+
+#footer {
+    background-color: #141414;
+}
+
+@media (max-width: 1200px) {
+    
+    #about-container {
+        flex-direction: column;
+    }
+
+    #about-img-container {
+        margin-left: 0;
+    }
+
+    #about-text-container p {
+        width: fit-content;
+    }
+
 }
