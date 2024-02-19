@@ -265,6 +265,10 @@ dialog::backdrop {
   background-color: #141414;
 }
 
+#head {
+    background-color: #141414;
+}
+
 @media (max-width: 1200px) {
   #about-container {
     flex-direction: column;

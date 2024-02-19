@@ -1,5 +1,6 @@
 import home from "./Pages/home.js";
 import matKlubb from "./Pages/matklubb.js";
+import signup from "./Pages/signup.js";
 
 async function route() {
   //console.log(location)
@@ -17,6 +18,10 @@ async function route() {
 
     case "matklubb":
       $("main").html(await matKlubb())
+      break;
+
+    case "signup":
+      $("main").html(await signup())
       break;
 
     default:
