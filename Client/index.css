@@ -1,4 +1,5 @@
-@import url("/Styles/comedy.css");
+@import url("./Styles/Home.css");
+@import url(./Styles/matklubb.css);
 
 * {
   margin: 0;

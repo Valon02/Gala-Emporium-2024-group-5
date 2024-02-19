@@ -62,10 +62,10 @@ export default function (server) {
                 res.json(savedBooking)
 
             } catch (error) {
-                res.json({ message: "Något gick fel vid bokning av eventet." })
+                return res.json({ message: "Något gick fel vid bokning av eventet." })
             }
         } else {
-            res.json({ message: "Du måste logga in för att boka." })
+            return res.json({ message: "Du måste logga in för att boka." })
         }
     })
 
