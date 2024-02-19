@@ -1,10 +1,12 @@
 // Importera "home"-sidan från filen "./Pages/home.js"
 import home from "./Pages/home.js";
+// Importera "login"-sidan från filen "./Pages/login.js"
+import login from "./Pages/login.js";
 
 // Kontrollera om någon är inloggad via en serverförfrågan till "/api/user"
 server.get("/api/user", async (req, res) => {
   try {
-    if (req.session.login) {
+    if (await req.session.login) {
       // Om någon är inloggad, skicka tillbaka information om den inloggade användaren utan att inkludera lösenordet
       res.json({ user: req.session.login.mail, message: "Inloggad användare information." });
     } else {
@@ -13,7 +15,7 @@ server.get("/api/user", async (req, res) => {
     }
   } catch (error) {
     // Om det uppstår ett fel, skicka en statuskod 400 och ett felmeddelande
-    res.status(400).json({ message: "Något gick fel." }, error);
+    res.status(400).json({ message: "Något gick fel." });
   }
 });
 
@@ -38,35 +40,26 @@ async function checkIfUserLoggedIn() {
   }
 }
 
-// Anropa funktionen för att kontrollera om användaren är inloggad och hantera resultatet
-checkIfUserLoggedIn().then((isLoggedIn) => {
-  console.log("Är användaren inloggad?", isLoggedIn);
-
-  // Hämta referenser till HTML-elementen för inloggad och utloggad header
-  const headerLoggedIn = document.getElementById("header-logged-in");
-  const headerLoggedOut = document.getElementById("header-logged-out");
-
-  // Uppdatera visningen av header beroende på om användaren är inloggad eller inte
-  if (isLoggedIn) {
-    headerLoggedIn.style.display = "block"; // Visa inloggad header
-    headerLoggedOut.style.display = "none"; // Dölj utloggad header
-  } else {
-    headerLoggedIn.style.display = "none"; // Dölj inloggad header
-    headerLoggedOut.style.display = "block"; // Visa utloggad header
-  }
-});
 
 // Funktion för att ruttväxla beroende på URL-hashen
-function route() {
+async function route() {
   switch (location.hash.replace("#", "")) {
     case "about":
       console.log("about");
       $("main").html(about()); // Uppdatera huvudinnehållet med "about"-sidan
       break;
+    case "login":
+      console.log("login", login());
+      $("main").html(login()); // Uppdatera huvudinnehållet med "login"-sidan
+      break;
     case "":
       console.log("Home", home());
       $("main").html(home()); // Uppdatera huvudinnehållet med "home"-sidan
       break;
+      case "login":
+      console.log("login", login());
+      $("header").html(login()); // Uppdatera huvudinnehållet med "login"-sidan
+        break;
     default:
       console.log("404"); // Om ingen matchande route hittas, logga en 404
       break;
