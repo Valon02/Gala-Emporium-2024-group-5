@@ -70,6 +70,15 @@ export default async function matKlubb() {
                 document.querySelector('dialog').close()
         })
 
+
+        $(document).on('click', '#scroll-button', function () {
+                // Hämta referensen till div med id #main-event-container
+                const scrollTo = document.getElementById('main-event-container');
+            
+                // Scrolla ner till #main-event-container med smooth scroll-effekt
+                scrollTo.scrollIntoView({ behavior: 'smooth' });
+        })
+
         return `
                 <div id="main-container">
 
@@ -81,7 +90,7 @@ export default async function matKlubb() {
                                                 <h3>MAT KLUBBEN</h3>
                                                 <p>Sammansmältning av passion och smak,<br> vår matlagningsklubb skapar<br> kulinariska äventyr!</p>
                                         </div>
-                                        <button>Boka nu</button>
+                                        <a id="scroll-button">Boka nu</a>
                                 </div>
                         </div>
                         
@@ -89,9 +98,10 @@ export default async function matKlubb() {
                         <div id="main-event-container">
 
                                 <dialog>
-                                        
-                                        <p>Test</p>
-                                        <button id="close-dialog">Close</button>
+                                        <div>
+                                                <p>Test</p>
+                                                <button id="close-dialog">Close</button>
+                                        </div>
                                 </dialog>
 
                                 <div id="event-container">

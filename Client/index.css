@@ -16,7 +16,6 @@ body {
 header {
   width: 100vw;
   height: 80px;
-  position: absolute;
 
   display: flex;
   justify-content: end;
@@ -164,15 +163,12 @@ nav li:last-child a {
 footer {
     font-family: sans-serif;
     width: 100vw;
-    min-height: auto;
+    min-height: 80vh;
     background-color: grey;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
-    position: relative;
-    bottom: 0;
-    margin-bottom: 0;
 }
 
 .left-footer-section {
