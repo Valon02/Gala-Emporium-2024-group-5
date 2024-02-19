@@ -1,8 +1,8 @@
 dialog {
   width: 40rem;
-  height: 20rem;
-  background-color: #363333;
-  border: 2 solid #111010b4;
+  height: 10rem;
+  background-color: #d9d9d9;
+  border: 5px solid #111010b4;
   border-radius: 1rem;
   position: fixed;
   top: 50%;

@@ -89,8 +89,9 @@ export default async function matKlubb() {
                         <div id="main-event-container">
 
                                 <dialog>
+                                        
+                                        <p>Test</p>
                                         <button id="close-dialog">Close</button>
-                                        <p></p>
                                 </dialog>
 
                                 <div id="event-container">
