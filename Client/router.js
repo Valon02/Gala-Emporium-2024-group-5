@@ -12,7 +12,7 @@ async function route() {
 
     case "":
       console.log("Home", home());
-      $("main").html(home());
+      $("main").html(await home());
       break;
 
     case "comedy":

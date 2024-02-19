@@ -1,8 +1,160 @@
+.home-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-title-image {
+  position: relative;
+  width: 100%;
+}
 
-/*HEADER*/
+.home-title-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 
+  padding: 1rem 2.5rem;
 
-/*FOOTER*/
+  border-radius: 25px;
+  background-color: rgba(100, 100, 100, 0.39);
+}
+.home-title {
+  color: yellow;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.home-sub-title {
+  color: yellow;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  line-height: 2rem;
+}
 
+.break-part {
+  width: 100%;
+  height: 4rem;
+  background-color: black;
+}
 
-/*FOOTER*/
+.home-main-next {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-about-image {
+  position: relative;
+  width: 100%;
+}
+
+.home-about-us-container {
+  color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+
+  max-width: 80%;
+  padding: 1rem 2.5rem;
+
+  border-radius: 25px;
+  background-color: rgba(60, 60, 60, 0.836);
+}
+
+.home-about-us-title {
+  font-size: 2.1rem;
+  color: yellow;
+  margin-bottom: 1rem;
+}
+
+.home-about-us-text {
+  color: yellow;
+
+  font-size: 1.5rem;
+}
+
+/*
+.home-upcoming-events-container {
+  width: 90%;
+  max-height: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  background-color: gray;
+  overflow-y: auto;
+}
+*/
+.home-upcoming-events-container {
+  max-height: 300px; /* Justera höjden efter behov */
+  overflow-y: auto;
+  display: flex;
+
+  background-color: gray;
+  flex-wrap: wrap;
+  gap: 20px; /* Avstånd mellan kolumner */
+}
+
+.home-upcoming-events-title {
+  text-align: center;
+  background-color: gray;
+  width: 100%;
+
+  font-weight: 300;
+}
+.home-upcoming-events-title h2 {
+  text-align: center;
+  background-color: gray;
+  color: yellow;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 1rem;
+}
+
+/*
+.home-kommande-event {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+*/
+.home-kommande-event {
+  display: flex;
+  width: calc(50% - 10px); /* 2 kolumner med avstånd mellan dem */
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* För att hantera långa evenemangsbeskrivningar */
+}
+
+/*
+.home-date-container {
+  background-color: yellow;
+  padding: 1.5rem;
+}
+
+.home-about-container {
+  background-color: beige;
+  padding: 1.5rem;
+}
+*/
+
+.home-date-container {
+  text-align: center;
+  margin-bottom: 10px;
+
+  background-color: yellow;
+}
+
+.home-date-container p {
+  margin: 0;
+}
+
+.home-about-container p {
+  margin: 0;
+}
