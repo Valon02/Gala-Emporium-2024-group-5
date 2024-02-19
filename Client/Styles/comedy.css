@@ -155,26 +155,3 @@
 .event-card .buy-ticket:hover {
   background-color: #e60000;
 }
-
-.all-events {
-  display: block;
-  border: none;
-
-  border: 4px solid transparent;
-  background-color: white;
-  padding: 5px;
-  color: red;
-  font-size: 1.7rem;
-  max-width: 80%;
-  margin: auto;
-
-  transition: background-color 0.7s ease;
-}
-
-.all-events:hover {
-  font-style: italic;
-  cursor: pointer;
-  background-color: #1a1a66;
-  color: white;
-  border-color: red;
-}

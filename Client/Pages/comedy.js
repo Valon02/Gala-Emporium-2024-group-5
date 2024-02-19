@@ -17,9 +17,9 @@ export default async function renderComedy() {
           <div class="event-card">
             <h3 class="event-name">${event.name}</h3>
             <p class="event-date">${dateString}</p>
-            <p class="event-time">Time:${timeString}</p>
-            <p class="event-tickets-left">Available tickets: ${event.availableTickets}</p>
-            <button class="buy-ticket">Buy Ticket</button>
+            <p class="event-time">Tid: ${timeString}</p>
+            <p class="event-tickets-left">Biljetter tillgängliga: ${event.availableTickets}</p>
+            <button class="buy-ticket">Köp Biljettt</button>
           </div>
         `;
     }
@@ -40,10 +40,12 @@ export default async function renderComedy() {
   
         <div class="break-line"></div>
   
-        <h2 class="comedy-upcoming-events-title">Upcoming Events</h2>
+        <h2 class="comedy-upcoming-events-title">Kommande evenemang</h2>
         <section class="comedy-upcoming-events">
           ${eventCards}
         </section>
       </main>
     `;
 }
+
+//LOGIN LÖSEN FÖR lukasholmwolf@gmail.com / ABC123
