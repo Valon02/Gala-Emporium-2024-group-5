@@ -1,6 +1,6 @@
 .main {
   padding: 10px 10px 20px 10px;
-  background-color: #1a1a66;
+  background-color: #171722;
 }
 
 .comedy-site-title {
@@ -80,16 +80,19 @@
   max-height: 800px;
   margin: auto;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.8) rgba(0, 0, 0, 0.1);
+}
+.comedy-upcoming-events::-webkit-scrollbar {
+  width: 12px;
 }
 
 .comedy-upcoming-events::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: darkred;
+  border-radius: 6px;
 }
 
 .comedy-upcoming-events::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #42426f;
+  border-radius: 6px;
 }
 
 .event-card {
