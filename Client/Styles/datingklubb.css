@@ -1,0 +1,195 @@
+
+#datingklubb {
+   
+}
+
+/* Bakgrundsfärg och typsnitt för hela sidan */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Stil för webbplatsens titel */
+  .datingklubb-site-title-container {
+    text-align: center;
+  }
+  
+  .Gnistan {
+    color: pink;
+    font-size: 36px;
+    margin: 20px;
+  }
+  
+  /* Stil för om oss-sektionen */
+  .datingklubb-about {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .datingklubb-about-title {
+    color: pink;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .datingklubb-about-description {
+    color: black;
+    font-size: 18px;
+    text-align: justify;
+  }
+  
+  /* Stil för brytningslinjen */
+  .break-line {
+    width: 80%;
+    height: 2px;
+    background-color: pink;
+    margin: 20px auto;
+  }
+  
+  /* Stil för rubriken för kommande evenemang */
+  .datingklubb-upcoming-events-title {
+    color: pink;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  /* Stil för sektionen för kommande evenemang */
+  .datingklubb-upcoming-events {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  /* Stil för varje evenemangskort */
+  .event-card {
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    border: 2px solid pink;
+    box-shadow: 5px 5px 10px gray;
+    position: relative;
+    background-image: url("heart.png"); /* En bild av ett hjärta */
+    background-size: cover;
+  }
+  
+  /* Stil för datumet på evenemangskortet */
+  .event-card-date {
+    width: 80px;
+    height: 80px;
+    color: pink;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  /* Stil för tiden på evenemangskortet */
+  .event-card-time {
+    width: 80px;
+    height: 80px;
+    color: pink;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  /* Stil för beskrivningen på evenemangskortet */
+  .event-card-description {
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    margin-top: 90px;
+  }
+  
+  /* Stil för köp biljett-knappen på evenemangskortet */
+  .bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn27 {
+    background-image: linear-gradient(
+      to right,
+      #ed6ea0,
+      #ec8c69,
+      #f7186a,
+      #fbb03b
+    );
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+  }
+  
+  /* Stil för visa alla evenemang-knappen */
+  .bn632-hover {
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:hover {
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .bn632-hover:focus {
+    outline: none;
+  }
+  
+  .bn632-hover.bn27 {
+    background-image: linear-gradient(
+      to right,
+      #ed6ea0,
+      #ec8c69,
+      #f7186a,
+      #fbb03b
+    );
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+  }
+  
