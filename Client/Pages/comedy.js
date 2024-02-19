@@ -1,5 +1,7 @@
 export default async function renderComedy() {
-  const response = await fetch("/api/events");
+  const clubIdKomedi = "65d31920f938356ae734e46d";
+
+  const response = await fetch(`/api/events/clubs/${clubIdKomedi}`);
   const result = await response.json();
 
   let eventCards = "";
