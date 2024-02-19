@@ -1,10 +1,13 @@
+
+import renderlogin from "./Pages/login.js";
+
 export default function home() {
-  $("main").attr("id","homepage")
+  $("header").attr("id","homepage")
     return `
 
-    <main>
-    
-    </main>
+    <header>
+    ${mainContent}
+    </header>
 
     `
   }
