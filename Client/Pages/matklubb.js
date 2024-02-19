@@ -1,3 +1,5 @@
+
+
 export default async function matKlubb() {
         $("main").attr("id", "matklubb")
 
@@ -6,6 +8,7 @@ export default async function matKlubb() {
         const response = await fetch(`/api/events/clubs/${clubId}`)
         const result = await response.json()
         console.log(result);
+        
 
 
         // Hämtar alla eventen och lägger till rätt styling
@@ -39,34 +42,33 @@ export default async function matKlubb() {
                 `
         }
 
-
-
-
-
-
-
-
-
         // Lägg till en klickhändelse för knapparna med klassen "event-button"
-        $(document).on('click', '.event-button', function () {
+        $(document).on('click', '.event-button', async function () {
+
                 // Hämta det specifika eventets id från det närliggande DOM-elementet
                 const eventId = $(this).closest('.kommande-event').data('event-id');
 
                 // Gör något baserat på eventets id
                 console.log('Klickade på knappen för event med id:', eventId);
+
+                try {
+                        const response = await fetch(`/api/bookings/events/${eventId}`, { method: "POST" })
+                        const result = await response.json()
+                        console.log(result.message);
+                        $('dialog p').text(result.message)
+                        document.querySelector('dialog').showModal()
+                        
+
+                } catch (error) {
+                        console.log(res.status(500).json({ message: "Något gick fel vid skapandet av användaren", error: error.message }))
+                }
+
         });
 
-
-
-
-
-
-
-
-
-
-
-
+        // Close modal
+        $(document).on('click', '#close-dialog', function () {
+                document.querySelector('dialog').close()
+        })
 
         return `
                 <div id="main-container">
@@ -85,6 +87,12 @@ export default async function matKlubb() {
                         
 
                         <div id="main-event-container">
+
+                                <dialog>
+                                        <button id="close-dialog">Close</button>
+                                        <p></p>
+                                </dialog>
+
                                 <div id="event-container">
                                         <div id="event-container-header">
                                                 <h3>Kommande evenemang!</h3>
@@ -116,3 +124,8 @@ export default async function matKlubb() {
         `
 
 }
+
+/*let closeDialog = document.getElementById("close-dialog")
+        closeDialog.addEventListener("click",() => {
+                console.log(1);
+        } ) */

@@ -74,7 +74,15 @@ export default function (server) {
         } catch (error) {
             res.status(400).json({ message: "Något gick fel."}, err)
         }
-        
+    })
+
+    // Kollar om någon är inloggad
+    server.get("/api/login", async (req, res) => {
+        if (req.session.login) {
+            return true
+        } else {
+            return false
+        }
     })
 
     // Logout funktion
