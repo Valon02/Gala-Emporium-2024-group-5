@@ -1,3 +1,4 @@
+
 export default async function signup() {
     $("main").attr("id", "signup")
 
@@ -10,6 +11,8 @@ export default async function signup() {
             <div id="signup-container">
 
                 <h3>SKAPA KONTO</h3>
+                
+                <p id="meddelande"></p>
 
                 <form id="signup-container-form">
                     <input type="text" placeholder="Förnamn" name="firstName"></input>
@@ -25,16 +28,39 @@ export default async function signup() {
     `
 }
 
-$(document).on('submit', '#signup-container-form', function (event) {
-    console.log(1);
+
+// Hämta det som står i input fälten och skickar in det i post metoden till 
+// att skapa en ny användare.
+$(document).on('submit', '#signup-container-form', async function (event) {
     event.preventDefault()
 
+    // Input fält värden
     var formData = {
         firstName: $('[name=firstName]').val(),
         lastName: $('[name=lastName]').val(),
-        email: $('[name=email]').val(),
+        mail: $('[name=email]').val(),
         password: $('[name=password]').val()
     };
 
-    console.log(formData);
+    try {
+        const response = await fetch(`/api/users`, {
+            method: "POST", 
+            headers: { "Content-Type": "application/json"}, 
+            body: JSON.stringify(formData)
+        })
+
+                if (response.ok) {
+                    const result = await response.json()
+                    console.log(result.message);
+                    $("#meddelande").text("Du har nu skapat ett nytt konto. Välkommen!")
+                    
+                } else {
+                    console.log('statuskod:', response);
+                    $("#meddelande").text("Något gick fel!")
+
+                }
+
+    } catch (error) {
+        console.error('Något gick fel:', error);
+    }
 })

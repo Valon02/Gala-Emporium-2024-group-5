@@ -28,6 +28,11 @@
     color: #363333;
 }
 
+#signup-container p {
+    color: #363333;
+    margin-bottom: 1rem;
+}
+
 #signup-container-form {
     width: 100%;
     height: auto;
