@@ -18,7 +18,7 @@ export default async function trolleriKlubb() {
                 const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
 
         eventString += `
-        <div class="kommande-event" data-event-id="${event._id}">
+        <div class="trolleri-kommande-event" data-event-id="${event._id}">
         <h3>${event.name}</h3>
         <p>${event.about}</p>
         <br>
@@ -26,14 +26,14 @@ export default async function trolleriKlubb() {
         <br>
         <p>${day}</p>
         <p>${month}</p>
-        <button id="boka-btn">Boka</button>
+        <button id="trolleri-boka-btn">Boka</button>
         </div>
         `
     }
 
-    $(document).on('click', '#boka-btn', async function () {
+    $(document).on('click', '#trolleri-boka-btn', async function () {
         // Hämta det specifika eventets id från det närliggande DOM-elementet
-        const eventId = $(this).closest('.kommande-event').data('event-id');
+        const eventId = $(this).closest('.trolleri-kommande-event').data('event-id');
     
         // Gör något baserat på eventets id
         console.log('Klickade på knappen för event med id:', eventId);
@@ -42,7 +42,7 @@ export default async function trolleriKlubb() {
             const response = await fetch(`/api/bookings/events/${eventId}`, { method: "POST"})
             const result = await response.json();
             $("#trolleri-dialog-h3").text(result.message)
-            document.querySelector("dialog").showModal()
+            document.getElementById("trolleri-dialog").showModal()
         }
         catch(error) {
             console.log(res.status(500).json({message: "Något gick fel"}))
@@ -56,8 +56,8 @@ export default async function trolleriKlubb() {
 
 
     return `
-    <div id="logga-container">
-        <h1 id="logga">SimSalaBim</h1>
+    <div id="trolleri-logga-container">
+        <h1 id="trolleri-logga">SimSalaBim</h1>
     </div>
 
 
@@ -78,9 +78,9 @@ export default async function trolleriKlubb() {
     
 
 
-    <section class="kommande-event-container">
-        <h3 id="kommande-event-titel">Kommande event:</h3>
-        <div class="kommande-event-test">
+    <section class="trolleri-kommande-event-container">
+        <h3 id="trolleri-kommande-event-titel">Kommande event:</h3>
+        <div class="trolleri-kommande-event-test">
             ${eventString}
         </div>
     </section>

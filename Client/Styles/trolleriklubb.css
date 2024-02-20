@@ -4,13 +4,13 @@
    color: white;
 }
 
-#logga {
+#trolleri-logga {
     border-radius: 5px;
     display: inline-flex;
     padding: 1rem;
 }
 
-#logga-container {
+#trolleri-logga-container {
     display: flex;
     justify-content: center;
 }
@@ -43,17 +43,22 @@
 
 }
 
-.kommande-event-container{
+.trolleri-kommande-event-container{
     padding: 1rem;
-    
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.trolleri-kommande-event-container > h3 {
+    text-align: center;
+}
+
+.trolleri-kommande-event-test{
+    display: flex;
     flex-wrap: wrap;
 }
 
-.kommande-event-test{
-    display: flex;
-}
-
-.kommande-event {
+.trolleri-kommande-event {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -63,7 +68,7 @@
     border: 2px solid #c45c2b;
 }
 
-.kommande-event > button {
+.trolleri-kommande-event > button {
     padding: 1rem;
     margin-top: auto;
     font-size: 15px;
@@ -74,16 +79,16 @@
     color: white;
 }
 
-.kommande-event > button:hover{
+.trolleri-kommande-event > button:hover{
     background-color: rgb(25, 25, 25);
     border: 1px solid #c45c2b;
 }
 
-.kommande-event > button:active{
+.trolleri-kommande-event > button:active{
     opacity: 0.7;
 }
 
-#kommande-event-titel {
+#trolleri-kommande-event-titel {
     font-size: 2rem;
 }
 
