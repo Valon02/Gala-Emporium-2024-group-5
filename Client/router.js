@@ -6,9 +6,12 @@ import login from "./Pages/login.js";
 // Kontrollera om någon är inloggad via en serverförfrågan till "/api/user"
 server.get("/api/user", async (req, res) => {
   try {
-    if (await req.session.login) {
+    // Använd destructuring för att göra koden mer läsbar
+    const { login } = req.session;
+
+    if (await login) {
       // Om någon är inloggad, skicka tillbaka information om den inloggade användaren utan att inkludera lösenordet
-      res.json({ user: req.session.login.mail, message: "Inloggad användare information." });
+      res.json({ user: login.mail, message: "Inloggad användare information." });
     } else {
       // Om ingen är inloggad, skicka ett meddelande om detta
       res.json({ message: "Ingen användare är för närvarande inloggad." });
@@ -18,6 +21,7 @@ server.get("/api/user", async (req, res) => {
     res.status(400).json({ message: "Något gick fel." });
   }
 });
+
 
 // Funktion för att kontrollera om en användare är inloggad
 async function checkIfUserLoggedIn() {
@@ -41,6 +45,7 @@ async function checkIfUserLoggedIn() {
 }
 
 
+
 // Funktion för att ruttväxla beroende på URL-hashen
 async function route() {
   switch (location.hash.replace("#", "")) {
@@ -48,23 +53,20 @@ async function route() {
       console.log("about");
       $("main").html(about()); // Uppdatera huvudinnehållet med "about"-sidan
       break;
-    case "login":
-      console.log("login", login());
-      $("main").html(login()); // Uppdatera huvudinnehållet med "login"-sidan
-      break;
     case "":
       console.log("Home", home());
       $("main").html(home()); // Uppdatera huvudinnehållet med "home"-sidan
       break;
-      case "login":
+    case "login":
       console.log("login", login());
       $("header").html(login()); // Uppdatera huvudinnehållet med "login"-sidan
-        break;
+      break;
     default:
       console.log("404"); // Om ingen matchande route hittas, logga en 404
       break;
   }
 }
+
 
 // Lyssna på ändringar i URL-hashen och ladda om sidan
 window.onhashchange = route;
