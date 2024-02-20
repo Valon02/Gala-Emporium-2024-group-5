@@ -65,7 +65,7 @@
 
 .kommande-event > button {
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
     font-size: 15px;
     background-color: #c45c2b;
     border: none;
@@ -85,4 +85,47 @@
 
 #kommande-event-titel {
     font-size: 2rem;
+}
+
+#trolleri-dialog {
+    width: 35rem;
+    height: 10rem;
+    position: fixed;
+    border-radius: 5px;
+    margin: auto;
+    background-color: rgb(25, 25, 25);
+    border: 5px solid #c45c2b;
+}
+
+#trolleri-dialog-h3 {
+    padding: 1rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+#trolleri-close-dialog {
+    width: 10rem;
+    padding: 0.5rem;
+    border: 2px solid #c45c2b;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #c45c2b;
+    color: white;
+}
+
+#trolleri-close-dialog:hover {
+    background-color: rgb(25, 25, 25);
+    border: 2px solid #c45c2b;
+}
+
+#trolleri-close-dialog:active {
+    opacity: 0.7;
+}
+
+#trolleri-dialog-div {
+    text-align: center;
+}
+
+dialog::backdrop {
+    background-color: #0000005a;
 }
