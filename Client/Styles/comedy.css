@@ -106,7 +106,7 @@
   margin: 20px auto;
 }
 
-.event-card .event-name {
+.event-card .comedy-event-name {
   position: relative;
   top: 50px;
   text-align: center;
@@ -115,7 +115,7 @@
   margin-bottom: 10px;
 }
 
-.event-card .event-date {
+.event-card .comedy-event-date {
   position: absolute;
   top: 10px;
   font-size: 1.5rem;
@@ -123,7 +123,7 @@
   margin-bottom: 5px;
 }
 
-.event-card .event-time {
+.event-card .comedy-event-time {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -157,4 +157,49 @@
 
 .event-card .buy-ticket:hover {
   background-color: #e60000;
+}
+
+dialog {
+  width: 40rem;
+  height: 10rem;
+  background-color: #d9d9d9;
+  border: 5px solid red;
+  border-radius: 1.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+dialog > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+dialog p {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+dialog button {
+  width: 6rem;
+  height: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+dialog button:focus {
+  outline: none;
+}
+
+dialog::backdrop {
+  background-color: #0000009a;
 }

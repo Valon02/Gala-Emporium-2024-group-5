@@ -15,15 +15,46 @@ export default async function renderComedy() {
 
       eventCards += `
           <div class="event-card">
-            <h3 class="event-name">${event.name}</h3>
-            <p class="event-date">${dateString}</p>
-            <p class="event-time">Tid: ${timeString}</p>
+            <h3 class="comedy-event-name">${event.name}</h3>
+            <p class="comedy-event-date">${dateString}</p>
+            <p class="comedy-event-time">Tid: ${timeString}</p>
             <p class="event-tickets-left">Biljetter tillgängliga: ${event.availableTickets}</p>
             <button class="buy-ticket">Köp Biljettt</button>
           </div>
         `;
     }
   }
+
+  // Lägg till en klickhändelse för knapparna med klassen "event-button"
+  $(document).on("click", ".buy-ticket", async function () {
+    // Hämta det specifika eventets id från det närliggande DOM-elementet
+    const eventId = $(this).closest(".event-card").data("event-id");
+
+    // Gör något baserat på eventets id
+    console.log("Klickade på knappen för event med id:", eventId);
+
+    try {
+      const response = await fetch(`/api/bookings/events/${eventId}`, {
+        method: "POST",
+      });
+      const result = await response.json();
+      console.log(result.message);
+      $("dialog p").text(result.message);
+      document.querySelector("dialog").showModal();
+    } catch (error) {
+      console.log(
+        res.status(500).json({
+          message: "Något gick fel vid skapandet av användaren",
+          error: error.message,
+        })
+      );
+    }
+  });
+
+  // Close modal
+  $(document).on("click", "#close-dialog", function () {
+    document.querySelector("dialog").close();
+  });
 
   return `
       <main class="main">
@@ -39,6 +70,13 @@ export default async function renderComedy() {
         </section>
   
         <div class="break-line"></div>
+
+        <dialog>
+              <div>
+                  <p></p>
+                  <button id="close-dialog">Close</button>
+             </div>
+        </dialog>
   
         <h2 class="comedy-upcoming-events-title">Kommande evenemang</h2>
         <section class="comedy-upcoming-events">
