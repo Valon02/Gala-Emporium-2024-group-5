@@ -55,10 +55,11 @@ body {
     font-size: 2rem;
 }
 
-#event-container {
+#kod-event-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 .kod-h3{
     align-self: center;
@@ -68,7 +69,7 @@ body {
     width: fit-content;
 }
 
-.kommande-event {
+.kod-kommande-event {
     margin: 20vh;
     padding: 20px;
     border: 1px solid #ccc;
@@ -78,40 +79,40 @@ body {
     background-color: lightblue
 }
 
-.event-date {
+.kod-event-date {
     text-align: center;
     margin-bottom: 15px;
     
 }
 
-.event-date span {
+.kod-event-date span {
     font-size: 2rem;
 }
 
-.event-date b {
+.kod-event-date b {
     font-size: 1rem;
 }
 
-.event-content h3 {
+.kod-event-content h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.event-content-about {
+.kod-event-content-about {
     font-size: 1rem;
     margin-bottom: 10px;
 }
 
-.event-content-platser {
+.kod-event-content-platser {
     font-size: 0.9rem;
 }
 
-.event-button {
+.kod-event-button {
     text-align: center;
     margin-top: 30px;
 }
 
-.event-button b {
+.kod-event-button b {
     font-size: 1rem;
     padding: 5px 10px;
     background-color: #007bff;
@@ -122,7 +123,7 @@ body {
 }
 
 /* Stilar för Om oss-sektionen */
-#about-container {
+#kod-about-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -133,6 +134,7 @@ body {
 #kod-about-text {
     flex: 1;
     padding: 0 20px;
+    background-color: white;
 }
 
 #kod-about-text h2 {
@@ -144,7 +146,7 @@ body {
     font-size: 1.2rem;
 }
 
-#about-img-container {
+#kod-about-img-container {
     flex: 1;
     padding: 0 20px;
 }
@@ -194,8 +196,7 @@ body {
     margin-bottom: 10vh;
 }
 
-css
-Copy code
+
 .leaderboard-ranks {
     list-style: none;
     padding: 0;

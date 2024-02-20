@@ -13,20 +13,20 @@ export default async function kodklubben() {
         const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '');
         const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" });
         eventString += `
-            <div class="kommande-event" data-event-id="${event._id}">
-                <div class="event-date">
+            <div class="kod-kommande-event" data-event-id="${event._id}">
+                <div class="kod-event-date">
                     <span>${day}</span>
                     <b>${month}</b>
                 </div>
-                <div class="event-content">
+                <div class="kod-event-content">
                     <h3>${event.name}</h3>
-                    <p class="event-content-about">${event.about}</p>
-                    <p class="event-content-platser">Platser kvar: ${event.availableTickets}</p>
+                    <p class="kod-event-content-about">${event.about}</p>
+                    <p class="-kod-event-content-platser">Platser kvar: ${event.availableTickets}</p>
                 </div>
                 <div class="kod-main-page">
                     <h3>Kommande evenemang!</h3>
                 </div>
-                <div class="event-button">
+                <div class="kod-event-button">
                     <b>BOKA</b>
                 </div>
             </div>`;
@@ -46,11 +46,11 @@ export default async function kodklubben() {
             </div>
 
             <div id="kod-main-event">
-                <div id="event-container">
+                <div id="kod-event-container">
                     <div id="kod-event-header">
                         <h3 class=kod-h3>Kommande evenemang!</h3>
                     </div>
-                    <div id="event-container-main">${eventString}</div>
+                    <div id="kod-event-container-main">${eventString}</div>
                 </div>
             </div>
 
