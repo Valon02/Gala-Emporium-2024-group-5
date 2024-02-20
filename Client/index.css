@@ -1,4 +1,8 @@
 @import url("./Styles/Home.css");
+@import url("./Styles/comedy.css");
+@import url("./Styles/trolleriklubb.css");
+@import url(./Styles/signup.css);
+@import url(./Styles/matklubb.css);
 @import url(./Styles/kodklubben.css);
 
 * {
@@ -12,6 +16,7 @@ body {
   display: flex;
   flex-direction: column; /* Låter main och footer följa efter varandra */
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /*HEADER*/
@@ -159,40 +164,37 @@ nav li:last-child a {
 /*HEADER*/
 
 /*MAIN*/
-#homepage{
-  min-height: calc(20vh - 80px);
-}  
 
 /*MAIN*/
 
-
 /*FOOTER*/
 footer {
-    font-family: sans-serif;
-    width: 100vw;
-    height: 80vh;
-    background-color: grey;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 1rem;    
+  font-family: sans-serif;
+  width: 100vw;
+  height: 80vh;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
 }
 
 .left-footer-section {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    color: yellow
-    
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: yellow;
 }
-form {
+#form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
 }
 
-input[type='text'],
+input[type="text"],
 textarea {
-  width: calc(100% - 20px); /* Fyller ut tillgängligt utrymme, med lite marginal */
+  width: calc(
+    100% - 20px
+  ); /* Fyller ut tillgängligt utrymme, med lite marginal */
   padding: 10px; /* Utfyllnad för input-fälten */
   margin-bottom: 15px; /* Lite marginal mellan fälten */
   border: 1px solid #ccc; /* Ljus gränslinje */
@@ -205,8 +207,8 @@ textarea {
   height: 100px; /* Höjden för textområdet */
 }
 
-input[type='button'] {
-  background-color: #4CAF50; /* Grön bakgrundsfärg */
+input[type="button"] {
+  background-color: #4caf50; /* Grön bakgrundsfärg */
   color: white; /* Vit textfärg */
   border: none;
   padding: 10px 20px; /* Utfyllnad för knappen */
@@ -215,24 +217,22 @@ input[type='button'] {
   font-size: 14px; /* Textstorlek */
 }
 
-input[type='button']:hover {
+input[type="button"]:hover {
   background-color: #45a049; /* Lite mörkare grön vid hover */
 }
 
 /* Placeholder-färger */
-input[type='text']::placeholder,
+input[type="text"]::placeholder,
 textarea::placeholder {
   color: #999; /* Ljusare grå för placeholders */
 }
 
 /* Fokusstilar */
-input[type='text']:focus,
+input[type="text"]:focus,
 textarea:focus {
   outline: none; /* Ingen standardfokusram */
-  border-color: #4CAF50; /* Grön fokusram */
+  border-color: #4caf50; /* Grön fokusram */
 }
-
-
 
 .right-footer-section {
   display: flex;
@@ -271,7 +271,8 @@ textarea:focus {
 
 /* Stil för h2-elementen */
 h2 {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 20px;
   margin-bottom: 10px; /* Lite extra utrymme under h2-elementen */
 }

@@ -1,5 +1,9 @@
 import home from "./Pages/home.js";
 import kodklubben from "./Pages/kodklubben.js";
+import trolleriKlubb from "./Pages/trolleriklubb.js";
+import matKlubb from "./Pages/matklubb.js";
+import signup from "./Pages/signup.js";
+import renderComedy from "./Pages/comedy.js";
 
 async function route() {
   //console.log(location)
@@ -12,7 +16,24 @@ async function route() {
 
     case "":
       console.log("Home", home());
-      $("main").html(home());
+      $("main").html(await home());
+      break;
+
+    case "matklubb":
+      $("main").html(await matKlubb());
+      break;
+
+    case "trolleriklubb":
+      $("main").html(await trolleriKlubb());
+      break;
+
+    case "signup":
+      $("main").html(await signup());
+      break;
+
+    case "comedy":
+      console.log("comedy");
+      $("main").html(await renderComedy());
       break;
 
       case "kodklubben":
