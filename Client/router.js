@@ -1,7 +1,7 @@
 import home from "./Pages/home.js";
 import kodklubben from "./Pages/kodklubben.js";
 
-function route() {
+async function route() {
   //console.log(location)
 
   switch (location.hash.replace("#", "")) {
@@ -16,7 +16,7 @@ function route() {
       break;
 
       case "kodklubben":
-        $("main").html(kodklubben());
+        $("main").html(await kodklubben());
         break;
     default:
       console.log("404");
