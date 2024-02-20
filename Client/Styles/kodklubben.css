@@ -19,42 +19,32 @@ body {
     position: relative;
 }
 
-#kode-main #mainImg {
+#Imgtop{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    
 }
 
 #kod-landing-container {
     text-align: center;
-    color: white;
+    color: black;
+    background-color: gray;
+    padding: 3vh;
 }
 
 #kod-landing-container h3 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+
 }
 
 #kod-landing-container p {
-    font-size: 1.2rem;
+    font-size: 2.2rem;
 }
 
-#kod-landing-container button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-}
 
 /* Stilar för evenemangssektionen */
 #kod-main-event {
     padding: 20px 0;
+    
 }
 
 #kod-event-header {
@@ -70,20 +60,28 @@ body {
     flex-wrap: wrap;
     justify-content: center;
 }
+.kod-h3{
+    align-self: center;
+    display: flex;
+    justify-self: center;
+    margin: 30px;
+    width: fit-content;
+}
 
 .kommande-event {
-    margin: 20px;
+    margin: 20vh;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
+    background-color: lightblue
 }
 
 .event-date {
     text-align: center;
     margin-bottom: 15px;
+    
 }
 
 .event-date span {
@@ -110,7 +108,7 @@ body {
 
 .event-button {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .event-button b {
@@ -151,29 +149,32 @@ body {
     padding: 0 20px;
 }
 
-#about-img-container img {
-    display: flex;
-    width: 100%;
-    height: auto; /* Lägg till denna egenskap för att bibehålla bildens proportioner */
-    border-radius: 5px;
+#leaderboard-image{
+    height: 80%;
+    width: 70%;
 }
 
 #leaderboard-section {
     margin-top: 50px;
-    background-color: #f9f9f9;
+    background-color: gray;
     padding: 20px;
+    margin-bottom: 50px;
 }
 
 #leaderboard-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10vh;
+    font-size: 1.5rem;
+}
+.leaderboard-ranks{
+    display: flex;
+    flex-direction: column;
 }
 
 #leaderboard-image img {
-    width: 40%;
-    max-width: 400px;
+ display: flex;
+ flex-direction: column;
 }
 
 #content-boxes {
@@ -193,3 +194,18 @@ body {
     margin-bottom: 10vh;
 }
 
+css
+Copy code
+.leaderboard-ranks {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard-ranks li {
+    margin-bottom: 10px;
+}
+
+.rank {
+    font-weight: bold;
+    margin-right: 5px;
+}

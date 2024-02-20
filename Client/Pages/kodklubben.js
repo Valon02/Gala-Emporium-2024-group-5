@@ -24,7 +24,6 @@ export default async function kodklubben() {
                     <p class="event-content-platser">Platser kvar: ${event.availableTickets}</p>
                 </div>
                 <div class="kod-main-page">
-                    <img src="Pages/kodklubb-foto/leetcode.png" id="mainImg">
                     <h3>Kommande evenemang!</h3>
                 </div>
                 <div class="event-button">
@@ -37,20 +36,19 @@ export default async function kodklubben() {
     return `
         <div id="kodsidan">
             <div id="kode-main container">
-                <img src="Pages/kodklubb-foto/computer-background.webp" id="mainImg">
+                <img src="Pages/kodklubb-foto/computer-background.webp" id="Imgtop">
                 <div id="kod-landing-container">
                     <div>
                         <h3>Kodklubben</h3>
                         <p>Platsen där programmering kan göras lätt,<br>vi lär dig det viktigaste inom programmering såsom att centrera en div!</p>
                     </div>
-                    <button>Boka nu</button>
                 </div>
             </div>
 
             <div id="kod-main-event">
                 <div id="event-container">
                     <div id="kod-event-header">
-                        <h3>Kommande evenemang!</h3>
+                        <h3 class=kod-h3>Kommande evenemang!</h3>
                     </div>
                     <div id="event-container-main">${eventString}</div>
                 </div>
@@ -59,12 +57,36 @@ export default async function kodklubben() {
             <div id="leaderboard-section">
                 <div id="leaderboard-container">
                     <div id="leaderboard-image">
-                        <img src="path_to_your_leaderboard_image.png" alt="Leaderboard Image">
+                    <img src="Pages/kodklubb-foto/leetcode.png" id="leaderboard-image">
                     </div>
                     <div id="content-boxes">
-                        <div class="content-box">Content Box 1</div>
-                        <div class="content-box">Content Box 2</div>
-                        <div class="content-box">Content Box 3</div>
+                        <div class="content-box">
+                        <h2>Rankning för mest leetcode problem gjorda</a></h3>
+                        <ul class=leaderboard-ranks>
+                        <li><span class="rank">1.</span> Linus - 5120</li>
+                        <li><span class="rank">2.</span> Jakob - 4430</li>
+                        <li><span class="rank">3.</span> Kempe - 3230</li>
+                        <li><span class="rank">4.</span> Hoffman - 2054</li>
+                        </ul>
+                        </div>
+                        <div class="content-box">
+                        <h2>Snabbaste centrering av div</a></h3>
+                        <ul class=leaderboard-ranks>
+                        <li><span class="rank">1.</span> Jakob - 10 sec</li>
+                        <li><span class="rank">2.</span> Linus - 20 sec</li>
+                        <li><span class="rank">3.</span> Kempe - 40 sec </li>
+                        <li><span class="rank">4.</span> Hoffman - 2 dagar</li>
+                        </ul>
+                        </div>
+                        <div class="content-box">
+                        <h2>bästa guidesen gjorda</a></h3>
+                        <ul class=leaderboard-ranks>
+                        <li><span class="rank">1.</span> Hoffman - Hur man hittar LIA som IT-student!</li>
+                        <li><span class="rank">2.</span> Linus - Undvik jobba i main branchen</li>
+                        <li><span class="rank">3.</span> Jakob - Back-end utveckling till en ny nivå</li>
+                        <li><span class="rank">4.</span> Kempe - Bli en .NET utvecklare i din sömn </li>
+                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
