@@ -20,7 +20,7 @@ export default function (server) {
     // Get one user
     server.get("/api/users/:id", async (req, res) => {
         const id = req.params.id
-        const user = await User.findById(id).populate("club")
+        const user = await User.findById(id).populate("clubOwnerAt")
         res.json(user)
     })
 
@@ -41,7 +41,7 @@ export default function (server) {
                 lastName: req.body.lastName,
                 mail: req.body.mail,
                 password: getHash(req.body.password),
-                clubOwnerAt: req.body.clubId
+                clubOwnerAt: req.body.clubOwnerAt
             })
             
             const savedUser = await newUser.save()
@@ -74,7 +74,15 @@ export default function (server) {
         } catch (error) {
             res.status(400).json({ message: "Något gick fel."}, err)
         }
-        
+    })
+
+    // Kollar om någon är inloggad
+    server.get("/api/login", async (req, res) => {
+        if (req.session.login) {
+            return true
+        } else {
+            return false
+        }
     })
 
     // Logout funktion
