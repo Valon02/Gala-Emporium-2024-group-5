@@ -1,5 +1,7 @@
 import home from "./Pages/home.js";
+import trolleriKlubb from "./Pages/trolleriklubb.js";
 import matKlubb from "./Pages/matklubb.js";
+import signup from "./Pages/signup.js";
 import renderComedy from "./Pages/comedy.js";
 
 async function route() {
@@ -18,6 +20,14 @@ async function route() {
 
     case "matklubb":
       $("main").html(await matKlubb());
+      break;
+
+    case "trolleriklubb":
+      $("main").html(await trolleriKlubb());
+      break;
+
+    case "signup":
+      $("main").html(await signup());
       break;
 
     case "comedy":

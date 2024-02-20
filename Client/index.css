@@ -1,7 +1,9 @@
 @import url("./Styles/Home.css");
+@import url(./Styles/trolleriklubb.css);
 @import url(./Styles/matklubb.css);
 @import url(./Styles/comedy.css);
 
+@import url(./Styles/signup.css);
 * {
   margin: 0;
   padding: 0;
@@ -182,7 +184,7 @@ footer {
   flex-direction: column;
   color: yellow;
 }
-form {
+#form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
 }
