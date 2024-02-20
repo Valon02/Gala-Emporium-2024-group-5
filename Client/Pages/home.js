@@ -19,11 +19,11 @@ export default async function home() {
     eventString += `
         <div class="home-kommande-event" data-event-id="${event._id}">
           <div class="home-date-container">
-            <p>${day}</p>
-            <p>${month}</p>
+            <p id="home-day-margin">${day}</p>
+            <p><b>${month}</b></p>
           </div>
           <div class="home-about-container">
-            <p>${event.name}</p>
+            <p><b>${event.name}</b></p>
             <p>${event.about}</p>
           </div>
         

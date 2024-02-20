@@ -79,26 +79,6 @@
   font-size: 1.5rem;
 }
 
-/*
-.home-upcoming-events-container {
-  width: 90%;
-  max-height: 400px;
-  margin: 10px auto;
-  padding: 20px;
-  background-color: gray;
-  overflow-y: auto;
-}
-*/
-.home-upcoming-events-container {
-  max-height: 300px; /* Justera höjden efter behov */
-  overflow-y: auto;
-  display: flex;
-
-  background-color: gray;
-  flex-wrap: wrap;
-  gap: 20px; /* Avstånd mellan kolumner */
-}
-
 .home-upcoming-events-title {
   text-align: center;
   background-color: gray;
@@ -115,46 +95,46 @@
   padding: 1rem;
 }
 
-/*
-.home-kommande-event {
+
+.home-upcoming-events-container {
+  max-height: 300px; /* Justera höjden efter behov */
+  overflow-y: auto;
   display: flex;
+  background-color: gray;
   flex-wrap: wrap;
-  justify-content: center;
-}
-*/
-.home-kommande-event {
-  display: flex;
-  width: calc(50% - 10px); /* 2 kolumner med avstånd mellan dem */
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* För att hantera långa evenemangsbeskrivningar */
+  gap: 10px; /* Avstånd mellan kolumner */
+  width: auto;
 }
 
-/*
+
+.home-kommande-event {
+  display: flex;
+  margin: 0 auto 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 600px;
+  overflow: hidden; /* För att hantera långa evenemangsbeskrivningar */
+  height: 5rem;
+}
+
+
 .home-date-container {
   background-color: yellow;
-  padding: 1.5rem;
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-about-container {
-  background-color: beige;
-  padding: 1.5rem;
-}
-*/
-
-.home-date-container {
-  text-align: center;
-  margin-bottom: 10px;
-
-  background-color: yellow;
+  background-color: #f0f0f0;
+  width: 35rem;
 }
 
-.home-date-container p {
-  margin: 0;
+.home-about-container > p {
+  margin: 10px 0 0 10px;
 }
 
-.home-about-container p {
-  margin: 0;
-}
+
+
