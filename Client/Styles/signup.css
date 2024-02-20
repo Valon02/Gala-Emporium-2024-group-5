@@ -65,3 +65,9 @@
     margin-top: 1.5rem;
     font-weight: bold;
 }
+
+#signup-container-form button:hover {
+    background-color: #fff82b;
+    cursor: pointer;
+    scale: 1.1;
+}
