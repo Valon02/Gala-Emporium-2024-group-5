@@ -6,6 +6,7 @@
 @import url(./Styles/signup.css);
 @import url(./Styles/kodklubben.css);
 @import url(./Styles/datingklubb.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -205,6 +206,7 @@ footer {
   color: yellow;
 }
 #form {
+#form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
 }
@@ -212,6 +214,9 @@ footer {
 input[type="text"],
 input[type="text"],
 textarea {
+  width: calc(
+    100% - 20px
+  ); /* Fyller ut tillgängligt utrymme, med lite marginal */
   width: calc(
     100% - 20px
   ); /* Fyller ut tillgängligt utrymme, med lite marginal */
