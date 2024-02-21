@@ -1,5 +1,3 @@
-
-
 export default async function matKlubb() {
         $("main").attr("id", "matklubb")
 
@@ -27,7 +25,6 @@ export default async function matKlubb() {
                         <div class="event-date">
                                 <span>${day}</span>
                                 <b>${month}</b>
-
                         </div>
 
                         <div class="event-content">
@@ -75,8 +72,7 @@ export default async function matKlubb() {
                                 method: "POST",
                                 headers: { "Content-Type": "application/json" },
                                 body: JSON.stringify(formData)
-                        }
-                        )
+                        })
 
                 const bookingData = await response.json();
                 console.log(bookingData);

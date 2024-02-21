@@ -8,7 +8,6 @@ import signinPage from "./Pages/signin-page.js";
 import newMyPages from "./Pages/new-my-pages.js";
 
 async function route() {
-  console.log(1);
 
   switch (location.hash.replace("#", "")) {
     case "about":
