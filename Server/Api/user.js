@@ -20,7 +20,7 @@ export default function (server) {
     // Get one user
     server.get("/api/users/:id", async (req, res) => {
         const id = req.params.id
-        const user = await User.findById(id).populate("club")
+        const user = await User.findById(id).populate("clubOwnerAt")
         res.json(user)
     })
 
@@ -41,7 +41,7 @@ export default function (server) {
                 lastName: req.body.lastName,
                 mail: req.body.mail,
                 password: getHash(req.body.password),
-                clubOwnerAt: req.body.clubId
+                clubOwnerAt: req.body.clubOwnerAt
             })
             
             const savedUser = await newUser.save()
@@ -72,9 +72,17 @@ export default function (server) {
                 }
             }
         } catch (error) {
-            res.status(400).json({ message: "Något gick fel."}, err)
+            res.status(500).json({ message: "Något gick fel."}, error)
         }
-        
+    })
+
+    // Kollar om någon är inloggad
+    server.get("/api/login", async (req, res) => {
+        if (req.session.login) {
+            return true
+        } else {
+            return false
+        }
     })
 
     // Logout funktion
@@ -96,52 +104,6 @@ export default function (server) {
         const result = await User.findByIdAndUpdate(id, updatedItem, { new: true });
 
         res.status(200).json(updatedItem);
-    })
-
-    // Boka event
-    server.put("/api/users/book/:id/:antal", async (req, res) => {
-        // Om användaren är inloggad
-        if (req.session.login) {
-            // Hämtar användaren som är inloggad
-            const userId = req.session.login
-            try {
-                // Hämtar eventet
-                const eventId = req.params.id
-                const event = await Event.findById(eventId)
-
-                // Letar upp användaren baserat på användar id't
-                const user = await User.findById(userId)
-
-                // Om användaren redan har bokat eventet
-                if (user.upcomingEvents.includes(eventId)) {
-                    return res.json({ message: "Du har redan en bokning på detta eventet." })
-                }
-
-                // Kollar om det finns platser kvar
-                if (event.availableTickets <= 0) {
-                    return res.json({ message: "Det finns inga lediga platser kvar på detta eventet." })
-                }
-
-                // Pushar eventet till kommande event
-                user.upcomingEvents.push(eventId)
-
-                // Minskar antalet platser som finns kvar
-                event.availableTickets--
-
-                // Sparar användaren
-                await user.save()
-                await event.save()
-
-
-                
-
-                res.json({ message: "Du har nu bokat eventet." })
-            } catch (error) {
-                res.json({ message: "Något gick fel vid bokning av eventet." })
-            }
-        } else {
-            res.json({ message: "Du måste logga in för att boka." })
-        }
     })
 
     // Delete user
