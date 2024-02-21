@@ -25,6 +25,7 @@ export default async function newMyPages() {
                   <option value="65d230f506faf47f74e55504">Matklubben</option>
                   <option value="65d316622d34b531073334e3">Trolleriklubben</option>
                   <option value="65d31920f938356ae734e46d">Komediklubben</option>
+                  <input type="submit" value="Hoppas detta funkar" class="choose-club-dropdown">
                 </select>
               </form>
 
@@ -85,8 +86,9 @@ $("main").on("click", ".my-pages-go-back", function(){
     $(".my-pages-main-container-create-event").addClass("hidden")
 })
 
-$(".club-id-dropdown").on("change", function(){
+$("main").on("click", ".choose-club-dropdown", async function(){
     console.log("test")
+    await viewEvent();
 })
 
 
