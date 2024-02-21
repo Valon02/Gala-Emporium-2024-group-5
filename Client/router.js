@@ -1,4 +1,5 @@
 import home from "./Pages/home.js";
+import kodklubben from "./Pages/kodklubben.js";
 import trolleriKlubb from "./Pages/trolleriklubb.js";
 import matKlubb from "./Pages/matklubb.js";
 import signup from "./Pages/signup.js";
@@ -16,7 +17,7 @@ async function route() {
 
     case "":
       console.log("Home", home());
-      $("main").html(home());
+      $("main").html(await home());
       break;
 
     case "matklubb":
@@ -39,11 +40,17 @@ async function route() {
       console.log("comedy");
       $("main").html(await renderComedy());
       break;
+
+      case "kodklubben":
+        $("main").html(await kodklubben());
+        break;
     default:
       console.log("404");
       break;
   }
+
 }
+
 
 window.onhashchange = route;
 window.onload = route;
