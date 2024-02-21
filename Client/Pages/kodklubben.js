@@ -12,6 +12,36 @@ export default async function kodklubben() {
         const dateObject = new Date(dateString);
         const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '');
         const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" });
+
+        // Lägg till en klickhändelse för knapparna med klassen "event-button"
+
+             $(document).on('click', '.event-button', async function () {
+
+            // Hämta det specifika eventets id från det närliggande DOM-elementet
+            const eventId = $(this).closest('.kommande-event').data('event-id');
+
+            // Gör något baserat på eventets id
+            console.log('Klickade på knappen för event med id:', eventId);
+
+            try {
+                const response = await fetch(`/api/bookings/events/${eventId}`, { method: "POST" })
+                const result = await response.json()
+                console.log(result.message);
+                $('dialog p').text(result.message)
+                document.querySelector('dialog').showModal()
+
+
+            } catch (error) {
+                console.log(res.status(500).json({ message: "Något gick fel vid skapandet av användaren", error: error.message }))
+            }
+
+        });
+
+        // Close modal
+        $(document).on('click', '#close-dialog', function () {
+            document.querySelector('dialog').close()
+        })
+
         eventString += `
             <div class="kod-kommande-event" data-event-id="${event._id}">
                 <div class="kod-event-date">
