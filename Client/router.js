@@ -4,6 +4,7 @@ import trolleriKlubb from "./Pages/trolleriklubb.js";
 import matKlubb from "./Pages/matklubb.js";
 import signup from "./Pages/signup.js";
 import renderComedy from "./Pages/comedy.js";
+import nattklubb from "./Pages/nattklubb.js";
 
 async function route() {
   //console.log(location)
@@ -36,9 +37,14 @@ async function route() {
       $("main").html(await renderComedy());
       break;
 
-      case "kodklubben":
-        $("main").html(await kodklubben());
-        break;
+    case "kodklubben":
+      $("main").html(await kodklubben());
+      break;
+
+    case "nattklubb":
+      $("main").html(await nattklubb())
+      break;
+
     default:
       console.log("404");
       break;
