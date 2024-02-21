@@ -44,14 +44,19 @@ $(document).on('submit', '#signin-container-form', async function (event) {
         })
         console.log(2);
 
-        if (response.ok) {
+
+        const userData = await response.json();
+        console.log(userData);
+            $("#meddelande").text(userData.message)
+
+       /* if (response.ok) {
             const userData = await response.json();
             $("#meddelande").text("Du har nu loggat in. Välkommen!")
             console.log(3);
-            console.log(userData._id);
+            console.log(userData);
         } else {
             $("#meddelande").text("Din mailadress eller ditt lösenord stämmer inte överens.")
-        }
+        }*/
 
     } catch (error) {
         console.error('Något gick fel:', error);
