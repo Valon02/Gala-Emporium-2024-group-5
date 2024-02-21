@@ -26,12 +26,12 @@ export default async function nattklubb() {
                 <span>${day}</span>
                 <b>${month}</b>
             </div>
-            <div class="event-content">
+            <div class="nattklubb-event-content">
                 <h3>${event.club.name}</h3>
-                <p class="event-content-about">${event.about}</p>
-                <p class="event-content-platser">Platser kvar: ${event.availableTickets}</p>
+                <p class="-nattklubbevent-content-about">${event.about}</p>
+                <p class="nattklubb-event-content-platser">Platser kvar: ${event.availableTickets}</p>
             </div>
-            <div class="event-button">
+            <div class="nattklubb-event-button">
                 <b>BOKA</b>
             </div>
         </div>
@@ -53,12 +53,12 @@ export default async function nattklubb() {
         <h1 id="logga">Zachary's Nattklubb</h1>
     </div>
 
-    <section class="grid-container">
-        <div class="grid-item">
-        <img id="img1" src="images/nattklubb1.jpg">
+    <section class="nattklubb-grid-container">
+        <div class="nattklubb-grid-item">
+        <img id="nattklubb-img1" src="images/nattklubb1.jpg">
         </div>
-        <div class="grid-item">
-        <h2>Välkommna till <span id="red-color">Zachary's nattklubb</span>!</h2>
+        <div class="nattklubb-grid-item">
+        <h2>Välkommna till <span id="nattklubb-red-color">Zachary's nattklubb</span>!</h2>
         <p>Zachary’s Nattklubb är en pulserande oas i hjärtat av staden, en plats där nattlivet kommer till liv.
          Med en sofistikerad atmosfär, toppmodern ljus- och ljudteknik och en rad exklusiva drycker, 
          erbjuder Zachary’s en oförglömlig upplevelse. Här kan du dansa natten lång till tonerna av våra begåvade DJ:s,
@@ -70,21 +70,21 @@ export default async function nattklubb() {
         </p>
         </div>
 
-         <div class="grid-item">
+         <div class="nattklubb-grid-item">
             <h2>Opening Hours</h2>
             <p>Monday - Friday: 10:00 - 22:00</p>
             <p>Saturday - Sunday: 12:00 - 23:00</p>
         </div>
 
-        <div class="grid-item">
+        <div class="nattklubb-grid-item">
              <img id="img2" src="images/nattklubb2.jpg">
         </div>
        
-        <div class="grid-item">
+        <div class="nattklubb-grid-item">
              <img id="img3" src="images/nattklubb3.jpg">
 
         </div>
-        <div class="grid-item">
+        <div class="nattklubb-grid-item">
             <h2>Rules!!!!!</h2>
             <p>-OnlyHotPeople.</p>
             <p>-OnlyHotPeople.</p>
@@ -98,8 +98,8 @@ export default async function nattklubb() {
         </div>
     </section>
 
-    <section class="kommande-event-container">
-        <h3 id="kommande-event-titel">Kommande event:</h3>
+    <section class="nattklubb-kommande-event-container">
+        <h3 id="nattklubb-kommande-event-titel">Kommande event:</h3>
         <div class="kommande-event-test">
             ${eventString}
         </div>
