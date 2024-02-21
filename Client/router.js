@@ -46,7 +46,7 @@ async function route() {
       $("main").html(await kodklubben());
       break;
 
-    case "lukas-my-pages":
+    case "minaSidor":
       console.log("my-pages");
       $("main").html(await newMyPages());
       break;

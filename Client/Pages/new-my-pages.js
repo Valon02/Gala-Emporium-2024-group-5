@@ -27,6 +27,10 @@ export default async function newMyPages() {
                   <option value="65d31920f938356ae734e46d">Komediklubben</option>
                 </select>
               </form>
+
+              <div id="view-event-div">
+              </div>
+
               <button class="my-pages-go-back">Gå tillbaka</button>
           </div>
       </div>
@@ -81,6 +85,10 @@ $("main").on("click", ".my-pages-go-back", function(){
     $(".my-pages-main-container-create-event").addClass("hidden")
 })
 
+$(".club-id-dropdown").on("change", function(){
+    console.log("test")
+})
+
 
 function createEvent() {
     //event.preventDefault();
@@ -132,10 +140,46 @@ function createEvent() {
     });
   });
 
-  
+
     $(document).on("click", ".logout-btn", function(){
         fetch("/api/login",{
             method: "DELETE"
         })
     })
+
+async function viewEvent (){
+
+
+    const clubIdDropDownValue = $(".club-id-dropdown").val()
+
+    if(clubIdDropDownValue != null) {
+
+    const response = await fetch(`/api/events/${clubIdDropDownValue}`)
+    const result = await response.json()
+
+
+    let eventString = "";
+    for (let event of result ){
+        const dateString = event.date;
+                // Konverterar datumet till ett datum objekt
+                const dateObject = new Date(dateString);
+                // Använder datum objektet för att få fram vilken månad det är (förkortat)
+                const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '')
+                const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
+
+        eventString += `
+        <div class="trolleri-kommande-event" data-event-id="${event._id}">
+        <h3>${event.name}</h3>
+        <p>${event.about}</p>
+        <br>
+        <p>Participant limit: ${event.participantLimit}</p>
+        <br>
+        <p>${day}</p>
+        <p>${month}</p>
+        <button id="trolleri-boka-btn">Boka</button>
+        </div>
+        `
+    }
+}
+}
   
