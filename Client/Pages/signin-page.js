@@ -35,28 +35,25 @@ $(document).on('submit', '#signin-container-form', async function (event) {
     };
 
     try {
-
-        console.log(1);
         const response = await fetch(`/api/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
         })
-        console.log(2);
 
 
         const userData = await response.json();
         console.log(userData);
-            $("#meddelande").text(userData.message)
+        $("#meddelande").text(userData.message)
 
-       /* if (response.ok) {
-            const userData = await response.json();
-            $("#meddelande").text("Du har nu loggat in. Välkommen!")
-            console.log(3);
-            console.log(userData);
-        } else {
-            $("#meddelande").text("Din mailadress eller ditt lösenord stämmer inte överens.")
-        }*/
+        /* if (response.ok) {
+             const userData = await response.json();
+             $("#meddelande").text("Du har nu loggat in. Välkommen!")
+             console.log(3);
+             console.log(userData);
+         } else {
+             $("#meddelande").text("Din mailadress eller ditt lösenord stämmer inte överens.")
+         }*/
 
     } catch (error) {
         console.error('Något gick fel:', error);
