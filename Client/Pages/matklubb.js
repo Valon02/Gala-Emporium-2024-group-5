@@ -60,7 +60,7 @@ export default async function matKlubb() {
                         
 
                 } catch (error) {
-                        console.log(res.status(500).json({ message: "Något gick fel vid skapandet av användaren", error: error.message }))
+                        console.log(res.status(500).json({ message: "Något gick fel vid bokningen av eventet.", error: error }))
                 }
 
         });
