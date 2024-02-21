@@ -7,6 +7,7 @@ export default async function newMyPages() {
             <h3>Mina sidor</h3>
             <button class="my-pages-create-new-event">Nytt event</button>
             <button class="my-pages-view-current-event">Nuvarande event</button>
+            <button class="logout-btn">Logga ut</button>
         </div>
     </div>
 
@@ -81,7 +82,7 @@ $("main").on("click", ".my-pages-go-back", function(){
 })
 
 
-function test() {
+function createEvent() {
     //event.preventDefault();
 
     const eventName = document.querySelector(".new-event-name").value;
@@ -127,6 +128,14 @@ function test() {
     $("#skapa-event-form").submit(function (event) {
       // Din funktion test() som ska köras när formuläret skickas
       console.log("YES");
-      test();
+      createEvent();
     });
   });
+
+  
+    $(document).on("click", ".logout-btn", function(){
+        fetch("/api/login",{
+            method: "DELETE"
+        })
+    })
+  
