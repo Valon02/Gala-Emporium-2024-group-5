@@ -1,195 +1,109 @@
+body {
+  font-family: Arial, sans-serif;
 
-#datingklubb {
-   
+  #datingklubb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centrerar innehållet vertikalt */
+    padding: 20px;
+  }
+
+  .datingklubb-site-title-container h1,
+  .datingklubb-about-title,
+  .datingklubb-upcoming-events-title {
+    color: #ff1493;
+    /* Deep pink color */
+  }
+
+  .events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrerar korten vertikalt */
+    width: 100%;
+    max-width: 600px; /* Anpassa denna värde baserat på den totala bredden du föredrar */
 }
 
-/* Bakgrundsfärg och typsnitt för hela sidan */
-body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+.event-card {
+    border: 2px solid #ff1493; /* Djuprosa kant */
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* Skugga för djup */
+    width: 100%; /* Korten tar upp full bredd */
+    margin-bottom: 20px; /* Mellanrum mellan korten */
+}
+
+.event-card:last-child {
+    margin-bottom: 0; /* Tar bort marginalen för det sista kortet */
+}
+
+.event-card:nth-of-type(n+11) {
+    display: none; /* Gömmer kort som överstiger 10 */
+}
+
+  .bn632-hover.bn27 {
+    background-color: #ff1493;
+    /* Deep pink button background */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
-  
-  /* Stil för webbplatsens titel */
-  .datingklubb-site-title-container {
-    text-align: center;
+
+  .bn632-hover.bn27:hover {
+    background-color: #ff69b4;
+    /* Lighter pink on hover */
   }
-  
-  .Gnistan {
-    color: pink;
-    font-size: 36px;
-    margin: 20px;
-  }
-  
-  /* Stil för om oss-sektionen */
-  .datingklubb-about {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .datingklubb-about-title {
-    color: pink;
-    font-size: 24px;
-    text-align: center;
-  }
-  
-  .datingklubb-about-description {
-    color: black;
-    font-size: 18px;
-    text-align: justify;
-  }
-  
-  /* Stil för brytningslinjen */
+
   .break-line {
-    width: 80%;
-    height: 2px;
-    background-color: pink;
-    margin: 20px auto;
+    border-bottom: 2px dashed #ff1493;
+    /* Deep pink dashed line */
+    margin: 20px 0;
   }
-  
-  /* Stil för rubriken för kommande evenemang */
-  .datingklubb-upcoming-events-title {
-    color: pink;
-    font-size: 24px;
-    text-align: center;
+
+  /* Heart icons in titles */
+  .datingklubb-site-title-container h1::before,
+  .datingklubb-about-title::before,
+  .datingklubb-upcoming-events-title::before {
+    content: "❤ ";
+    color: #ff1493;
   }
-  
-  /* Stil för sektionen för kommande evenemang */
-  .datingklubb-upcoming-events {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
+
+  /* Custom scrollbar for webkit browsers */
+  body::-webkit-scrollbar {
+    width: 8px;
   }
-  
-  /* Stil för varje evenemangskort */
-  .event-card {
-    width: 300px;
-    height: 200px;
-    margin: 10px;
-    border: 2px solid pink;
-    box-shadow: 5px 5px 10px gray;
-    position: relative;
-    background-image: url("heart.png"); /* En bild av ett hjärta */
-    background-size: cover;
+
+  body::-webkit-scrollbar-track {
+    background: #fff;
   }
-  
-  /* Stil för datumet på evenemangskortet */
-  .event-card-date {
-    width: 80px;
-    height: 80px;
-    color: pink;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 80px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
+
+  body::-webkit-scrollbar-thumb {
+    background: #ff69b4;
   }
-  
-  /* Stil för tiden på evenemangskortet */
-  .event-card-time {
-    width: 80px;
-    height: 80px;
-    color: pink;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 80px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
+
+  body::-webkit-scrollbar-thumb:hover {
+    background: #ff1493;
   }
-  
-  /* Stil för beskrivningen på evenemangskortet */
-  .event-card-description {
-    color: white;
-    font-size: 14px;
-    padding: 10px;
-    margin-top: 90px;
+
+  /* Button pulse animation on hover */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
-  
-  /* Stil för köp biljett-knappen på evenemangskortet */
-  .bn632-hover {
-    width: 160px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+
+  .bn632-hover.bn27:hover {
+    animation: pulse 1s infinite;
   }
-  
-  .bn632-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-  }
-  
-  .bn632-hover:focus {
-    outline: none;
-  }
-  
-  .bn632-hover.bn27 {
-    background-image: linear-gradient(
-      to right,
-      #ed6ea0,
-      #ec8c69,
-      #f7186a,
-      #fbb03b
-    );
-    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-  }
-  
-  /* Stil för visa alla evenemang-knappen */
-  .bn632-hover {
-    width: 160px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 55px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-  }
-  
-  .bn632-hover:hover {
-    background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-  }
-  
-  .bn632-hover:focus {
-    outline: none;
-  }
-  
-  .bn632-hover.bn27 {
-    background-image: linear-gradient(
-      to right,
-      #ed6ea0,
-      #ec8c69,
-      #f7186a,
-      #fbb03b
-    );
-    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-  }
-  
