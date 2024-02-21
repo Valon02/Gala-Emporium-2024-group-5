@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1616;
+    color: #fff;
+}
+
+#nattklubb {
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+}
+
+#red-color {
+    color: #FA4C5D;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-item {
+    border: 6px solid #FA4C5D;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+}
+
+.kommande-event-container {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.kommande-event {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    width: 14rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 2px solid #FA4C5D;
+    align-items: center;
+    background-color: #f31f1f;
+}
+
+.kommande-event .event-button {
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 15px;
+    background-color: #801515;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+}
+
+.kommande-event .event-button:hover {
+    background-color: #fff;
+    color: #f3261f;
+    border: 1px solid #f3261f;
+}
+
+.kommande-event .event-button:active {
+    opacity: 0.7;
+}
+
+#kommande-event-titel {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kommande-event-test {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+
+#img1 {
+
+    size: 100px;
+    transition: scale, 0.5s;
+
+}
+
+#img1:hover {
+    transform: scale(1.015);
+}
+#img2 {
+
+    transition: scale, 0.5s;
+}
+
+#img2:hover {
+    transform: scale(1.015);
+}
+
+#img3 {
+
+    transition: scale, 0.5s;
+}
+
+#img3:hover {
+    transform: scale(1.015);
+}
