@@ -1,160 +1,119 @@
 body {
   font-family: Arial, sans-serif;
+}
 
-  #datingklubb {
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; Ta bort eller kommentera ut för att undvika strikt vertikal centrerad justering */
-    padding: 20px;
+#datingklubb {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#datingklubb .datingklubb-site-title-container h1::after,
+#datingklubb .datingklubb-about-title::after,
+#datingklubb .datingklubb-upcoming-events-title::after {
+  content: " ❤";
+  color: #ff1493;
+}
+
+#datingklubb .events-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+#datingklubb .event-card {
+  border: 2px solid #ff1493;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #ffe0f0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 50%;
+  max-width: 90%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#datingklubb .event-card:last-child {
+  margin-bottom: 0;
+}
+
+#datingklubb .event-card:nth-of-type(n+6) {
+  display: none;
+}
+
+#datingklubb .bn632-hover.bn27 {
+  background-color: #ff1493;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#datingklubb .bn632-hover.bn27:hover,
+#datingklubb .bn632-hover.bn27:hover {
+  background-color: #ff69b4;
+  animation: pulse 1s infinite;
+}
+
+#datingklubb .break-line {
+  border-bottom: 2px dashed #ff1493;
+  margin: 20px 0;
+}
+
+#datingklubb .datingklubb-site-title-container h1::before,
+#datingklubb .datingklubb-about-title::before,
+#datingklubb .datingklubb-upcoming-events-title::before {
+  content: "❤ ";
+  color: #ff1493;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #ff69b4;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: #ff1493;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-
-  .datingklubb-site-title-container h1::after,
-  .datingklubb-about-title::after,
-  .datingklubb-upcoming-events-title::after {
-    content: " ❤";
-    color: #ff1493;
+  50% {
+    transform: scale(1.1);
   }
-
-
-  .events-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Centrerar innehållet vertikalt */
-    width: 100%;
+  100% {
+    transform: scale(1);
   }
+}
 
+#datingklubb .datingklubb-more-info {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  color: #333;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .event-card {
-    border: 2px solid #ff1493;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #ffe0f0;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    width: 50%; /* Uppdaterad till 50% bredd */
-    max-width: 90%; /* Justera detta värde efter behov */
-    margin-bottom: 20px;
-    margin-left: auto; /* Behåller korten centrerade */
-    margin-right: auto; /* Behåller korten centrerade */
-    text-align: center; /* Centrerar texten inuti korten */
-  }
-
-
-
-  .event-card:last-child {
-    margin-bottom: 0;
-    /* Tar bort marginalen för det sista kortet */
-  }
-
-  .event-card:nth-of-type(n+6) {
-    display: none;
-    /* Gömmer kort som överstiger 10 */
-  }
-
-  .bn632-hover.bn27 {
-    background-color: #ff1493;
-    /* Deep pink button background */
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .bn632-hover.bn27:hover {
-    background-color: #ff69b4;
-    /* Lighter pink on hover */
-  }
-
-  .break-line {
-    border-bottom: 2px dashed #ff1493;
-    /* Deep pink dashed line */
-    margin: 20px 0;
-  }
-
-  /* Heart icons in titles */
-  .datingklubb-site-title-container h1::before,
-  .datingklubb-about-title::before,
-  .datingklubb-upcoming-events-title::before {
-    content: "❤ ";
-    color: #ff1493;
-  }
-
-  /* Custom scrollbar for webkit browsers */
-  body::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  body::-webkit-scrollbar-track {
-    background: #fff;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: #ff69b4;
-  }
-
-  body::-webkit-scrollbar-thumb:hover {
-    background: #ff1493;
-  }
-
-  /* Button pulse animation on hover */
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.1);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
-  .bn632-hover.bn27:hover {
-    animation: pulse 1s infinite;
-  }
-
-  .datingklubb-more-info {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    /* Vit bakgrund för att matcha sidans stil */
-    color: #333;
-    /* Mörk text för läsbarhet */
-    max-width: 800px;
-    /* Centrerar innehållet och sätter en maxbredd */
-    border-radius: 8px;
-    /* Rundade hörn som övriga element */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Lägger till en lätt skugga för djup */
-  }
-
-  .datingklubb-more-info h2 {
-    color: #ff1493;
-    /* Använder samma djuprosa färg för rubriker */
-    margin-bottom: 15px;
-    /* Lägger till utrymme under rubriken */
-  }
-
-  .datingklubb-more-info p,
-  .datingklubb-more-info span {
-    line-height: 1.6;
-    /* Ökar radavståndet för bättre läsbarhet */
-    margin-bottom: 15px;
-    /* Lägger till utrymme mellan stycken */
-  }
-
-  .datingklubb-more-info a {
-    color: #ff1493;
-    /* Sätter länkfärgen till djuprosa */
-    text-decoration: none;
-    /* Tar bort understrykning */
-  }
-
-  .datingklubb-more-info a:hover {
-    text-decoration: underline;
-    /* Lägger till understrykning vid hover för att indikera klickbarhet */
-  }
+#datingklubb .datingklubb-more-info h2,
+#datingklubb .datingklubb-more-info p,
+#datingklubb .datingklubb-more-info span,
+#datingklubb .datingklubb-more-info a,
+#datingklubb .datingklubb-more-info a:hover {
+  /* Stiljusteringar för text inom .datingklubb-more-info */
+}
