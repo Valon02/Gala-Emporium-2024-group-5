@@ -8,7 +8,8 @@ export default async function matKlubb() {
         const response = await fetch(`/api/events/clubs/${clubId}`)
         const result = await response.json()
         console.log(result);
-        
+        let eventId = ""
+
 
 
         // Hämtar alla eventen och lägger till rätt styling
@@ -46,24 +47,44 @@ export default async function matKlubb() {
         $(document).on('click', '.event-button', async function () {
 
                 // Hämta det specifika eventets id från det närliggande DOM-elementet
-                const eventId = $(this).closest('.kommande-event').data('event-id');
-
-                // Gör något baserat på eventets id
+                eventId = $(this).closest('.kommande-event').data('event-id');
                 console.log('Klickade på knappen för event med id:', eventId);
 
                 try {
-                        const response = await fetch(`/api/bookings/events/${eventId}`, { method: "POST" })
-                        const result = await response.json()
-                        console.log(result.message);
-                        $('dialog p').text(result.message)
+                        // Open modal
                         $('dialog').get(0).showModal()
                         
-
                 } catch (error) {
                         console.log(res.status(500).json({ message: "Något gick fel vid bokningen av eventet.", error: error }))
                 }
-
         });
+
+
+        // Submit
+        $(document).on('click', '#mat-submit', async function (event) {
+                event.preventDefault()
+
+                // Input fält värden
+                var formData = {
+                        quantity: $('[name=quantity]').val()
+                };
+
+                // Fetch
+                const response = await fetch(`/api/bookings/events/${eventId}`,
+                        {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify(formData)
+                        }
+                        )
+
+                const bookingData = await response.json();
+                console.log(bookingData);
+                $("#meddelande").text(bookingData.message)
+
+                //console.log(formData.quantity);
+                //console.log(bookingData.message);    
+        })
 
         // Close modal
         $(document).on('click', '#close-dialog', function () {
@@ -74,7 +95,7 @@ export default async function matKlubb() {
         $(document).on('click', '#scroll-button', function () {
                 // Hämta referensen till div med id #main-event-container
                 const scrollTo = document.getElementById('main-event-container');
-            
+
                 // Scrolla ner till #main-event-container med smooth scroll-effekt
                 scrollTo.scrollIntoView({ behavior: 'smooth' });
         })
@@ -97,9 +118,14 @@ export default async function matKlubb() {
 
                         <div id="main-event-container">
 
-                                <dialog>
+                                <dialog id="mat-dialog">
                                         <div>
-                                                <p>Test</p>
+                                                <p id="meddelande">BOKA</p>
+                                                <form onsubmit="return false">
+                                                        <label for="quantity">Antal:</label>
+                                                        <input type="number" id="quantity" name="quantity" min="1" max="100"></input>
+                                                        <input type="submit" id="mat-submit" value="Boka"></input>
+                                                </form>
                                                 <button id="close-dialog">Close</button>
                                         </div>
                                 </dialog>
