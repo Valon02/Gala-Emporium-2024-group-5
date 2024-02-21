@@ -32,7 +32,7 @@ export default function (server) {
                 about: req.body.about,
                 date: req.body.date,
                 participantLimit: req.body.participantLimit,
-                availableTickets: req.body.availableTickets,
+                availableTickets: req.body.participantLimit,
                 club: req.body.clubId
             })
             const savedEvent = await newEvent.save()

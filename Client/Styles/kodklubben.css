@@ -1,0 +1,219 @@
+/* Allmän styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgray;
+    margin: 0;
+    padding: 0;
+}
+
+#kodklubben {
+    padding: 20px;
+}
+
+/* Stilar för huvudsektionen */
+#kode-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    position: relative;
+}
+
+#Imgtop{
+    width: 100%;
+    
+}
+
+#kod-landing-container {
+    text-align: center;
+    color: black;
+    background-color: gray;
+    margin: 5%;
+    
+}
+
+#kod-landing-container h3 {
+    font-size: 3.5rem;
+
+}
+
+#kod-landing-container p {
+    font-size: 2.2rem;
+}
+
+
+/* Stilar för evenemangssektionen */
+#kod-main-event {
+    padding: 20px 0;
+    
+}
+
+#kod-event-header {
+    text-align: center;
+}
+
+#kod-event-header h3 {
+    font-size: 2rem;
+}
+
+#kod-event-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    
+}
+.kod-h3{
+    align-self: center;
+    display: flex;
+    justify-self: center;
+    margin: 30px;
+    width: fit-content;
+}
+
+.kod-kommande-event {
+    margin: 10vh;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: lightblue
+}
+
+.kod-event-date {
+    text-align: center;
+    margin-bottom: 15px;
+    
+}
+
+.kod-event-date span {
+    font-size: 2rem;
+}
+
+.kod-event-date b {
+    font-size: 1rem;
+}
+
+.kod-event-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.kod-event-content-about {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.kod-event-content-platser {
+    font-size: 0.9rem;
+}
+
+.kod-event-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.kod-event-button b {
+    font-size: 1rem;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Stilar för Om oss-sektionen */
+#kod-about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+#kod-about-text {
+    flex: 1;
+    padding: 0 20px;
+    background-color: white;
+}
+
+#kod-about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#kod-about-text p {
+    font-size: 1.2rem;
+}
+
+#kod-about-img-container {
+    flex: 1;
+    padding: 0 20px;
+}
+
+#leaderboard-image{
+    height: 80%;
+    width: 70%;
+}
+
+#leaderboard-section {
+    margin-top: 50px;
+    background-color: gray;
+    padding: 20px;
+    margin-bottom: 50px;
+    height: auto;
+}
+
+#leaderboard-container {
+    height: auto;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.leaderboard-ranks{
+    flex-direction: column;
+}
+
+#leaderboard-image img {
+ display: flex;
+ flex-direction: column;
+}
+
+#content-boxes {
+    display: flex; /* Lägg till flexbox */
+    flex-direction: column; /* Placera content-boxes på rad under varandra */
+    justify-content: center; /* Centrera content-boxes horisontellt */
+    margin-bottom: 10vh;
+    height: auto;
+}
+
+.content-box {
+    height: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    margin: 10%;
+}
+
+
+
+.leaderboard-ranks {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard-ranks li {
+    margin-bottom: 10px;
+}
+
+.rank {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
