@@ -72,7 +72,7 @@ export default function (server) {
                 }
             }
         } catch (error) {
-            res.status(400).json({ message: "Något gick fel."}, err)
+            res.status(500).json({ message: "Något gick fel."}, error)
         }
     })
 

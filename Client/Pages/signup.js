@@ -51,7 +51,7 @@ $(document).on('submit', '#signup-container-form', async function (event) {
 
                 if (response.ok) {
                     const result = await response.json()
-                    console.log(result.message);
+                    console.log(result);
                     $("#meddelande").text("Du har nu skapat ett nytt konto. Välkommen!")
                     
                 } else {
