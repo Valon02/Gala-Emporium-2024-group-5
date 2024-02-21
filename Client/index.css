@@ -4,6 +4,7 @@
 @import url(./Styles/signup.css);
 @import url(./Styles/matklubb.css);
 @import url(./Styles/kodklubben.css);
+@import url(./Styles/nattklubb.css);
 
 * {
   margin: 0;
