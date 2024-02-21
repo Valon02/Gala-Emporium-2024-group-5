@@ -5,7 +5,7 @@ import matKlubb from "./Pages/matklubb.js";
 import signup from "./Pages/signup.js";
 import renderComedy from "./Pages/comedy.js";
 import signinPage from "./Pages/signin-page.js";
-import myPages from "./Pages/my-pages.js";
+import newMyPages from "./Pages/new-my-pages.js";
 
 async function route() {
   console.log(1);
@@ -48,7 +48,7 @@ async function route() {
 
     case "lukas-my-pages":
       console.log("my-pages");
-      $("main").html(await myPages());
+      $("main").html(await newMyPages());
       break;
     default:
       console.log("404");
