@@ -56,7 +56,7 @@ export default async function matKlubb() {
                         const result = await response.json()
                         console.log(result.message);
                         $('dialog p').text(result.message)
-                        document.querySelector('dialog').showModal()
+                        $('dialog').get(0).showModal()
                         
 
                 } catch (error) {
@@ -67,7 +67,7 @@ export default async function matKlubb() {
 
         // Close modal
         $(document).on('click', '#close-dialog', function () {
-                document.querySelector('dialog').close()
+                $('dialog').get(0).close()
         })
 
 

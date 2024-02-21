@@ -7,7 +7,7 @@ import renderComedy from "./Pages/comedy.js";
 import signinPage from "./Pages/signin-page.js"
 
 async function route() {
-  //console.log(location)
+  console.log(1)
 
   switch (location.hash.replace("#", "")) {
     case "about":
