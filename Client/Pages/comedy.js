@@ -7,6 +7,7 @@ export default async function renderComedy() {
   let eventCards = "";
   let dateString = "";
   let timeString = "";
+  let eventId = "";
 
   for (let event of result) {
     if (event.date) {
@@ -14,7 +15,7 @@ export default async function renderComedy() {
       timeString = event.date.substring(11, 16);
 
       eventCards += `
-          <div class="event-card">
+          <div class="event-card" data-event-id="${event._id}">
             <h3 class="comedy-event-name">${event.name}</h3>
             <p class="comedy-event-date">${dateString}</p>
             <p class="comedy-event-time">Tid: ${timeString}</p>
@@ -28,32 +29,49 @@ export default async function renderComedy() {
   // Lägg till en klickhändelse för knapparna med klassen "event-button"
   $(document).on("click", ".buy-ticket", async function () {
     // Hämta det specifika eventets id från det närliggande DOM-elementet
-    const eventId = $(this).closest(".event-card").data("event-id");
-
-    // Gör något baserat på eventets id
+    eventId = $(this).closest(".event-card").data("event-id");
     console.log("Klickade på knappen för event med id:", eventId);
 
     try {
-      const response = await fetch(`/api/bookings/events/${eventId}`, {
-        method: "POST",
-      });
-      const result = await response.json();
-      console.log(result.message);
-      $("dialog p").text(result.message);
-      document.querySelector("dialog").showModal();
+      // Open modal
+      $("dialog").get(0).showModal();
     } catch (error) {
       console.log(
         res.status(500).json({
-          message: "Något gick fel vid skapandet av användaren",
-          error: error.message,
+          message: "Något gick fel vid bokningen av eventet.",
+          error: error,
         })
       );
     }
   });
 
+  // Submit
+  $(document).on("click", "#comedy-submit", async function (event) {
+    event.preventDefault();
+
+    // Input fält värden
+    var formData = {
+      quantity: $("[name=quantity]").val(),
+    };
+
+    // Fetch
+    const response = await fetch(`/api/bookings/events/${eventId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const bookingData = await response.json();
+    console.log(bookingData);
+    $("#meddelande").text(bookingData.message);
+
+    //console.log(formData.quantity);
+    //console.log(bookingData.message);
+  });
+
   // Close modal
   $(document).on("click", "#close-dialog", function () {
-    document.querySelector("dialog").close();
+    $("dialog").get(0).close();
   });
 
   return `
@@ -71,12 +89,17 @@ export default async function renderComedy() {
   
         <div class="break-line"></div>
 
-        <dialog>
-              <div>
-                  <p></p>
-                  <button id="close-dialog">Close</button>
-             </div>
-        </dialog>
+        <dialog id="comedy-dialog">
+         <div>
+           <p id="meddelande">BOKA</p>
+                                                <form onsubmit="return false">
+                    <label for="quantity">Antal:</label>
+                                                        <input type="number" id="quantity" name="quantity" min="1" max="100"></input>
+                                                        <input type="submit" id="comedy-submit" value="Boka"></input>
+                                                </form>
+                                                <button id="close-dialog">Close</button>
+                                        </div>
+                                </dialog>
   
         <h2 class="comedy-upcoming-events-title">Kommande evenemang</h2>
         <section class="comedy-upcoming-events">
