@@ -123,7 +123,7 @@ export default async function kodklubben() {
                                 <li><span class="rank">4.</span> Hoffman - 2054</li>
                             </ul>
                         </div>
-                        <div class="content-box">
+                            <div class="content-box">>
                             <h2>Snabbaste centrering av div</h3>
                             <ul class=leaderboard-ranks>
                                 <li><span class="rank">1.</span> Jakob - 10 sec</li>
@@ -131,7 +131,6 @@ export default async function kodklubben() {
                                 <li><span class="rank">3.</span> Kempe - 40 sec </li>
                                 <li><span class="rank">4.</span> Hoffman - 2 dagar</li>
                             </ul>
-                        </div>
                         </div>
                         <div class="content-box">
                         <h2>bästa guidesen gjorda</a></h3>
@@ -142,6 +141,7 @@ export default async function kodklubben() {
                         <li><span class="rank">4.</span> Kempe - Bli en .NET utvecklare i din sömn </li>
                         </ul>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
