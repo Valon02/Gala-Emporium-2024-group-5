@@ -22,22 +22,21 @@ export default function (server) {
         
     })
 
+
+
     // Book an event
     server.post("/api/bookings/events/:id", async (req, res) => {
+        // Om användaren är inloggad.
         if (req.session.login) {
-            const id = req.params.id
 
             try {
-                // Hämtar eventet
+                // Hämtar eventet man vill boka fråm parametern.
                 const eventId = req.params.id
-                console.log("Innan");
                 const event = await Event.findById(eventId)
-                console.log("Efter att hämtat eventet");
 
                 // Hämtar användaren
                 const userId = req.session.login
                 const user = await User.findById(userId)
-                console.log("Efter hämtad anvndare");
 
                 // Skapar en ny bokning
                 const newBooking = new Booking({
@@ -45,7 +44,6 @@ export default function (server) {
                     event: event,
                     quantity: req.body.quantity
                 })
-                console.log("Efter bokningen hämtats");
 
                 // Om det inte finns tillräckligt många platser kvar så får man ett felmeddelande
                 if (event.availableTickets < newBooking.quantity) {
@@ -69,10 +67,14 @@ export default function (server) {
             } catch (error) {
                 return res.json({ message: "Något gick fel vid bokning av eventet." })
             }
+        // Om man inte är inloggad.
         } else {
             return res.json({ message: "Du måste logga in för att boka." })
         }
     })
+
+
+
 
     // Update booking
     server.put("/api/bookings/:id", async (req, res) => {

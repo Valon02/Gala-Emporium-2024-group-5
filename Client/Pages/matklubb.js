@@ -42,9 +42,9 @@ export default async function matKlubb() {
   }
 
   // Lägg till en klickhändelse för knapparna med klassen "event-button"
-  $(document).on("click", ".event-button", async function () {
+  $(document).on("click", ".mat-event-button", async function () {
     // Hämta det specifika eventets id från det närliggande DOM-elementet
-    eventId = $(this).closest(".kommande-event").data("event-id");
+    eventId = $(this).closest(".mat-kommande-event").data("event-id");
     console.log("Klickade på knappen för event med id:", eventId);
 
     try {

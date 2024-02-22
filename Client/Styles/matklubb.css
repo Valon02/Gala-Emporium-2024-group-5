@@ -11,6 +11,10 @@
   z-index: 10;
 }
 
+#scroll-button {
+  color: #141414;
+}
+
 #mat-dialog > div {
     width: 100%;
     height: 100%;
