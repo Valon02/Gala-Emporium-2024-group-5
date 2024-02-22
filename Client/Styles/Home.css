@@ -11,13 +11,13 @@
 
 .home-title-container {
   position: absolute;
+  top: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 1;
   padding: 1rem 2.5rem;
-  margin-top: -100rem;
 
   border-radius: 25px;
   background-color: rgba(100, 100, 100, 0.39);
@@ -95,7 +95,6 @@
   padding: 1rem;
 }
 
-
 .home-upcoming-events-container {
   max-height: 300px; /* Justera höjden efter behov */
   overflow-y: auto;
@@ -106,7 +105,6 @@
   width: auto;
 }
 
-
 .home-kommande-event {
   display: flex;
   margin: 0 auto 0 auto;
@@ -116,7 +114,6 @@
   overflow: hidden; /* För att hantera långa evenemangsbeskrivningar */
   height: 5rem;
 }
-
 
 .home-date-container {
   background-color: yellow;
@@ -135,6 +132,3 @@
 .home-about-container > p {
   margin: 10px 0 0 10px;
 }
-
-
-
