@@ -89,9 +89,6 @@ export default async function kodklubben() {
 
             <div id="kod-main-event">
                 <div id="kod-event-container">
-                    <div id="kod-event-header">
-                        <h3 class=kod-h3>Kommande evenemang!</h3>
-                    </div>
                     <div id="kod-event-container-main">${eventString}</div>
                 </div>
             </div>
