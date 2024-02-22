@@ -8,12 +8,6 @@
 @import url(./Styles/my-pages.css);
 @import url(./Styles/datingklubb.css);
 
-@import url("./Styles/Home.css");
-@import url("./Styles/comedy.css");
-@import url("./Styles/trolleriklubb.css");
-@import url(./Styles/signup.css);
-@import url(./Styles/matklubb.css);
-@import url(./Styles/datingklubb.css);
 
 * {
   margin: 0;
@@ -25,22 +19,6 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column; /* Låter main och footer följa efter varandra */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column; /* Låter main och footer följa efter varandra */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column; /* Låter main och footer följa efter varandra */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column; /* Låter main och footer följa efter varandra */
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-x: hidden;
-  overflow-x: hidden;
 }
 
 
@@ -224,7 +202,7 @@ footer {
   flex-direction: column;
   color: yellow;
 }
-#form {
+
 #form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
@@ -251,8 +229,7 @@ textarea {
   height: 100px; /* Höjden för textområdet */
 }
 
-input[type="button"] {
-  background-color: #4caf50; /* Grön bakgrundsfärg */
+
 input[type="button"] {
   background-color: #4caf50; /* Grön bakgrundsfärg */
   color: white; /* Vit textfärg */
@@ -263,7 +240,7 @@ input[type="button"] {
   font-size: 14px; /* Textstorlek */
 }
 
-input[type="button"]:hover {
+
 input[type="button"]:hover {
   background-color: #45a049; /* Lite mörkare grön vid hover */
 }
@@ -324,6 +301,7 @@ textarea:focus {
 .footer-icons img {
   width: 40px; /* Justera storleken på ikonerna efter behov */
   margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
+}
 .footer-container {
   display: flex;
   flex-direction: column;
@@ -349,12 +327,7 @@ textarea:focus {
   margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
 }
 
-/* Stil för h2-elementen */
-h2 {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 20px;
-  margin-bottom: 10px; /* Lite extra utrymme under h2-elementen */
+
 /* Stil för h2-elementen */
 h2 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

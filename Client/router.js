@@ -53,11 +53,12 @@ async function route() {
     case "minaSidor":
       console.log("my-pages");
       $("main").html(await newMyPages());
-      break;
-    default:
-      console.log("404");
-      break;
-  }
+            break;
+        
+        default:
+            console.log("404");
+            break;
+    }
 }
 
 window.onhashchange = route;
