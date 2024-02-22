@@ -1,36 +1,34 @@
-let eventString = ""
+let eventString = "";
 
-
-let userResult = ""
+let userResult = "";
 async function loggedIn() {
   const userResponse = await fetch("/api/login", {
-    method: "GET"
-  })
-  userResult = await userResponse.json()
+    method: "GET",
+  });
+  userResult = await userResponse.json();
   console.log(userResult);
 }
 
 loggedIn();
 
-
-
-
 async function viewEvent() {
   const clubIdDropDownValue = userResult.ownerAt;
-  console.log(clubIdDropDownValue)
+  console.log(clubIdDropDownValue);
 
   if (clubIdDropDownValue != null) {
-
-    const response = await fetch(`/api/events/clubs/${clubIdDropDownValue}`)
-    const result = await response.json()
+    const response = await fetch(`/api/events/clubs/${clubIdDropDownValue}`);
+    const result = await response.json();
 
     for (let event of result) {
       const dateString = event.date;
       // Konverterar datumet till ett datum objekt
       const dateObject = new Date(dateString);
       // Använder datum objektet för att få fram vilken månad det är (förkortat)
-      const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '')
-      const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
+      const month = dateObject
+        .toLocaleDateString("sv-SE", { month: "short" })
+        .toUpperCase()
+        .replace(".", "");
+      const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" });
 
       eventString += `
       <div class="my-pages-kommande-event" data-event-id="${event._id}">
@@ -39,17 +37,14 @@ async function viewEvent() {
       <br>
       <p>${day} ${month}</p>
       </div>
-      `
+      `;
       $("#view-event-div").html(eventString);
     }
   }
 }
 
-
 export default async function newMyPages() {
   $("main").attr("id", "new-my-pages");
-
-
 
   return `
     <div class="my-pages-main-container">
@@ -70,7 +65,7 @@ export default async function newMyPages() {
               <p>Här visas nuvarande events från databasen...</p>
               
 
-              <div id="view-event-div" class="hidden">
+              <div id="view-event-div" class="">
               
               </div>
 
@@ -105,33 +100,29 @@ export default async function newMyPages() {
             </form>
         </div>
     </div>
-    `
-
-    ;
+    `;
 }
-
 
 $("main").on("click", ".my-pages-view-current-event", async function () {
   $(".my-pages-main-container").hide();
   $(".my-pages-main-container-test").removeClass("hidden");
-  $("#view-event-div").removeClass("hidden")
+  $("#view-event-div").removeClass("hidden");
   eventString = "";
   await viewEvent();
 });
 
 $("main").on("click", ".my-pages-create-new-event", function () {
   $(".my-pages-main-container").hide();
-  $(".my-pages-main-container-create-event").removeClass("hidden")
-
-})
+  $(".my-pages-main-container-create-event").removeClass("hidden");
+  $(".my-pages-main-container-create-event").show();
+});
 
 $("main").on("click", ".my-pages-go-back", function () {
   $(".my-pages-main-container").show();
-  $(".my-pages-main-container-test").addClass("hidden")
-  $("#view-event-div").addClass("hidden")
+  $(".my-pages-main-container-test").addClass("hidden");
+  $("#view-event-div").addClass("hidden");
   $(".my-pages-main-container-create-event").hide();
-})
-
+});
 
 function createEvent() {
   //event.preventDefault();
@@ -174,7 +165,6 @@ function createEvent() {
     });
 }
 
-
 $(document).on("click", ".skapa-event-btn", function () {
   $("#skapa-event-form").submit(function (event) {
     // Din funktion test() som ska köras när formuläret skickas
@@ -182,13 +172,13 @@ $(document).on("click", ".skapa-event-btn", function () {
   });
 });
 
-// Logga ut funktion 
+// Logga ut funktion
 $(document).on("click", ".logout-btn", function () {
   fetch("/api/login", {
-    method: "DELETE"
-  })
-})
-
-
+    method: "DELETE",
+  });
+  console.log("logged Out");
+  
+});
 
 /*$(".events-container").html(eventString);*/
