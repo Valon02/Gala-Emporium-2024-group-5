@@ -28,7 +28,8 @@ body {
     text-align: center;
     color: black;
     background-color: gray;
-    padding: 3vh;
+    margin: 5%;
+    
 }
 
 #kod-landing-container h3 {
@@ -57,8 +58,9 @@ body {
 
 #kod-event-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+    margin: 0;
     
 }
 .kod-h3{
@@ -70,7 +72,7 @@ body {
 }
 
 .kod-kommande-event {
-    margin: 20vh;
+    margin: 10vh;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -161,16 +163,17 @@ body {
     background-color: gray;
     padding: 20px;
     margin-bottom: 50px;
+    height: auto;
 }
 
 #leaderboard-container {
+    height: auto;
+    margin: 30px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     font-size: 1.5rem;
 }
 .leaderboard-ranks{
-    display: flex;
     flex-direction: column;
 }
 
@@ -180,21 +183,24 @@ body {
 }
 
 #content-boxes {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Lägg till flexbox */
+    flex-direction: column; /* Placera content-boxes på rad under varandra */
+    justify-content: center; /* Centrera content-boxes horisontellt */
     margin-bottom: 10vh;
+    height: auto;
 }
 
 .content-box {
-    height: 40vh;
-    width: 100vh;
+    height: auto;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 5vh;
     margin-top: 10vh;
     margin-bottom: 10vh;
+    margin: 10%;
 }
+
 
 
 .leaderboard-ranks {
@@ -210,3 +216,4 @@ body {
     font-weight: bold;
     margin-right: 5px;
 }
+
