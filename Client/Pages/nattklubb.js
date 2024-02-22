@@ -86,13 +86,7 @@ $(document).on('click', '#close-dialog', function () {
 })
 
 
-$(document).on('click', '#scroll-button', function () {
-    // Get the reference to the div with id #main-event-container
-    const scrollTo = document.getElementById('main-event-container');
 
-    // Scroll down to #main-event-container with smooth scroll effect
-    scrollTo.scrollIntoView({ behavior: 'smooth' });
-})
 
     return `
     <div id="logga-container">
