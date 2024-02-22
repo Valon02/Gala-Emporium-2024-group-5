@@ -187,9 +187,10 @@ export default async function newMyPages() {
         </div>
     </div>
     `;
-  } else if (userResult.ownerAt == undefined) {
+  } else if (userResult.userId !== undefined) {
 
     console.log("Du är nu inloggad som en icke admin!");
+    console.log(userResult.userId)
 
     return `
     
