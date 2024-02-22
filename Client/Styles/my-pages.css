@@ -7,6 +7,21 @@
   align-items: center;
 }
 
+
+
+.my-pages-main-container button:hover {
+  background-color: #fff82b !important;
+  cursor: pointer;
+}
+.my-pages-main-container-test button:hover {
+  background-color: #fff82b !important;
+  cursor: pointer;
+}
+.my-pages-main-container-create-event button:hover {
+  background-color: #fff82b !important;
+  cursor: pointer;
+}
+
 .my-pages-main-container-test {
   width: 100vw;
   min-height: 100vh;
@@ -112,4 +127,8 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
