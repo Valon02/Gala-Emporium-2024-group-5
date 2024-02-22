@@ -20,7 +20,7 @@ export default function (server) {
     // Get one user
     server.get("/api/users/:id", async (req, res) => {
         const id = req.params.id
-        const user = await User.findById(id).populate("clubOwnerAt")
+        const user = await User.findById(id).populate("clubOwnerAt").populate("upcomingEvents")
         res.json(user)
     })
 
@@ -79,9 +79,9 @@ export default function (server) {
     // Kollar om någon är inloggad
     server.get("/api/login", async (req, res) => {
         if (req.session.login) {
-            res.json({ isLoggedIn: true, ownerAt: req.session.login.clubOwnerAt})
+            res.json({ isLoggedIn: true, ownerAt: req.session.login.clubOwnerAt, userId: req.session.login._id})
         } else {
-            res.json(false)
+            res.json({ isLoggedIn: false })
         }
     })
 

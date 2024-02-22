@@ -19,6 +19,7 @@ export default async function signup() {
                     <input type="text" placeholder="Efternamn" name="lastName"></input>
                     <input type="text" placeholder="Email" name="email"></input>
                     <input type="password" placeholder="Lösenord" name="password"></input>
+                    <p>Har du redan ett konto? <a href="#signin">Klicka här!<a/> </p>
                     <button type="submit" id="submit-signup">SKAPA</button>
                 </form>
             </div>
