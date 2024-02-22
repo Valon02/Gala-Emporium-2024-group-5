@@ -1,5 +1,7 @@
 body {
   font-family: Arial, sans-serif;
+}
+}
 
   #dkdatingklubb {
     display: flex;
@@ -70,17 +72,26 @@ body {
     width: 8px;
   }
 
-  body::-webkit-scrollbar-track {
-    background: #fff;
-  }
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
+body::-webkit-scrollbar-track {
+  background: #fff;
+}
 
-  body::-webkit-scrollbar-thumb {
-    background: #ff69b4;
-  }
+body::-webkit-scrollbar-thumb {
+  background: #ff69b4;
+}
+body::-webkit-scrollbar-thumb {
+  background: #ff69b4;
+}
 
-  body::-webkit-scrollbar-thumb:hover {
-    background: #ff1493;
-  }
+body::-webkit-scrollbar-thumb:hover {
+  background: #ff1493;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: #ff1493;
+}
 
   @keyframes dkpulse {
     0% {
