@@ -197,7 +197,7 @@ export default async function newMyPages() {
     <div class="my-pages-main-container">
       <div id="my-pages-container">
         <h3>Mina sidor</h3>
-        <button class="my-pages-view-current-event">Bokade Event</button>
+        <button class="my-pages-view-current-event">BOKADE EVENT</button>
         <button class="logout-btn" href="#signin">LOGGA UT</button>
       </div>
     </div>
