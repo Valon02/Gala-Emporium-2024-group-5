@@ -1,9 +1,9 @@
 export default async function nattklubb() {
     $("main").attr("id", "nattklubb")
-    const clubIdKomedi = "65d31920f938356ae734e46d";
+    const clubIdNattklubb = "65d31920f938356ae734e46d";
+    let eventId = ""
 
-
-    const response = await fetch(`/api/events/clubs/${clubIdKomedi}`);
+    const response = await fetch(`/api/events/clubs/${clubIdNattklubb}`);
     const result = await response.json()
 
     console.log(result)
@@ -20,8 +20,8 @@ export default async function nattklubb() {
         const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '')
         const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
         eventString += `
-        <div class="kommande-event" data-event-id="${event._id}">
-            <div class="event-date">
+        <div class="nattklubb-kommande-event" data-event-id="${event._id}">
+            <div class="nattklubb-event-date">
                 <span>${day}</span>
                 <b>${month}</b>
             </div>
@@ -37,36 +37,59 @@ export default async function nattklubb() {
         `;
     }
 
-    // Lägg till en klickhändelse för knapparna med klassen "event-button"
-    $(document).on("click", ".nattklubb-event-button", async function () {
-        // Hämta det specifika eventets id från det närliggande DOM-elementet
-        const eventId = $(this).closest(".kommande-event").data("event-id");
+    // Add a click event for the buttons with the class "nattklubb-event-button"
+$(document).on('click', '.nattklubb-event-button', async function () {
 
-        // Gör något baserat på eventets id
-        console.log("Klickade på knappen för event med id:", eventId);
+    // Get the specific event's id from the nearby DOM element
+    const eventId = $(this).closest('.nattklubb-kommande-event').data('event-id');
+    console.log('Clicked on the button for event with id:', eventId);
 
-        try {
-            const response = await fetch(`/api/bookings/events/${eventId}`, {
-                method: "POST",
-            });
-            const result = await response.json();
-            console.log(result.message);
-            $("dialog p").text(result.message);
-            document.querySelector("dialog").showModal();
-        } catch (error) {
-            console.log(
-                res.status(500).json({
-                    message: "Något gick fel vid skapandet av användaren",
-                    error: error.message,
-                })
-            );
+    try {
+        // Open modal
+        $('dialog').get(0).showModal()
+        
+    } catch (error) {
+        console.log(res.status(500).json({ message: "Något gick fel vid bokningen av eventet.", error: error }))
+    }
+});
+
+
+// Submit
+$(document).on('click', '#nattklubb-submit', async function (event) {
+    event.preventDefault()
+
+    // Input field values
+    var formData = {
+        quantity: $('[name=quantity]').val()
+    };
+
+    // Fetch
+    const response = await fetch(`/api/bookings/events/${eventId}`,
+        {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
         }
-    });
+    )
 
-    // Close modal
-    $(document).on("click", "#close-dialog", function () {
-        document.querySelector("dialog").close();
-    });
+    const bookingData = await response.json();
+    console.log(bookingData);
+    $("#meddelande").text(bookingData.message)
+})
+
+// Close modal
+$(document).on('click', '#close-dialog', function () {
+    $('dialog').get(0).close()
+})
+
+
+$(document).on('click', '#scroll-button', function () {
+    // Get the reference to the div with id #main-event-container
+    const scrollTo = document.getElementById('main-event-container');
+
+    // Scroll down to #main-event-container with smooth scroll effect
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+})
 
     return `
     <div id="logga-container">
@@ -86,22 +109,19 @@ export default async function nattklubb() {
         <img id="nattklubb-img1" src="images/nattklubb1.jpg">
         </div>
         <div class="nattklubb-grid-item">
-        <h2>Välkommna till <span id="nattklubb-red-color">Zachary's nattklubb</span>!</h2>
-        <p>Zachary’s Nattklubb är en pulserande oas i hjärtat av staden, en plats där nattlivet kommer till liv.
-         Med en sofistikerad atmosfär, toppmodern ljus- och ljudteknik och en rad exklusiva drycker, 
-         erbjuder Zachary’s en oförglömlig upplevelse. Här kan du dansa natten lång till tonerna av våra begåvade DJ:s,
-          njuta av liveframträdanden och koppla av i våra lyxiga VIP-områden. Zachary’s är mer än bara en nattklubb -
-           det är din destination för en oförglömlig kväll. Välkommen till Zachary’s, där natten aldrig tar slut.mosfär, toppmodern ljus- och ljudteknik och en rad exklusiva drycker, 
-         erbjuder Zachary’s en oförglömlig upplevelse. Här kan du dansa natten lång till tonerna av våra begåvade DJ:s,
-          njuta av liveframträdanden och koppla av i våra lyxiga VIP-områden. Zachary’s är mer än bara en nattklubb -
-           det är din destination för en oförglömlig kväll. Välkommen till Zachary’
+        <h2>Välkommna till <span id="nattklubb-red-color">Club Pulse</span>!</h2>
+        <p>Välkommen till Club Pulse, stadsens pulserande nattlivsoas. 
+        Med toppmodern teknik och exklusiva drycker erbjuder vi en oförglömlig upplevelse. 
+        Dansa till våra DJ:s, njut av liveframträdanden och koppla av i VIP-områden. 
+        Club Pulse är mer än en nattklubb - det är din destination för en oförglömlig kväll.
+         Där natten aldrig tar slut.
         </p>
         </div>
 
          <div class="nattklubb-grid-item">
-            <h2>Opening Hours</h2>
-            <p>Monday - Friday: 10:00 - 22:00</p>
-            <p>Saturday - Sunday: 12:00 - 23:00</p>
+         <h2>Välkommen till vår pulserande värld!</h2>
+         <p><strong>Vardagar (Måndag - Fredag)</strong>: Släpp loss din ande från 10:00 till 22:00</p>
+         <p><strong>Helgkänslor (Lördag - Söndag)</strong>: Dyk in i extravaganza från 12:00 till 23:00</p>         
         </div>
 
         <div class="nattklubb-grid-item">
@@ -113,16 +133,16 @@ export default async function nattklubb() {
 
         </div>
         <div class="nattklubb-grid-item">
-            <h2>Rules!!!!!</h2>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-            <p>-OnlyHotPeople.</p>
-             <p>-OnlyHotPeople.</p>
+        <h2>Regler</h2>
+        <p>-Alla ska behandlas med respekt.</p>
+        <p>-Ingen alkohol får tas med in i klubben.</p>
+        <p>-Rökning är endast tillåten på utsedda platser.</p>
+        <p>-Inga droger är tillåtna.</p>
+        <p>-Respektera personalens anvisningar.</p>
+        <p>-Ingen våldsamhet kommer att tolereras.</p>
+        <p>-Klädkoden måste följas.</p>
+        <p>-Åldersgränsen måste respekteras.</p>
+        <p>-Ha roligt och njut av natten!</p>
         </div>
     </section>
 
