@@ -59,10 +59,11 @@ async function upcomingEvents() {
     const response = await fetch(`/api/users/${userResult.userId}`);
     const result = await response.json();
     console.log(result.upcomingEvents);
+    console.log(result.upcomingEvents[0].name);
 
     
 
-    if (result._id != null) {
+    if (userResult.userId !== null) {
 
       for (let upcomingEvents of result.upcomingEvents) {
         const dateString = upcomingEvents.date;
@@ -81,7 +82,6 @@ async function upcomingEvents() {
         <p>${upcomingEvents.about}</p>
         <br>
         <p>${day} ${month}</p>
-        <button class="delete-event">Delete</button>
         </div>
         `;
         $("#view-event-div-user").html(upcomingEventsString);
@@ -211,7 +211,7 @@ export default async function newMyPages() {
               <p>Här visas dina bokade event.</p>
               
 
-              <div id="view-event-div" >
+              <div id="view-event-div-user" >
               
               </div>
 
