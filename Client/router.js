@@ -7,6 +7,7 @@ import signup from "./Pages/signup.js";
 import renderComedy from "./Pages/comedy.js";
 import signinPage from "./Pages/signin-page.js";
 import newMyPages from "./Pages/new-my-pages.js";
+import nattklubb from "./Pages/nattklubb.js";
 
 async function route() {
 
@@ -48,6 +49,10 @@ async function route() {
 
     case "kodklubben":
       $("main").html(await kodklubben());
+      break;
+
+    case "nattklubb":
+      $("main").html(await nattklubb())
       break;
 
     case "minaSidor":

@@ -22,19 +22,19 @@ export default async function matKlubb() {
       .replace(".", "");
     const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" });
     eventString += `
-                <div class="kommande-event" data-event-id="${event._id}">
-                        <div class="event-date">
+                <div class="mat-kommande-event" data-event-id="${event._id}">
+                        <div class="mat-event-date">
                                 <span>${day}</span>
                                 <b>${month}</b>
                         </div>
 
-                        <div class="event-content">
+                        <div class="mat-event-content">
                                 <h3>${event.name}</h3>
-                                <p class="event-content-about">${event.about}</p>
-                                <p class="event-content-platser">Platser kvar: ${event.availableTickets}</p>
+                                <p class="mat-event-content-about">${event.about}</p>
+                                <p class="mat-event-content-platser">Platser kvar: ${event.availableTickets}</p>
                         </div>
 
-                        <div class="event-button">
+                        <div class="mat-event-button">
                                 <b>BOKA</b>
                         </div>
                 </div>
@@ -42,9 +42,9 @@ export default async function matKlubb() {
   }
 
   // Lägg till en klickhändelse för knapparna med klassen "event-button"
-  $(document).on("click", ".event-button", async function () {
+  $(document).on("click", ".mat-event-button", async function () {
     // Hämta det specifika eventets id från det närliggande DOM-elementet
-    eventId = $(this).closest(".kommande-event").data("event-id");
+    eventId = $(this).closest(".mat-kommande-event").data("event-id");
     console.log("Klickade på knappen för event med id:", eventId);
 
     try {
