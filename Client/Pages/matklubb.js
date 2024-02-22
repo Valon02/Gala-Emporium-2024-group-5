@@ -26,7 +26,6 @@ export default async function matKlubb() {
                         <div class="event-date">
                                 <span>${day}</span>
                                 <b>${month}</b>
-
                         </div>
 
                         <div class="event-content">

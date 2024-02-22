@@ -79,9 +79,9 @@ export default function (server) {
     // Kollar om någon är inloggad
     server.get("/api/login", async (req, res) => {
         if (req.session.login) {
-            return true
+            res.json({ isLoggedIn: true, ownerAt: req.session.login.clubOwnerAt})
         } else {
-            return false
+            res.json(false)
         }
     })
 

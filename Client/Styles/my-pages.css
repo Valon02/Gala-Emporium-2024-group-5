@@ -1,0 +1,119 @@
+.my-pages-main-container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #363333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-pages-main-container-test {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #363333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#my-pages-container {
+  background-color: #d9d9d9;
+  border-radius: 1.5rem;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  padding: 20px;
+  width: 30rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+}
+
+#my-pages-container button {
+  width: 12rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: none;
+  margin: 0.5rem;
+  background-color: #e8e24f;
+  font-weight: 600;
+  
+}
+
+#my-pages-container h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  color: #363333;
+}
+
+#my-pages-container p {
+  color: #363333;
+  margin-bottom: 1rem;
+}
+
+#my-pages-container-form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#my-pages-container-form input {
+  width: 25rem;
+  height: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  outline: none;
+  margin-bottom: 1.5rem;
+}
+
+#my-pages-container-form input::placeholder {
+  color: #989898;
+}
+
+#my-pages-container-form button {
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  border-radius: 1.5rem;
+  background-color: #e8e24f;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+}
+
+#my-pages-container-form button:hover {
+  background-color: #fff82b;
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.my-pages-kommande-event {
+  border: 2px solid black;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  width: 25rem;
+}
+
+.my-pages-main-container-create-event {
+  height: 100vh;
+  background-color: #363333;
+}
