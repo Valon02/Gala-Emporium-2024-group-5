@@ -22,19 +22,19 @@ export default async function matKlubb() {
       .replace(".", "");
     const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" });
     eventString += `
-                <div class="kommande-event" data-event-id="${event._id}">
-                        <div class="event-date">
+                <div class="mat-kommande-event" data-event-id="${event._id}">
+                        <div class="mat-event-date">
                                 <span>${day}</span>
                                 <b>${month}</b>
                         </div>
 
-                        <div class="event-content">
+                        <div class="mat-event-content">
                                 <h3>${event.name}</h3>
-                                <p class="event-content-about">${event.about}</p>
-                                <p class="event-content-platser">Platser kvar: ${event.availableTickets}</p>
+                                <p class="mat-event-content-about">${event.about}</p>
+                                <p class="mat-event-content-platser">Platser kvar: ${event.availableTickets}</p>
                         </div>
 
-                        <div class="event-button">
+                        <div class="mat-event-button">
                                 <b>BOKA</b>
                         </div>
                 </div>
