@@ -1,10 +1,7 @@
 export default async function signinPage() {
-    $("main").attr("id", "signup")
+  $("main").attr("id", "signup");
 
-
-
-
-    return `
+  return `
         <div id="signin-main-container">
         
             <div id="signin-container">
@@ -22,31 +19,30 @@ export default async function signinPage() {
 
         </div>
 
-    `
+    `;
 }
 
-$(document).on('submit', '#signin-container-form', async function (event) {
-    event.preventDefault()
+$(document).on("submit", "#signin-container-form", async function (event) {
+  event.preventDefault();
 
-    // Input fält värden
-    var formData = {
-        mail: $('[name=email]').val(),
-        password: $('[name=password]').val()
-    };
+  // Input fält värden
+  var formData = {
+    mail: $("[name=email]").val(),
+    password: $("[name=password]").val(),
+  };
 
-    try {
-        const response = await fetch(`/api/login`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
-        })
+  try {
+    const response = await fetch(`/api/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
+    const userData = await response.json();
+    console.log(userData);
+    $("#meddelande").text(userData.message);
 
-        const userData = await response.json();
-        console.log(userData);
-        $("#meddelande").text(userData.message)
-
-        /* if (response.ok) {
+    /* if (response.ok) {
              const userData = await response.json();
              $("#meddelande").text("Du har nu loggat in. Välkommen!")
              console.log(3);
@@ -54,8 +50,7 @@ $(document).on('submit', '#signin-container-form', async function (event) {
          } else {
              $("#meddelande").text("Din mailadress eller ditt lösenord stämmer inte överens.")
          }*/
-
-    } catch (error) {
-        console.error('Något gick fel:', error);
-    }
-})
+  } catch (error) {
+    console.error("Något gick fel:", error);
+  }
+});
