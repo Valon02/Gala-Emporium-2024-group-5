@@ -34,7 +34,7 @@ export default async function kodklubben() {
             </div>`;
     }
 
-    // Lägg till en klickhändelse för knapparna med klassen "event-button"
+    // Lägg till en klickhändelse för knapparna med klassen "kod-event-button"
     $(document).on('click', '.kod-event-button', async function () {
         // Hämta det specifika eventets id från det närliggande DOM-elementet
         eventId = $(this).closest('.kod-kommande-event').data('event-id');
@@ -89,9 +89,6 @@ export default async function kodklubben() {
 
             <div id="kod-main-event">
                 <div id="kod-event-container">
-                    <div id="kod-event-header">
-                        <h3 class=kod-h3>Kommande evenemang!</h3>
-                    </div>
                     <div id="kod-event-container-main">${eventString}</div>
                 </div>
             </div>
@@ -123,7 +120,7 @@ export default async function kodklubben() {
                                 <li><span class="rank">4.</span> Hoffman - 2054</li>
                             </ul>
                         </div>
-                            <div class="content-box">>
+                            <div class="content-box">
                             <h2>Snabbaste centrering av div</h3>
                             <ul class=leaderboard-ranks>
                                 <li><span class="rank">1.</span> Jakob - 10 sec</li>
