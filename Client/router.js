@@ -4,10 +4,11 @@ import trolleriKlubb from "./Pages/trolleriklubb.js";
 import matKlubb from "./Pages/matklubb.js";
 import signup from "./Pages/signup.js";
 import renderComedy from "./Pages/comedy.js";
+import signinPage from "./Pages/signin-page.js";
+import newMyPages from "./Pages/new-my-pages.js";
 import nattklubb from "./Pages/nattklubb.js";
 
 async function route() {
-  //console.log(location)
 
   switch (location.hash.replace("#", "")) {
     case "about":
@@ -32,6 +33,10 @@ async function route() {
       $("main").html(await signup());
       break;
 
+    case "signin":
+      $("main").html(await signinPage());
+      break;
+
     case "comedy":
       console.log("comedy");
       $("main").html(await renderComedy());
@@ -45,13 +50,16 @@ async function route() {
       $("main").html(await nattklubb())
       break;
 
+    case "minaSidor":
+      console.log("my-pages");
+      $("main").html(await newMyPages());
+      break;
+      
     default:
       console.log("404");
       break;
   }
-
 }
-
 
 window.onhashchange = route;
 window.onload = route;

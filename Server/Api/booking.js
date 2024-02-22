@@ -30,11 +30,14 @@ export default function (server) {
             try {
                 // Hämtar eventet
                 const eventId = req.params.id
+                console.log("Innan");
                 const event = await Event.findById(eventId)
+                console.log("Efter att hämtat eventet");
 
                 // Hämtar användaren
                 const userId = req.session.login
                 const user = await User.findById(userId)
+                console.log("Efter hämtad anvndare");
 
                 // Skapar en ny bokning
                 const newBooking = new Booking({
@@ -42,10 +45,11 @@ export default function (server) {
                     event: event,
                     quantity: req.body.quantity
                 })
+                console.log("Efter bokningen hämtats");
 
                 // Om det inte finns tillräckligt många platser kvar så får man ett felmeddelande
                 if (event.availableTickets < newBooking.quantity) {
-                    return res.json({ message: "Det finns inga lediga platser kvar på detta eventet." })
+                    return res.json({ message: `Det finns bara såhär många platser lediga: ${event.availableTickets}` })
                 }
 
                 // Pushar eventet till kommande event i användaren
@@ -59,7 +63,8 @@ export default function (server) {
                 await event.save()
                 const savedBooking = await newBooking.save()
 
-                res.json(savedBooking)
+                res.json({ message: "Du har nu bokat eventet.", savedBooking: savedBooking})
+
 
             } catch (error) {
                 return res.json({ message: "Något gick fel vid bokning av eventet." })

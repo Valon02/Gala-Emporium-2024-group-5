@@ -1,32 +1,31 @@
-
-
 export default async function matKlubb() {
-        $("main").attr("id", "matklubb")
+  $("main").attr("id", "matklubb");
 
-        const clubId = "65d230f506faf47f74e55504"
+  const clubId = "65d230f506faf47f74e55504";
 
-        const response = await fetch(`/api/events/clubs/${clubId}`)
-        const result = await response.json()
-        console.log(result);
-        
+  const response = await fetch(`/api/events/clubs/${clubId}`);
+  const result = await response.json();
+  console.log(result);
+  let eventId = "";
 
-
-        // Hämtar alla eventen och lägger till rätt styling
-        let eventString = "";
-        for (let event of result) {
-                // Hämtar datumet som en sträng
-                const dateString = event.date;
-                // Konverterar datumet till ett datum objekt
-                const dateObject = new Date(dateString);
-                // Använder datum objektet för att få fram vilken månad det är (förkortat)
-                const month = dateObject.toLocaleDateString("sv-SE", { month: "short" }).toUpperCase().replace('.', '')
-                const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" })
-                eventString += `
+  // Hämtar alla eventen och lägger till rätt styling
+  let eventString = "";
+  for (let event of result) {
+    // Hämtar datumet som en sträng
+    const dateString = event.date;
+    // Konverterar datumet till ett datum objekt
+    const dateObject = new Date(dateString);
+    // Använder datum objektet för att få fram vilken månad det är (förkortat)
+    const month = dateObject
+      .toLocaleDateString("sv-SE", { month: "short" })
+      .toUpperCase()
+      .replace(".", "");
+    const day = dateObject.toLocaleDateString("sv-SE", { day: "numeric" });
+    eventString += `
                 <div class="kommande-event" data-event-id="${event._id}">
                         <div class="event-date">
                                 <span>${day}</span>
                                 <b>${month}</b>
-
                         </div>
 
                         <div class="event-content">
@@ -39,47 +38,68 @@ export default async function matKlubb() {
                                 <b>BOKA</b>
                         </div>
                 </div>
-                `
-        }
+                `;
+  }
 
-        // Lägg till en klickhändelse för knapparna med klassen "event-button"
-        $(document).on('click', '.event-button', async function () {
+  // Lägg till en klickhändelse för knapparna med klassen "event-button"
+  $(document).on("click", ".event-button", async function () {
+    // Hämta det specifika eventets id från det närliggande DOM-elementet
+    eventId = $(this).closest(".kommande-event").data("event-id");
+    console.log("Klickade på knappen för event med id:", eventId);
 
-                // Hämta det specifika eventets id från det närliggande DOM-elementet
-                const eventId = $(this).closest('.kommande-event').data('event-id');
+    try {
+      // Open modal
+      $("dialog").get(0).showModal();
+    } catch (error) {
+      console.log(
+        res
+          .status(500)
+          .json({
+            message: "Något gick fel vid bokningen av eventet.",
+            error: error,
+          })
+      );
+    }
+  });
 
-                // Gör något baserat på eventets id
-                console.log('Klickade på knappen för event med id:', eventId);
+  // Submit
+  $(document).on("click", "#mat-submit", async function (event) {
+    event.preventDefault();
 
-                try {
-                        const response = await fetch(`/api/bookings/events/${eventId}`, { method: "POST" })
-                        const result = await response.json()
-                        console.log(result.message);
-                        $('dialog p').text(result.message)
-                        document.querySelector('dialog').showModal()
-                        
+    // Input fält värden
+    var formData = {
+      quantity: $("[name=quantity]").val(),
+    };
 
-                } catch (error) {
-                        console.log(res.status(500).json({ message: "Något gick fel vid skapandet av användaren", error: error.message }))
-                }
+    // Fetch
+    const response = await fetch(`/api/bookings/events/${eventId}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
 
-        });
+    const bookingData = await response.json();
+    console.log(bookingData);
+    $("#meddelande").text(bookingData.message);
 
-        // Close modal
-        $(document).on('click', '#close-dialog', function () {
-                document.querySelector('dialog').close()
-        })
+    //console.log(formData.quantity);
+    //console.log(bookingData.message);
+  });
 
+  // Close modal
+  $(document).on("click", "#close-dialog", function () {
+    $("dialog").get(0).close();
+  });
 
-        $(document).on('click', '#scroll-button', function () {
-                // Hämta referensen till div med id #main-event-container
-                const scrollTo = document.getElementById('main-event-container');
-            
-                // Scrolla ner till #main-event-container med smooth scroll-effekt
-                scrollTo.scrollIntoView({ behavior: 'smooth' });
-        })
+  $(document).on("click", "#scroll-button", function () {
+    // Hämta referensen till div med id #main-event-container
+    const scrollTo = document.getElementById("main-event-container");
 
-        return `
+    // Scrolla ner till #main-event-container med smooth scroll-effekt
+    scrollTo.scrollIntoView({ behavior: "smooth" });
+  });
+
+  return `
                 <div id="main-container">
 
 
@@ -97,9 +117,14 @@ export default async function matKlubb() {
 
                         <div id="main-event-container">
 
-                                <dialog>
+                                <dialog id="mat-dialog">
                                         <div>
-                                                <p>Test</p>
+                                                <p id="meddelande">BOKA</p>
+                                                <form onsubmit="return false">
+                                                        <label for="quantity">Antal:</label>
+                                                        <input type="number" id="quantity" name="quantity" min="1" max="100"></input>
+                                                        <input type="submit" id="mat-submit" value="Boka"></input>
+                                                </form>
                                                 <button id="close-dialog">Close</button>
                                         </div>
                                 </dialog>
@@ -132,8 +157,7 @@ export default async function matKlubb() {
                 </div>
 
 
-        `
-
+        `;
 }
 
 /*let closeDialog = document.getElementById("close-dialog")

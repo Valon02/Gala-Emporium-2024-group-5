@@ -19,6 +19,7 @@ export default async function signup() {
                     <input type="text" placeholder="Efternamn" name="lastName"></input>
                     <input type="text" placeholder="Email" name="email"></input>
                     <input type="password" placeholder="Lösenord" name="password"></input>
+                    <p>Har du redan ett konto? <a href="#signin">Klicka här!<a/> </p>
                     <button type="submit" id="submit-signup">SKAPA</button>
                 </form>
             </div>
@@ -51,7 +52,7 @@ $(document).on('submit', '#signup-container-form', async function (event) {
 
                 if (response.ok) {
                     const result = await response.json()
-                    console.log(result.message);
+                    console.log(result);
                     $("#meddelande").text("Du har nu skapat ett nytt konto. Välkommen!")
                     
                 } else {

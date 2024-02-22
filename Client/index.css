@@ -1,10 +1,12 @@
-@import url("./Styles/Home.css");
-@import url("./Styles/comedy.css");
-@import url("./Styles/trolleriklubb.css");
-@import url(./Styles/signup.css);
+@import url(./Styles/Home.css);
 @import url(./Styles/matklubb.css);
+@import url(./Styles/comedy.css);
+@import url(./Styles/signin-page.css);
+@import url(./Styles/trolleriklubb.css);
+@import url(./Styles/signup.css);
 @import url(./Styles/kodklubben.css);
 @import url(./Styles/nattklubb.css);
+@import url(./Styles/my-pages.css);
 
 * {
   margin: 0;

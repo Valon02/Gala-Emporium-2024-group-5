@@ -20,7 +20,7 @@ export default function (server) {
     // Get one user
     server.get("/api/users/:id", async (req, res) => {
         const id = req.params.id
-        const user = await User.findById(id).populate("clubOwnerAt")
+        const user = await User.findById(id).populate("clubOwnerAt").populate("upcomingEvents")
         res.json(user)
     })
 
@@ -72,16 +72,16 @@ export default function (server) {
                 }
             }
         } catch (error) {
-            res.status(400).json({ message: "Något gick fel."}, err)
+            res.status(500).json({ message: "Något gick fel."}, error)
         }
     })
 
     // Kollar om någon är inloggad
     server.get("/api/login", async (req, res) => {
         if (req.session.login) {
-            return true
+            res.json({ isLoggedIn: true, ownerAt: req.session.login.clubOwnerAt, userId: req.session.login._id})
         } else {
-            return false
+            res.json({ isLoggedIn: false })
         }
     })
 
