@@ -34,7 +34,7 @@ export default async function kodklubben() {
             </div>`;
     }
 
-    // Lägg till en klickhändelse för knapparna med klassen "event-button"
+    // Lägg till en klickhändelse för knapparna med klassen "kod-event-button"
     $(document).on('click', '.kod-event-button', async function () {
         // Hämta det specifika eventets id från det närliggande DOM-elementet
         eventId = $(this).closest('.kod-kommande-event').data('event-id');
