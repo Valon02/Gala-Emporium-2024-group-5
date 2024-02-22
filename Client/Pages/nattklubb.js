@@ -44,17 +44,22 @@ export default async function nattklubb() {
         console.log('Clicked on the button for event with id:', eventId);
     
         try {
-            // Open modal
-            $("dialog").get(0).showModal();
-        } catch (error) {
+            const response = await fetch(`/api/bookings/events/${eventId}`, {
+              method: "POST",
+            });
+            const result = await response.json();
+            console.log(result.message);
+            $("dialog p").text(result.message);
+            document.querySelector("dialog").showModal();
+          } catch (error) {
             console.log(
-                res.status(500).json({
-                    message: "Något gick fel vid bokningen av eventet.",
-                    error: error,
-                })
+              res.status(500).json({
+                message: "Något gick fel vid skapandet av användaren",
+                error: error.message,
+              })
             );
-        }
-    });
+          }
+        });
     
 
 // Submit
