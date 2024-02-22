@@ -120,7 +120,7 @@ export default async function kodklubben() {
                                 <li><span class="rank">4.</span> Hoffman - 2054</li>
                             </ul>
                         </div>
-                            <div class="content-box">>
+                            <div class="content-box">
                             <h2>Snabbaste centrering av div</h3>
                             <ul class=leaderboard-ranks>
                                 <li><span class="rank">1.</span> Jakob - 10 sec</li>
