@@ -21,33 +21,37 @@ export default async function renderDatingKlubb() {
     // Set the static part of the main content with updated class and ID names
     $('main').html(mainContent);
 
-    // Fetch event data and generate dynamic event content with "dk" prefix in classes
-    try {
-        const response = await fetch("/api/events");
-        if (!response.ok) throw new Error("Failed to fetch events");
-        const events = await response.json();
+   // Anta att klubb-id är tillgängligt som en variabel
+const clubId = "65d62e6b9ecd2d675421e66e"; // Ersätt detta med dynamiskt erhållet id om nödvändigt
 
-        let eventString = "";
-        events.forEach(event => {
-            if (event.date) {
-                const dateString = event.date.substring(0, 10);
-                eventString += `
-                    <div class="dk-event-card">
-                        <div class="dk-event-date">${dateString}</div>
-                        <h3 class="dk-event-name">${event.name}</h3>
-                        <p>Participant limit: ${event.participantLimit}</p>
-                        <p>Available tickets: ${event.availableTickets}</p>
-                        <a href="/event/${event.id}" class="dk-event-info-button">Mer Information</a>
-                    </div>`;
-            }
-        });
+// Fetch event data and generate dynamic event content with "dk" prefix in classes
+try {
+    // Använd den specifika endpointen för att hämta events för en klubb
+    const response = await fetch(`/api/events/clubs/${clubId}`);
+    if (!response.ok) throw new Error("Failed to fetch events");
+    const events = await response.json();
 
-        // Append the dynamic event content to the 'dkupcoming-events' section with updated ID
-        $('#dkupcoming-events').html(eventString);
-    } catch (error) {
-        console.error("Error loading events:", error);
-        $('#dkupcoming-events').html("<p>Problem att ladda evenemang. Försök igen senare.</p>");
-    }
+    let eventString = "";
+    events.forEach(event => {
+        if (event.date) {
+            const dateString = event.date.substring(0, 10);
+            eventString += `
+                <div class="dk-event-card">
+                    <div class="dk-event-date">${dateString}</div>
+                    <h3 class="dk-event-name">${event.name}</h3>
+                    <p>Participant limit: ${event.participantLimit}</p>
+                    <p>Available tickets: ${event.availableTickets}</p>
+                    <a href="/event/${event.id}" class="dk-event-info-button">Mer Information</a>
+                </div>`;
+        }
+    });
+
+    // Append the dynamic event content to the 'dkupcoming-events' section with updated ID
+    $('#dkupcoming-events').html(eventString);
+} catch (error) {
+    console.error("Error loading events:", error);
+    $('#dkupcoming-events').html("<p>Problem att ladda evenemang. Försök igen senare.</p>");
+}
 
     return $('main').html();
 }
