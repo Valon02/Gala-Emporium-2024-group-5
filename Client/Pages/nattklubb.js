@@ -1,10 +1,9 @@
 export default async function nattklubb() {
     $("main").attr("id", "nattklubb")
+    const clubIdKomedi = "65d31920f938356ae734e46d";
 
 
-
-    const clubId = "nr"
-    const response = await fetch('/api/events') //${clubId}`)
+    const response = await fetch(`/api/events/clubs/${clubIdKomedi}`);
     const result = await response.json()
 
     console.log(result)
@@ -27,7 +26,7 @@ export default async function nattklubb() {
                 <b>${month}</b>
             </div>
             <div class="nattklubb-event-content">
-                <h3>${event.club.name}</h3>
+            <h3>${event.club ? event.club.name : 'Default Club Name'}</h3>
                 <p class="-nattklubbevent-content-about">${event.about}</p>
                 <p class="nattklubb-event-content-platser">Platser kvar: ${event.availableTickets}</p>
             </div>
@@ -38,20 +37,49 @@ export default async function nattklubb() {
         `;
     }
 
- //  "event-button"
-        $(document).on('click', '.event-button', function () {
-                // Hämta det specifika eventets id från det närliggande DOM-elementet
-                const eventId = $(this).closest('.kommande-event').data('event-id');
+    // Lägg till en klickhändelse för knapparna med klassen "event-button"
+    $(document).on("click", ".nattklubb-event-button", async function () {
+        // Hämta det specifika eventets id från det närliggande DOM-elementet
+        const eventId = $(this).closest(".kommande-event").data("event-id");
 
-                // Gör något baserat på eventets id
-                console.log('Klickade på knappen för event med id:', eventId);
-        });
+        // Gör något baserat på eventets id
+        console.log("Klickade på knappen för event med id:", eventId);
 
+        try {
+            const response = await fetch(`/api/bookings/events/${eventId}`, {
+                method: "POST",
+            });
+            const result = await response.json();
+            console.log(result.message);
+            $("dialog p").text(result.message);
+            document.querySelector("dialog").showModal();
+        } catch (error) {
+            console.log(
+                res.status(500).json({
+                    message: "Något gick fel vid skapandet av användaren",
+                    error: error.message,
+                })
+            );
+        }
+    });
+
+    // Close modal
+    $(document).on("click", "#close-dialog", function () {
+        document.querySelector("dialog").close();
+    });
 
     return `
     <div id="logga-container">
         <h1 id="logga">Zachary's Nattklubb</h1>
     </div>
+
+
+    <dialog>
+    <div>
+        <p></p>
+        <button id="close-dialog">Close</button>
+   </div>
+</dialog>
 
     <section class="nattklubb-grid-container">
         <div class="nattklubb-grid-item">

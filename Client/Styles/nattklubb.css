@@ -12,7 +12,7 @@ body {
     padding: 20px;
 }
 
-#nattklubbred-color {
+#nattklubb-red-color {
     color: #FA4C5D;
 }
 
@@ -42,7 +42,7 @@ body {
     width: 100%;
 }
 
-.nattklubb-kommande-event {
+.kommande-event {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -54,7 +54,7 @@ body {
     background-color: #f31f1f;
 }
 
-.nattklubb-kommande-event .nattklubb-event-button {
+.nattklubb-event-button {
     padding: 1rem;
     margin-top: 1rem;
     font-size: 15px;
@@ -66,13 +66,13 @@ body {
     width: 100%;
 }
 
-.nattklubb-kommande-event .nattklubb-event-button:hover {
+.nattklubb-event-button:hover {
     background-color: #fff;
     color: #f3261f;
     border: 1px solid #f3261f;
 }
 
-.nattklubb-kommande-event .nattklubb-event-button:active {
+.nattklubb-event-button:active {
     opacity: 0.7;
 }
 
@@ -82,37 +82,20 @@ body {
     margin-bottom: 20px;
 }
 
-.nattklubb-kommande-event-test {
+.kommande-event-test {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
 }
 
-
-#nattklubb-img1 {
-
-    size: 100px;
-    transition: scale, 0.5s;
-
-}
-
-#nattklubb-img1:hover {
-    transform: scale(1.015);
-}
-#nattklubb-img2 {
-
-    transition: scale, 0.5s;
-}
-
-#nattklubb-img2:hover {
-    transform: scale(1.015);
-}
-
+#nattklubb-img1,
+#nattklubb-img2,
 #nattklubb-img3 {
-
     transition: scale, 0.5s;
 }
 
+#nattklubb-img1:hover,
+#nattklubb-img2:hover,
 #nattklubb-img3:hover {
     transform: scale(1.015);
 }
