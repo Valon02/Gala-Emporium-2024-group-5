@@ -32,7 +32,7 @@ export default function (server) {
                 about: req.body.about,
                 date: req.body.date,
                 participantLimit: req.body.participantLimit,
-                availableTickets: req.body.availableTickets,
+                availableTickets: req.body.participantLimit,
                 club: req.body.clubId
             })
             const savedEvent = await newEvent.save()
@@ -42,8 +42,8 @@ export default function (server) {
             await club.save()
 
             res.status(201).json(savedEvent)
-        }   catch (err) {
-            res.status(400).json({ message: "Något gick fel."}, err)
+        } catch (err) {
+            res.status(400).json({ message: "Något gick fel." }, err)
         }
     })
 

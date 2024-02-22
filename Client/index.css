@@ -1,3 +1,12 @@
+@import url(./Styles/Home.css);
+@import url(./Styles/matklubb.css);
+@import url(./Styles/comedy.css);
+@import url(./Styles/signin-page.css);
+@import url(./Styles/trolleriklubb.css);
+@import url(./Styles/signup.css);
+@import url(./Styles/kodklubben.css);
+@import url(./Styles/my-pages.css);
+
 @import url("./Styles/Home.css");
 @import url("./Styles/comedy.css");
 @import url("./Styles/trolleriklubb.css");
@@ -15,9 +24,15 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column; /* Låter main och footer följa efter varandra */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Låter main och footer följa efter varandra */
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-x: hidden;
 }
+
 
 /*HEADER*/
 
