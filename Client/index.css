@@ -1,8 +1,11 @@
-@import url("./Styles/Home.css");
-@import url("./Styles/comedy.css");
-@import url("./Styles/trolleriklubb.css");
-@import url(./Styles/signup.css);
+@import url(./Styles/Home.css);
 @import url(./Styles/matklubb.css);
+@import url(./Styles/comedy.css);
+@import url(./Styles/signin-page.css);
+@import url(./Styles/trolleriklubb.css);
+@import url(./Styles/signup.css);
+@import url(./Styles/kodklubben.css);
+@import url(./Styles/my-pages.css);
 @import url(./Styles/datingklubb.css);
 
 * {
@@ -15,9 +18,20 @@ body {
   padding: 0;
   display: flex;
   flex-direction: column; /* Låter main och footer följa efter varandra */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Låter main och footer följa efter varandra */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Låter main och footer följa efter varandra */
   min-height: 100vh;
   overflow-x: hidden;
+  overflow-x: hidden;
 }
+
+
 
 /*HEADER*/
 
@@ -177,6 +191,14 @@ footer {
   align-items: center;
   justify-content: space-evenly;
   padding: 1rem;
+  font-family: sans-serif;
+  width: 100vw;
+  height: 80vh;
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
 }
 
 .left-footer-section {
@@ -184,14 +206,23 @@ footer {
   display: flex;
   flex-direction: column;
   color: yellow;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  color: yellow;
 }
+#form {
 #form {
   max-width: 300px; /* Begränsar bredden */
   margin: 0 auto; /* Centrerar formuläret horisontellt */
 }
 
 input[type="text"],
+input[type="text"],
 textarea {
+  width: calc(
+    100% - 20px
+  ); /* Fyller ut tillgängligt utrymme, med lite marginal */
   width: calc(
     100% - 20px
   ); /* Fyller ut tillgängligt utrymme, med lite marginal */
@@ -209,6 +240,8 @@ textarea {
 
 input[type="button"] {
   background-color: #4caf50; /* Grön bakgrundsfärg */
+input[type="button"] {
+  background-color: #4caf50; /* Grön bakgrundsfärg */
   color: white; /* Vit textfärg */
   border: none;
   padding: 10px 20px; /* Utfyllnad för knappen */
@@ -218,10 +251,12 @@ input[type="button"] {
 }
 
 input[type="button"]:hover {
+input[type="button"]:hover {
   background-color: #45a049; /* Lite mörkare grön vid hover */
 }
 
 /* Placeholder-färger */
+input[type="text"]::placeholder,
 input[type="text"]::placeholder,
 textarea::placeholder {
   color: #999; /* Ljusare grå för placeholders */
@@ -229,12 +264,21 @@ textarea::placeholder {
 
 /* Fokusstilar */
 input[type="text"]:focus,
+input[type="text"]:focus,
 textarea:focus {
   outline: none; /* Ingen standardfokusram */
+  border-color: #4caf50; /* Grön fokusram */
   border-color: #4caf50; /* Grön fokusram */
 }
 
 .right-footer-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; /* Bakgrundsfärg för fotern */
+  padding: 20px; /* Lite utrymme runt innehållet */
+  margin-top: 20px; /* Avstånd från det föregående elementet */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -267,8 +311,37 @@ textarea:focus {
 .footer-icons img {
   width: 40px; /* Justera storleken på ikonerna efter behov */
   margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px; /* Maximal bredd för fotern */
+  width: 100%; /* Se till att fotern tar hela bredden av sitt föräldreelement */
 }
 
+.footer-container > * {
+  margin-bottom: 20px; /* Lägg till lite utrymme mellan varje del */
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: darkgray;
+  padding: 10px;
+}
+
+.footer-icons img {
+  width: 40px; /* Justera storleken på ikonerna efter behov */
+  margin-right: 10px; /* Lägg till ett litet mellanrum mellan ikonerna */
+}
+
+/* Stil för h2-elementen */
+h2 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 20px;
+  margin-bottom: 10px; /* Lite extra utrymme under h2-elementen */
 /* Stil för h2-elementen */
 h2 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
