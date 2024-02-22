@@ -1,7 +1,6 @@
 export default async function nattklubb() {
     $("main").attr("id", "nattklubb")
     const clubIdNattklubb = "65d32c03270b17a61bf563d5";
-    let eventId = ""
 
     const response = await fetch(`/api/events/clubs/${clubIdNattklubb}`);
     const result = await response.json()
@@ -9,7 +8,7 @@ export default async function nattklubb() {
     console.log(result)
 
 
-
+    let eventId = ""
     let eventString = "";
     for (let event of result) {
         // Hämtar datumet som en sträng
@@ -26,7 +25,7 @@ export default async function nattklubb() {
                 <b>${month}</b>
             </div>
             <div class="nattklubb-event-content">
-            <h3>${event.club ? event.club.name : 'Default Club Name'}</h3>
+            <h3>${event.name}</h3>
                 <p class="-nattklubbevent-content-about">${event.about}</p>
                 <p class="nattklubb-event-content-platser">Platser kvar: ${event.availableTickets}</p>
             </div>
@@ -48,8 +47,6 @@ export default async function nattklubb() {
               method: "POST",
             });
             const result = await response.json();
-            console.log(result.message);
-            $("dialog p").text(result.message);
             document.querySelector("dialog").showModal();
           } catch (error) {
             console.log(
@@ -78,7 +75,7 @@ $(document).on('click', '#nattklubb-submit', async function (event) {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
         }
-    )
+    );
 
     const bookingData = await response.json();
     console.log(bookingData);
@@ -99,12 +96,7 @@ $(document).on('click', '#close-dialog', function () {
     </div>
 
 
-    <dialog>
-    <div>
-        <p></p>
-        <button id="close-dialog">Close</button>
-   </div>
-</dialog>
+
 
     <section class="nattklubb-grid-container">
         <div class="nattklubb-grid-item">
@@ -154,6 +146,20 @@ $(document).on('click', '#close-dialog', function () {
             ${eventString}
         </div>
     </section>
+
+
+    <dialog id="nattklubb-dialog">
+                                        <div>
+                                                <p id="meddelande">BOKA</p>
+                                                <form onsubmit="return false">
+                                                        <label for="quantity">Antal:</label>
+                                                        <input type="number" id="quantity" name="quantity" min="1" max="100"></input>
+                                                        <input type="submit" id="nattklubb-submit" value="Boka"></input>
+                                                </form>
+                                                <button id="close-dialog">Close</button>
+                                        </div>
+                                </dialog>
+    
     `;
 }
 
