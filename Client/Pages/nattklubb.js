@@ -1,6 +1,6 @@
 export default async function nattklubb() {
     $("main").attr("id", "nattklubb")
-    const clubIdNattklubb = "65d31920f938356ae734e46d";
+    const clubIdNattklubb = "65d32c03270b17a61bf563d5";
     let eventId = ""
 
     const response = await fetch(`/api/events/clubs/${clubIdNattklubb}`);
@@ -38,21 +38,24 @@ export default async function nattklubb() {
     }
 
     // Add a click event for the buttons with the class "nattklubb-event-button"
-$(document).on('click', '.nattklubb-event-button', async function () {
-
-    // Get the specific event's id from the nearby DOM element
-    const eventId = $(this).closest('.nattklubb-kommande-event').data('event-id');
-    console.log('Clicked on the button for event with id:', eventId);
-
-    try {
-        // Open modal
-        $('dialog').get(0).showModal()
-        
-    } catch (error) {
-        console.log(res.status(500).json({ message: "Något gick fel vid bokningen av eventet.", error: error }))
-    }
-});
-
+    $(document).on('click', '.nattklubb-event-button', async function () {
+        // Get the specific event's id from the nearby DOM element
+        eventId = $(this).closest('.nattklubb-kommande-event').data('event-id');
+        console.log('Clicked on the button for event with id:', eventId);
+    
+        try {
+            // Open modal
+            $("dialog").get(0).showModal();
+        } catch (error) {
+            console.log(
+                res.status(500).json({
+                    message: "Något gick fel vid bokningen av eventet.",
+                    error: error,
+                })
+            );
+        }
+    });
+    
 
 // Submit
 $(document).on('click', '#nattklubb-submit', async function (event) {
