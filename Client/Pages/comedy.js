@@ -97,7 +97,7 @@ export default async function renderComedy() {
                                                         <input type="number" id="quantity" name="quantity" min="1" max="100"></input>
                                                         <input type="submit" id="comedy-submit" value="Boka"></input>
                                                 </form>
-                                                <button id="close-dialog">Close</button>
+                                                <button id="dating-close-dialog">Close</button>
                                         </div>
                                 </dialog>
   
