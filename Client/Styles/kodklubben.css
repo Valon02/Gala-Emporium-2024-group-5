@@ -132,12 +132,14 @@ body {
     align-items: center;
     padding: 50px 0;
     background-color: #f9f9f9;
+    
 }
 
 #kod-about-text {
     flex: 1;
     padding: 0 20px;
     background-color: white;
+    color: black;
 }
 
 #kod-about-text h2 {
@@ -200,6 +202,7 @@ body {
     margin-top: 10vh;
     margin-bottom: 10vh;
     margin: 10%;
+    color: black;
 }
 
 
