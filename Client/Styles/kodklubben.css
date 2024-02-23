@@ -132,6 +132,7 @@ body {
     align-items: center;
     padding: 50px 0;
     background-color: #f9f9f9;
+    
 }
 
 #kod-about-text {
@@ -202,6 +203,7 @@ body {
     margin-top: 10vh;
     margin-bottom: 10vh;
     margin: 10%;
+    color: black;
 }
 
 
